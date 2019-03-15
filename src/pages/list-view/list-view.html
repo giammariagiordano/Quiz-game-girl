@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Dealer List</ion-title>
+  </ion-navbar>
+
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)">
+  </ion-searchbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor ="let girl of generalInfo" (click)="showInfo(girl)">
+      <ion-row>
+        <div item-start>
+          <ion-icon style="font-size: 30px; margin-top: 50%" name="contact"></ion-icon>
+        </div>
+        <div  >
+         <h1 >{{girl.name}}</h1>
+          
+        </div>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content>
