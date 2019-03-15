@@ -438,12 +438,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var config = {
-    apiKey: "AIzaSyDZV1HE-WMqRhLPyaEGgu1WjJz9b1ovYVs",
-    authDomain: "broketest-ce7c1.firebaseapp.com",
-    databaseURL: "https://broketest-ce7c1.firebaseio.com",
-    projectId: "broketest-ce7c1",
-    storageBucket: "broketest-ce7c1.appspot.com",
-    messagingSenderId: "493621450493"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: ""
 };
 __WEBPACK_IMPORTED_MODULE_7_firebase___default.a.initializeApp(config);
 __WEBPACK_IMPORTED_MODULE_7_firebase___default.a.database.enableLogging(true);
