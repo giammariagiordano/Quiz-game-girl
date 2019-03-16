@@ -440,7 +440,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-alert(__WEBPACK_IMPORTED_MODULE_12__credential_json__["apiKey"]);
 var config = {
     apiKey: __WEBPACK_IMPORTED_MODULE_12__credential_json__["apiKey"],
     authDomain: __WEBPACK_IMPORTED_MODULE_12__credential_json__["authDomain"],

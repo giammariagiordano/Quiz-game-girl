@@ -14,16 +14,17 @@ import { ListViewPage } from '../pages/list-view/list-view';
 import { SpecificInfoPage } from '../pages/specific-info/specific-info';
 import * as credential from "./credential.json";
 
-alert(credential.apiKey);
+
 
 let config ={
-  apiKey: credential.apiKey,
-  authDomain: credential.authDomain,
-  databaseURL: credential.databaseURL,
-  projectId: credential.projectId,
-  storageBucket: credential.storageBucket,
-  messagingSenderId: credential.messagingSenderId
+  apiKey: (<any>credential).apiKey,
+  authDomain: (<any>credential).authDomain,
+  databaseURL: (<any>credential).databaseURL,
+  projectId: (<any>credential).projectId,
+  storageBucket: (<any>credential).storageBucket,
+  messagingSenderId: (<any>credential).messagingSenderId
 }
+
 firebase.initializeApp(config);
 firebase.database.enableLogging(true);
 @NgModule({
