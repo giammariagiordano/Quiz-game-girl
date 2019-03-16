@@ -12,14 +12,17 @@ import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { ListViewPage } from '../pages/list-view/list-view';
 import { SpecificInfoPage } from '../pages/specific-info/specific-info';
+import * as credential from "./credential.json";
+
+alert(credential.apiKey);
 
 let config ={
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: ""
+  apiKey: credential.apiKey,
+  authDomain: credential.authDomain,
+  databaseURL: credential.databaseURL,
+  projectId: credential.projectId,
+  storageBucket: credential.storageBucket,
+  messagingSenderId: credential.messagingSenderId
 }
 firebase.initializeApp(config);
 firebase.database.enableLogging(true);

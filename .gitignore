@@ -1,0 +1,13 @@
+node_modules
+
+\.sourcemaps/
+
+quiz\.code-workspace
+
+\.vscode/typings/cordova-ionic/plugins/keyboard\.d\.ts
+
+\.vscode/typings/jquery/jquery\.d\.ts
+
+typings/cordova-typings\.d\.ts
+
+src/app/credential\.json
