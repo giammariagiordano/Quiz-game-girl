@@ -1,3 +1,4 @@
+import { LobbyPage } from './../pages/lobby/lobby';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -13,8 +14,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { ListViewPage } from '../pages/list-view/list-view';
 import { SpecificInfoPage } from '../pages/specific-info/specific-info';
 import * as credential from "./credential.json";
-
-
+import { GamePage } from '../pages/game/game';
 
 let config ={
   apiKey: (<any>credential).apiKey,
@@ -34,7 +34,9 @@ firebase.database.enableLogging(true);
     LoginPage,
     SignupPage,
     ListViewPage,
-    SpecificInfoPage
+    SpecificInfoPage,
+    LobbyPage,
+    GamePage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,9 @@ firebase.database.enableLogging(true);
     LoginPage,
     SignupPage,
     ListViewPage,
-    SpecificInfoPage
+    SpecificInfoPage,
+    LobbyPage,
+    GamePage
   ],
   providers: [
     StatusBar,

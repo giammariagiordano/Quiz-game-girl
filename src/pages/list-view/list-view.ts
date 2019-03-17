@@ -31,10 +31,10 @@ export class ListViewPage {
   }
 
   getGirlDetails() {
-    
     firebase.database().ref('GeneralInfo').orderByChild('name').on('child_added', res => {
-      for( let girl of res.val())
-      this.generalInfo.push({name: girl.name , info: girl.info, src:girl.src});
+      //for( let girl of res.val())
+      this.generalInfo.push({name:res.val().name , info: res.val().info, src:res.val().src});
+      //this.generalInfo.push({name: girl.name , info: girl.info, src:girl.src});
     });
   }
 
@@ -54,7 +54,6 @@ export class ListViewPage {
     }*/
   }
   showInfo(girl){
-    //alert(girl.info);  
     this.navCtrl.push(SpecificInfoPage, girl.info);
   }
 
