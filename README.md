@@ -10,5 +10,5 @@ To answer these questions, the players will be able to document themselves using
 - Ionic 3 and Cordova for front-end
 ## Developed by:
 - [Giammaria Giordano](https://github.com/broke31), 
-- [Valeria Pontillo](https://github.com/valeriapontillo92]),
+- [Valeria Pontillo](https://github.com/valeriapontillo92),
 - [Francesco Vicidomini](https://github.com/CiccioTecchio)
