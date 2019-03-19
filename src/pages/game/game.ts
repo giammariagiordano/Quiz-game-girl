@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import firebase from 'firebase';
@@ -17,25 +18,38 @@ import firebase from 'firebase';
 export class GamePage {
 
   private score: number;
+  private CORRECT: number = 10;
+  private UNCORRECT: number = -5;
+  private NA: number = 0;
+  private questionNumber: number;
   private questions: any;
   private womanName: string[];
-  private question = {
-    QA: {
-      question: "",
-      answer: ""
-    },
-    wrong : ["", "", ""]
-    };
+  private pool: any;
+  private it: number;
+  public currentQuestion: any;
+   
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.score = 0;
+    this.it = 0;
+    this.questionNumber = 4;
     this.questions = new Array();
     this.womanName = new Array();
+    this.pool = new Array();
+    this.currentQuestion = {
+      question: "",
+      index: 0,
+      choice: ["", "", "", ""]
+    }
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GamePage');
     this.loadQuestion();
+  }
+
+  ionViewDidEnter(){
+   this.createQuestion();
   }
 
   loadQuestion(){
@@ -44,45 +58,66 @@ export class GamePage {
         this.questions.push(element);
         this.womanName.push(element.answer);
       });
-      this.createQuestion();
+      this.createPool();
     });
   }
 
-   createQuestion(){
-      let len = this.questions.length;
-      let chosen = Math.floor(Math.random() * len);
-      this.question.QA.question = this.questions[chosen].question;
-      this.question.QA.answer = this.questions[chosen].answer;
-      this.questions.splice(chosen,1);//rimuove la domanda scelta
-      let index = this.womanName.indexOf(this.question.QA.answer, 0);
+  createPool(){
+   this.mix(this.questions.length, this.questions);
+   for(let i = 0; i<this.questionNumber; i++){
+    this.pool.push(this.questions[i]);
+   }
+  }
+
+  /**
+   * giro di stupid sort 
+   */
+  private mix(len: number, toSort: Array<string>){ //todo aggiungere len e array parametrico
+    for(let i = 0; i < len; i++){
+      let rndIndex = Math.floor(Math.random() * len);
+      let app = toSort[i];
+      toSort[i] = toSort[rndIndex];
+      toSort[rndIndex] = app;
+    }
+  }
+
+  createQuestion(){
+    this.currentQuestion.question = this.pool[this.it].question;
+    this.currentQuestion.index = this.it;
+    let choice = this.currentQuestion.choice;
+    choice[0] = this.pool[this.it].answer;
+    let index = this.womanName.indexOf(choice[0]);
+    if(index > -1 ){
+       this.womanName.splice(index,1);
+    }
+    
+   for(let i = 1; i< 4; i++){
+      let wLen = this.womanName.length;
+      let rndIndex = Math.floor(Math.random() * wLen);
+      choice[i] = this.womanName[rndIndex];
+      let index = this.womanName.indexOf(choice[i]);
       if(index > -1 ){
         this.womanName.splice(index,1);
       }
-      this.createChoise();
+    }
+    this.womanName.push(choice[0]);
+    for(let i = 1; i < 4; i++){
+      this.womanName.push(choice[i]);
+    }
+    this.mix(4, choice);
   }
 
-   createChoise(){
-    let len = this.womanName.length;
-      for(let i=0; i<3; i++){
-        let chosen = Math.floor(Math.random() * len);
-        this.question.wrong[i]= this.womanName[chosen];
-        let index = this.womanName.indexOf(this.womanName[chosen], 0);
-        if(index > -1 ){
-        this.womanName.splice(index,1);
-        }
-        len = this.womanName.length;
-      }
-      this.womanName.push(this.question.QA.answer);
-      for(let i=0; i<3; i++){
-        this.womanName.push(this.question.wrong[i]);
-      }
-  }
-
-  answerToQestion(ev:Event){
+  answerToQuestion(ev:Event){
     let target = ev.target as HTMLButtonElement;
-    this.score = (target.value == this.question.QA.answer)? this.score + 10 : this.score - 5;
-    //crea la nuova domanda this.createQuestion();
-    alert(this.score);
+    this.score = (target.value == this.pool[this.currentQuestion.index].answer)? this.score + this.CORRECT : this.score + this.UNCORRECT;
+    //crea la nuova domanda
+    this.it++;
+    if(this.it == this.questionNumber) {
+      alert(this.score);
+      this.navCtrl.push(HomePage);
+    }else {this.createQuestion();}
+    
+    
   }
 
 }

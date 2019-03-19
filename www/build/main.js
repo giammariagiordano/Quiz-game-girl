@@ -51,10 +51,11 @@ var HomePage = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GamePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -64,6 +65,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -77,70 +79,97 @@ var GamePage = /** @class */ (function () {
     function GamePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.question = {
-            QA: {
-                question: "",
-                answer: ""
-            },
-            wrong: ["", "", ""]
-        };
+        this.CORRECT = 10;
+        this.UNCORRECT = -5;
+        this.NA = 0;
         this.score = 0;
+        this.it = 0;
+        this.questionNumber = 4;
         this.questions = new Array();
         this.womanName = new Array();
+        this.pool = new Array();
+        this.currentQuestion = {
+            question: "",
+            index: 0,
+            choice: ["", "", "", ""]
+        };
     }
     GamePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad GamePage');
         this.loadQuestion();
     };
+    GamePage.prototype.ionViewDidEnter = function () {
+        this.createQuestion();
+    };
     GamePage.prototype.loadQuestion = function () {
         var _this = this;
-        __WEBPACK_IMPORTED_MODULE_2_firebase___default.a.database().ref("Questions").once('value', function (res) {
+        __WEBPACK_IMPORTED_MODULE_3_firebase___default.a.database().ref("Questions").once('value', function (res) {
             res.val().forEach(function (element) {
                 _this.questions.push(element);
                 _this.womanName.push(element.answer);
             });
-            _this.createQuestion();
+            _this.createPool();
         });
     };
+    GamePage.prototype.createPool = function () {
+        this.mix(this.questions.length, this.questions);
+        for (var i = 0; i < this.questionNumber; i++) {
+            this.pool.push(this.questions[i]);
+        }
+    };
+    /**
+     * giro di stupid sort
+     */
+    GamePage.prototype.mix = function (len, toSort) {
+        for (var i = 0; i < len; i++) {
+            var rndIndex = Math.floor(Math.random() * len);
+            var app = toSort[i];
+            toSort[i] = toSort[rndIndex];
+            toSort[rndIndex] = app;
+        }
+    };
     GamePage.prototype.createQuestion = function () {
-        var len = this.questions.length;
-        var chosen = Math.floor(Math.random() * len);
-        this.question.QA.question = this.questions[chosen].question;
-        this.question.QA.answer = this.questions[chosen].answer;
-        this.questions.splice(chosen, 1); //rimuove la domanda scelta
-        var index = this.womanName.indexOf(this.question.QA.answer, 0);
+        this.currentQuestion.question = this.pool[this.it].question;
+        this.currentQuestion.index = this.it;
+        var choice = this.currentQuestion.choice;
+        choice[0] = this.pool[this.it].answer;
+        var index = this.womanName.indexOf(choice[0]);
         if (index > -1) {
             this.womanName.splice(index, 1);
         }
-        this.createChoise();
-    };
-    GamePage.prototype.createChoise = function () {
-        var len = this.womanName.length;
-        for (var i = 0; i < 3; i++) {
-            var chosen = Math.floor(Math.random() * len);
-            this.question.wrong[i] = this.womanName[chosen];
-            var index = this.womanName.indexOf(this.womanName[chosen], 0);
-            if (index > -1) {
-                this.womanName.splice(index, 1);
+        for (var i = 1; i < 4; i++) {
+            var wLen = this.womanName.length;
+            var rndIndex = Math.floor(Math.random() * wLen);
+            choice[i] = this.womanName[rndIndex];
+            var index_1 = this.womanName.indexOf(choice[i]);
+            if (index_1 > -1) {
+                this.womanName.splice(index_1, 1);
             }
-            len = this.womanName.length;
         }
-        this.womanName.push(this.question.QA.answer);
-        for (var i = 0; i < 3; i++) {
-            this.womanName.push(this.question.wrong[i]);
+        this.womanName.push(choice[0]);
+        for (var i = 1; i < 4; i++) {
+            this.womanName.push(choice[i]);
         }
+        this.mix(4, choice);
     };
-    GamePage.prototype.answerToQestion = function (ev) {
+    GamePage.prototype.answerToQuestion = function (ev) {
         var target = ev.target;
-        this.score = (target.value == this.question.QA.answer) ? this.score + 10 : this.score - 5;
-        //crea la nuova domanda this.createQuestion();
-        alert(this.score);
+        this.score = (target.value == this.pool[this.currentQuestion.index].answer) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
+        //crea la nuova domanda
+        this.it++;
+        if (this.it == this.questionNumber) {
+            alert(this.score);
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__home_home__["a" /* HomePage */]);
+        }
+        else {
+            this.createQuestion();
+        }
     };
     GamePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-game',template:/*ion-inline-start:"/Users/francescovicidomini/git/Quiz-game-girl/src/pages/game/game.html"*/'<!--\n  Generated template for the GamePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Game</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n    <ion-card-title>\n      <h1 style="text-align:center">{{question.QA.question}}</h1>\n    </ion-card-title>\n    <ion-card-content>\n      <ion-row block>\n        \n          <button ion-button color="primary" block (click)="answerToQestion($event)" value={{question.QA.answer}}>{{question.QA.answer}}</button>\n        \n      </ion-row>\n      <ion-row block>\n        \n          <button ion-button color="primary" block (click)="answerToQestion($event)" value={{question.wrong[0]}}>{{question.wrong[0]}}</button>\n        \n      </ion-row >\n      <ion-row block>\n        \n          <button ion-button color="primary" block (click)="answerToQestion($event)" value={{question.wrong[1]}}>{{question.wrong[1]}}</button>\n        \n      </ion-row>\n      <ion-row block> \n        \n          <button ion-button color="primary" block (click)="answerToQestion($event)" value={{question.wrong[2]}}>{{question.wrong[2]}}</button>    \n        \n      </ion-row>\n      \n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/francescovicidomini/git/Quiz-game-girl/src/pages/game/game.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
+            selector: 'page-game',template:/*ion-inline-start:"/Users/francescovicidomini/git/Quiz-game-girl/src/pages/game/game.html"*/'<!--\n  Generated template for the GamePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Game</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n    <ion-card-title>\n      <h1 style="text-align:center">{{currentQuestion.question}}</h1>\n    </ion-card-title>\n    <ion-card-content *ngFor= "let c of currentQuestion.choice">\n      <ion-row block>\n        \n         <button ion-button color="primary" block (click)="answerToQuestion($event)" value={{c}}>{{c}}</button>\n         \n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/francescovicidomini/git/Quiz-game-girl/src/pages/game/game.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
     ], GamePage);
     return GamePage;
     var _a, _b;
@@ -478,11 +507,11 @@ var map = {
 		2
 	],
 	"../pages/signup/signup.module": [
-		380,
+		381,
 		1
 	],
 	"../pages/specific-info/specific-info.module": [
-		381,
+		380,
 		0
 	]
 };
@@ -637,8 +666,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/list-view/list-view.module#DmPageModule', name: 'ListViewPage', segment: 'list-view', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/lobby/lobby.module#LobbyPageModule', name: 'LobbyPage', segment: 'lobby', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/specific-info/specific-info.module#SpecificInfoPageModule', name: 'SpecificInfoPage', segment: 'specific-info', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/specific-info/specific-info.module#SpecificInfoPageModule', name: 'SpecificInfoPage', segment: 'specific-info', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],

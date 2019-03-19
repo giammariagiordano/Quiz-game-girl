@@ -13,30 +13,14 @@
 <ion-content padding>
   <ion-card>
     <ion-card-title>
-      <h1 style="text-align:center">{{question.QA.question}}</h1>
+      <h1 style="text-align:center">{{currentQuestion.question}}</h1>
     </ion-card-title>
-    <ion-card-content>
+    <ion-card-content *ngFor= "let c of currentQuestion.choice">
       <ion-row block>
         
-          <button ion-button color="primary" block (click)="answerToQestion($event)" value={{question.QA.answer}}>{{question.QA.answer}}</button>
-        
+         <button ion-button color="primary" block (click)="answerToQuestion($event)" value={{c}}>{{c}}</button>
+         
       </ion-row>
-      <ion-row block>
-        
-          <button ion-button color="primary" block (click)="answerToQestion($event)" value={{question.wrong[0]}}>{{question.wrong[0]}}</button>
-        
-      </ion-row >
-      <ion-row block>
-        
-          <button ion-button color="primary" block (click)="answerToQestion($event)" value={{question.wrong[1]}}>{{question.wrong[1]}}</button>
-        
-      </ion-row>
-      <ion-row block> 
-        
-          <button ion-button color="primary" block (click)="answerToQestion($event)" value={{question.wrong[2]}}>{{question.wrong[2]}}</button>    
-        
-      </ion-row>
-      
     </ion-card-content>
   </ion-card>
 
