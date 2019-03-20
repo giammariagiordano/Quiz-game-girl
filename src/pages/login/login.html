@@ -7,23 +7,21 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="container">
     <form>
     <ion-list>
 
       <ion-item>
-        <ion-label fixed>Email</ion-label>
-        <ion-input type="email" [(ngModel)]="user.email" name="email"></ion-input>
+        <ion-input placeholder="email" type="email" [(ngModel)]="user.email" name="email"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label fixed>PIN</ion-label>
-        <ion-input type="password" [(ngModel)]="user.pin" name="pin" pattern="[0-9]*"></ion-input>
+        <ion-input placeholder="password" type="password" [(ngModel)]="user.password" name="password" pattern="[0-9]*"></ion-input>
       </ion-item>
 
       <div padding>
         <button ion-button color="primary" block (click)="doLogin()">Login</button>
-        <h4 style="text-align: center">or</h4> 
+        <h4 style="text-align: center">oppure</h4> 
         <button ion-button color="secondary" block (click)="goSignup()">Signup</button>
       </div>
 

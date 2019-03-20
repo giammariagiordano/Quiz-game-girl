@@ -25691,3 +25691,17 @@ ion-navbar.toolbar {
   padding-bottom: 4px;
   min-height: 46px;
 }
+
+.imgApp {
+  content: url("../assets/imgs/girl-icon.png");
+  height: 50%;
+}
+
+.button-md-primary {
+  margin: 10%;
+  width: -webkit-fill-available;
+}
+
+.container {
+  background: honeydew;
+}

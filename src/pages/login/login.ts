@@ -15,7 +15,7 @@ export class LoginPage {
   ref= firebase.database().ref('user/');  
   user = {
       email:"",
-      pin:"",
+      password:"",
       username: ""
     }
 
@@ -33,13 +33,13 @@ export class LoginPage {
   doLogin(){
     let toSend = {
       email: this.user.email,
-      pin: this.user.pin,
+      password: this.user.password,
       username: this.user.username,
     }
-    firebase.auth().signInWithEmailAndPassword(toSend.email,toSend.pin)
+    firebase.auth().signInWithEmailAndPassword(toSend.email,toSend.password)
     .then( res => firebase.database().ref('Users').orderByChild('email').equalTo(toSend.email).once('child_added', snapshot => {
       toSend.email= snapshot.val().email;
-      toSend.pin = snapshot.val().pin;
+      toSend.password = snapshot.val().password;
       toSend.username = snapshot.val().username;
      this.navCtrl.push(HomePage, toSend);
      //alert("loggato");
