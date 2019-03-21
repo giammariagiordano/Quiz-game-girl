@@ -20,7 +20,7 @@ export class ListViewPage {
      src :""
    }>();
 
-
+   data:any;
   constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
     this.user.username = this.navParams.get('username'); 
     this.getGirlDetails();

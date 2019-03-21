@@ -10,18 +10,29 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="container">
   <ion-card>
     <ion-card-title>
       <h1 style="text-align:center">{{currentQuestion.question}}</h1>
     </ion-card-title>
-    <ion-card-content *ngFor= "let c of currentQuestion.choice">
-      <ion-row block>
-        
-         <button ion-button color="primary" block (click)="answerToQuestion($event)" value={{c}}>{{c}}</button>
-         
-      </ion-row>
-    </ion-card-content>
   </ion-card>
+  <ion-card >
+      <ion-card-content *ngFor= "let c of currentQuestion.choice">
+        
+            
+             
+             <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <button  ion-button color="primary" block (click)="answerToQuestion($event)" value={{c}}>{{c}}</button>
+                      </ion-col>
+                     
+                </ion-row>
+                    
+                  </ion-grid>
+        </ion-card-content>
+  </ion-card>
+  
+
 
 </ion-content>

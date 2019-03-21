@@ -1,5 +1,7 @@
 {
   "name": "didatticaProject",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
