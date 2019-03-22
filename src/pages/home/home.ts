@@ -8,8 +8,9 @@ import { ListViewPage } from '../list-view/list-view';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  username:string
   constructor(public navCtrl: NavController, public navParam : NavParams) {
+    this.username=navParam.get("username")
   }
   
   generalInfo(){

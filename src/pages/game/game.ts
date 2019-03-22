@@ -1,7 +1,7 @@
-import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import firebase from 'firebase';
+import { ResultPage } from '../result/result';
 
 /**
  * Generated class for the GamePage page.
@@ -113,8 +113,7 @@ export class GamePage {
     //crea la nuova domanda
     this.it++;
     if(this.it == this.questionNumber) {
-      alert(this.score);
-      this.navCtrl.push(HomePage);
+      this.navCtrl.push(ResultPage,this.score);
     }else {this.createQuestion();}
     
     
