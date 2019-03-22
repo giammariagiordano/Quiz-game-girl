@@ -25692,6 +25692,18 @@ ion-navbar.toolbar {
   min-height: 46px;
 }
 
+.card-title-md {
+  padding: 5%;
+}
+
+.buttonPadding {
+  padding: 5%;
+}
+
+.paddingCard {
+  padding: 10%;
+}
+
 .imgApp {
   content: url("../assets/imgs/girl-icon.png");
   height: 50%;
@@ -25702,9 +25714,13 @@ ion-navbar.toolbar {
 }
 
 .container {
-  background: honeydew;
+  background: #040452;
 }
 
 .button-md-primary {
   margin: 0%;
+}
+
+h4 {
+  color: white;
 }
