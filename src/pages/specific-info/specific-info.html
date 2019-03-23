@@ -10,6 +10,14 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <p>{{infoText}}</p>
+<ion-content padding class="container">
+  <div>
+      <form class="box" action="index.html" method="post" (submit)="goToHome()" >
+        <h1>{{this.nameGirl}}</h1>
+          <p >{{this.infoText}}</p>
+          <div class="divLogin">
+            <input type="submit" name="" value="Vai alla home">
+          </div>
+        </form>
+  </div>
 </ion-content>

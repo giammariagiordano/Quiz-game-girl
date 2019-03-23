@@ -13,8 +13,8 @@ export class ListViewPage {
   private user = {
     username: "",
      };
-
-   private generalInfo = new Array<{
+  
+     private generalInfo = new Array<{
      name: "",
      info: "",
      src :""
@@ -54,7 +54,8 @@ export class ListViewPage {
     }*/
   }
   showInfo(girl){
-    this.navCtrl.push(SpecificInfoPage, girl.info);
+
+    this.navCtrl.push(SpecificInfoPage, girl);
   }
 
 

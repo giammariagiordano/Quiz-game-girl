@@ -25859,3 +25859,8 @@ h4 {
 .divLogin {
   display: -webkit-flex;
 }
+
+p {
+  color: white;
+  text-align: justify;
+}
