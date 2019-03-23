@@ -19,18 +19,19 @@
     </ion-card-title>
   </ion-card>
   <div *ngFor="let c of currentQuestion.choice">
+    <div style="background: black">
     <ion-grid>
       <ion-row>
         <ion-col>
-          <button style="padding:10%" ion-button color="secondary" block (click)="answerToQuestion($event)"
-            value={{c}}>{{c}}</button>
+          <!-- <button style="padding:10%" ion-button color="secondary" block (click)="answerToQuestion($event)" value={{c}}>{{c}}
+          </button>-->
+          <button class="test" type="submit" style="margin-top: 1%" ion-button color="secondary"
+            (click)="answerToQuestion($event)" block value="{{c}}">
+            {{c}}
+          </button>
         </ion-col>
-
       </ion-row>
-
     </ion-grid>
   </div>
-
-
-
+  </div>
 </ion-content>

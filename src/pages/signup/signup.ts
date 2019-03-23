@@ -20,7 +20,7 @@ export class SignupPage {
   user = {
       email:"",
       username:"",
-      pin:"",
+      password:"",
     }
     
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -31,9 +31,9 @@ export class SignupPage {
     let toSend = {
       email: this.user.email,
       username: this.user.username,
-      pin: this.user.pin,
+      password: this.user.password,
     };
-    firebase.auth().createUserWithEmailAndPassword(toSend.email,toSend.pin)
+    firebase.auth().createUserWithEmailAndPassword(toSend.email,toSend.password)
     .then( user => {
      firebase.database().ref("Users").push(toSend);
       this.navCtrl.push(HomePage, toSend);

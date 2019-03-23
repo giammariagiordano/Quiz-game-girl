@@ -27,7 +27,7 @@ export class GamePage {
   private pool: any;
   private it: number;
   public currentQuestion: any;
-   
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.score = 0;
@@ -48,12 +48,12 @@ export class GamePage {
     this.loadQuestion();
   }
 
-  ionViewDidEnter(){
-   this.createQuestion();
+  ionViewDidEnter() {
+    this.createQuestion();
   }
 
-  loadQuestion(){
-    firebase.database().ref("Questions").once( 'value', res => {
+  loadQuestion() {
+    firebase.database().ref("Questions").once('value', res => {
       res.val().forEach(element => {
         this.questions.push(element);
         this.womanName.push(element.answer);
@@ -62,18 +62,18 @@ export class GamePage {
     });
   }
 
-  createPool(){
-   this.mix(this.questions.length, this.questions);
-   for(let i = 0; i<this.questionNumber; i++){
-    this.pool.push(this.questions[i]);
-   }
+  createPool() {
+    this.mix(this.questions.length, this.questions);
+    for (let i = 0; i < this.questionNumber; i++) {
+      this.pool.push(this.questions[i]);
+    }
   }
 
   /**
    * giro di stupid sort 
    */
-  private mix(len: number, toSort: Array<string>){ //todo aggiungere len e array parametrico
-    for(let i = 0; i < len; i++){
+  private mix(len: number, toSort: Array<string>) { //todo aggiungere len e array parametrico
+    for (let i = 0; i < len; i++) {
       let rndIndex = Math.floor(Math.random() * len);
       let app = toSort[i];
       toSort[i] = toSort[rndIndex];
@@ -81,42 +81,48 @@ export class GamePage {
     }
   }
 
-  createQuestion(){
+  createQuestion() {
     this.currentQuestion.question = this.pool[this.it].question;
     this.currentQuestion.index = this.it;
     let choice = this.currentQuestion.choice;
     choice[0] = this.pool[this.it].answer;
     let index = this.womanName.indexOf(choice[0]);
-    if(index > -1 ){
-       this.womanName.splice(index,1);
+    if (index > -1) {
+      this.womanName.splice(index, 1);
     }
-    
-   for(let i = 1; i< 4; i++){
+
+    for (let i = 1; i < 4; i++) {
       let wLen = this.womanName.length;
       let rndIndex = Math.floor(Math.random() * wLen);
       choice[i] = this.womanName[rndIndex];
       let index = this.womanName.indexOf(choice[i]);
-      if(index > -1 ){
-        this.womanName.splice(index,1);
+      if (index > -1) {
+        this.womanName.splice(index, 1);
       }
     }
     this.womanName.push(choice[0]);
-    for(let i = 1; i < 4; i++){
+    for (let i = 1; i < 4; i++) {
       this.womanName.push(choice[i]);
     }
     this.mix(4, choice);
   }
 
-  answerToQuestion(ev:Event){
+  answerToQuestion(ev: Event) {
     let target = ev.target as HTMLButtonElement;
-    this.score = (target.value == this.pool[this.currentQuestion.index].answer)? this.score + this.CORRECT : this.score + this.UNCORRECT;
+    this.score = (target.value == this.pool[this.currentQuestion.index].answer) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
     //crea la nuova domanda
     this.it++;
-    if(this.it == this.questionNumber) {
-      this.navCtrl.push(ResultPage,this.score);
-    }else {this.createQuestion();}
-    
-    
+    if (this.it == this.questionNumber) {
+      this.navCtrl.push(ResultPage, this.score);
+    } else {
+      setTimeout(() => {
+        this.createQuestion();
+      },
+        1000);
+
+    }
+
+
   }
 
 }

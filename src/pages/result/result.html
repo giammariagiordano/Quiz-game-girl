@@ -12,8 +12,11 @@
 
 <ion-content class="container">
   <div>
-  <h4>Il tuo punteggio è di: {{this.score}}</h4>
-  <button ion-button color="secondary" block (click)="goToHome()">vai alla home page</button>
-</div>
-
+      <form class="box" action="index.html" method="post" (submit)="goToHome()" >
+          <h1>Il tuo punteggio finale è: {{this.score}}</h1>
+          <div class="divLogin">
+            <input type="submit" name="" value="Vai alla home">
+          </div>
+        </form>
+  </div>
 </ion-content>

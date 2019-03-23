@@ -8,28 +8,14 @@
 
 
 <ion-content>
-  <form (submit)="doSignup()">
-    <ion-list>
+  <form class="box" action="index.html" method="post" (submit)="doSignup()" >
+      <h1>Registrati</h1>
+      <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">
+      <input type="text" name="" placeholder="username" [(ngModel)]="user.username" name="username">
 
-      <ion-item>
-        <ion-label fixed>Email</ion-label>-->
-        <ion-input type="email" [(ngModel)]="user.email" name="email"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label fixed>Username</ion-label>-->
-        <ion-input type="text" [(ngModel)]="user.username" name="username"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label fixed>PIN</ion-label>-->
-        <ion-input type="password" [(ngModel)]="user.pin" name="pin"></ion-input>
-      </ion-item>
-
-      <div padding>
-        <button ion-button color="primary" block>SIGNUP</button>
+      <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">
+      <div class="divLogin">
+        <input type="submit" name="" value="Registrati">
       </div>
-
-      </ion-list>
-  </form>
+    </form>
 </ion-content>
