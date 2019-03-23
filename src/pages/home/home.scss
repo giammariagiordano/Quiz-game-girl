@@ -1,8 +1,50 @@
 .imgApp{
     content:url( "../assets/imgs/girl-icon.png");
-    height: 50%;
+    height: 35%;
 }
 
 .button-md-primary{
     margin-top: 10%;
+}
+
+.button-md-primary{
+    margin: 0%;
+}
+
+.container{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #34495e;
+  }
+.divGame{
+  display: grid;
+  background: #191919;
+  text-align: center;
+}
+
+
+h4{
+  color: white;
+}
+
+
+
+.test{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.test input :hover{
+  background: #2ecc71;
 }

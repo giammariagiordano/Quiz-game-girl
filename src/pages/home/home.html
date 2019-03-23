@@ -7,15 +7,22 @@
 </ion-header>
 
 <ion-content padding class="container">
-    <div>
-        <h4>Bentornato {{this.username}}</h4>
-      </div>
+  <div>
+
+  </div>
   <div class="imgApp"></div>
   <div class="padding">
-    
-    <div class="testButton">
-    <button ion-button color="primary" (click)="newGame()" block>Nuova Partita</button>
-    <button style ="margin-top: 10%" ion-button color="primary" (click)="generalInfo()" block>Ottieni Informazioni</button>
+    <div class="box" style="margin-top:15%">
+      <h4>Bentornato {{this.username  }}</h4>
+      <button  class= "test" type = "submit"style="margin-top: 10%" ion-button color="secondary" (click)="newGame()" block>Nuova Partita</button>
+      <button class="test" type="submit" style="margin-top: 10%" ion-button color="secondary" (click)="generalInfo()" block>Ottieni
+        Informazioni</button>
+
+    </div>
+
+    <!-- <button  (click)="newGame()" block>Nuova Partita</button>
+    <button style ="margin-top: 10%" ion-button color="primary" (click)="generalInfo()" block>Ottieni Informazioni</button>-->
+
   </div>
-  </div>
+
 </ion-content>
