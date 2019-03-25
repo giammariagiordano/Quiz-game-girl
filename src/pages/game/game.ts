@@ -20,7 +20,6 @@ export class GamePage {
   private score: number;
   private CORRECT: number = 10;
   private UNCORRECT: number = -5;
-  private NA: number = 0;
   private questionNumber: number;
   private questions: any;
   private womanName: string[];
@@ -108,8 +107,8 @@ export class GamePage {
   }
 
   answerToQuestion(ev: Event) {
-    let target = ev.target as HTMLButtonElement;
-    this.score = (target.value == this.pool[this.currentQuestion.index].answer) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
+    let target = ev.srcElement.textContent.trim();
+    this.score = (target == this.pool[this.currentQuestion.index].answer) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
     //crea la nuova domanda
     this.it++;
     if (this.it == this.questionNumber) {
@@ -117,12 +116,8 @@ export class GamePage {
     } else {
       setTimeout(() => {
         this.createQuestion();
-      },
-        1000);
-
+      }, 500);
     }
-
-
   }
 
 }

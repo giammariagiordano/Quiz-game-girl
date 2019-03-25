@@ -11,3 +11,5 @@ quiz\.code-workspace
 typings/cordova-typings\.d\.ts
 
 src/app/credential\.json
+
+\.vscode/

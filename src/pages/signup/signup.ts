@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as firebase from 'firebase';
-import { LoginPage } from '../login/login';
 import { HomePage } from '../home/home';
 /**
  * Generated class for the SignupPage page.
