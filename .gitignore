@@ -13,3 +13,5 @@ typings/cordova-typings\.d\.ts
 src/app/credential\.json
 
 \.vscode/
+
+platforms

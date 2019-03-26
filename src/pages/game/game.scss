@@ -7,10 +7,16 @@
 
 .paddingCard{
     padding:10%;
-    background: #c3c3c3;
+    background: #DBDBDB;
     width: 100%;
     margin: 0%;
+    border-radius: 3%;
 
+}
+
+h1 {
+    text-align:center;
+    color: grey;
 }
 
 .box{
@@ -20,14 +26,14 @@
 
 .test{
     border: 0;
-    background: none;
+    background: #DBDBDB;
     display: block;
     margin: 2% auto;
     text-align: center;
     border: 2px solid #2ecc71;
     padding: 14px 40px;
     outline: none;
-    color: white;
+    color: grey;
     border-radius: 24px;
     -webkit-transition: 0.25s;
     transition: 0.25s;

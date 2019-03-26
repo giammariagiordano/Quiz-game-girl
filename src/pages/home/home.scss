@@ -26,21 +26,20 @@
 
 
 h4{
-  color: white;
+  color: grey;
 }
 
 
 
 .test{
-  border: 0;
-  background: none;
+ 
+  background: #DBDBDB;
   display: block;
   margin: 20px auto;
   text-align: center;
-  border: 2px solid #2ecc71;
+  border: 2px solid;
   padding: 14px 40px;
-  outline: none;
-  color: white;
+  color: grey;
   border-radius: 24px;
   -webkit-transition: 0.25s;
   transition: 0.25s;
