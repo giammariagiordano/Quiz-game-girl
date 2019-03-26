@@ -8,13 +8,18 @@
 
 
 <ion-content class="container">
+
+    <div>
+
+      </div>
+      <div class="imgApp"></div>
   <form class="box" action="index.html" method="post">
-    <h1>Login</h1>
+
     <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">
     <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">
     <div class="divLogin">
       <input type="submit" name="" value="Login" (click)="doLogin()">
       <input type="submit" name="" value="Registrati" block (click)="goSignup()">
-    </div>
+      </div>
   </form>
 </ion-content>

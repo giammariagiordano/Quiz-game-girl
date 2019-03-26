@@ -35,7 +35,6 @@ var GamePage = /** @class */ (function () {
         this.navParams = navParams;
         this.CORRECT = 10;
         this.UNCORRECT = -5;
-        this.NA = 0;
         this.score = 0;
         this.it = 0;
         this.questionNumber = 4;
@@ -108,8 +107,8 @@ var GamePage = /** @class */ (function () {
     };
     GamePage.prototype.answerToQuestion = function (ev) {
         var _this = this;
-        var target = ev.target;
-        this.score = (target.value == this.pool[this.currentQuestion.index].answer) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
+        var target = ev.srcElement.textContent.trim();
+        this.score = (target == this.pool[this.currentQuestion.index].answer) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
         //crea la nuova domanda
         this.it++;
         if (this.it == this.questionNumber) {
@@ -118,7 +117,7 @@ var GamePage = /** @class */ (function () {
         else {
             setTimeout(function () {
                 _this.createQuestion();
-            }, 1000);
+            }, 500);
         }
     };
     GamePage = __decorate([
@@ -400,7 +399,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/login/login.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="container">\n  <form class="box" action="index.html" method="post">\n    <h1>Login</h1>\n    <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n    <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n    <div class="divLogin">\n      <input type="submit" name="" value="Login" (click)="doLogin()">\n      <input type="submit" name="" value="Registrati" block (click)="goSignup()">\n    </div>\n  </form>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/login/login.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="container">\n\n    <div>\n\n      </div>\n      <div class="imgApp"></div>\n  <form class="box" action="index.html" method="post">\n    <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n    <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n    <div class="divLogin">\n      <input type="submit" name="" value="Login" (click)="doLogin()">\n      <input type="submit" name="" value="Registrati" block (click)="goSignup()">\n      </div>\n  </form>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
     ], LoginPage);
