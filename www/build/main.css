@@ -25857,7 +25857,6 @@ h4 {
   display: -webkit-flex;
 }
 
-p {
-  color: white;
-  text-align: justify;
+h1, p {
+  color: black;
 }

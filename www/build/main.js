@@ -23,12 +23,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the GamePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 var GamePage = /** @class */ (function () {
     function GamePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
@@ -114,8 +108,8 @@ var GamePage = /** @class */ (function () {
             this.mix(4, choice);
         }
         else {
+            //? avrei potuto fermare qui il timer e chiamare la push ma avrei replicato due linee di codice
             this.answerToQuestion(null);
-            //? avrei potuto fermare qui i timer e chiamare la push 
         }
     };
     GamePage.prototype.answerToQuestion = function (ev) {
@@ -126,10 +120,9 @@ var GamePage = /** @class */ (function () {
         }
         //crea la nuova domanda
         this.it++;
-        //? e qui mettere l'uguaglianza, funziona uguale
+        //? e qui lasciare solo l'uguaglianza
         if (this.it >= this.questionNumber) {
             clearInterval(this.timer);
-            clearInterval(this.timerNextQuestion);
             this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__result_result__["a" /* ResultPage */], this.score);
         }
         else {
@@ -149,16 +142,17 @@ var GamePage = /** @class */ (function () {
             console.log("sono arrivato a zero");
             this.restartTimerCounter();
             this.it++;
-            this.createQuestion();
+            setTimeout(this.createQuestion, 500);
         }
     };
     GamePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-game',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/game/game.html"*/'<!--\n  Generated template for the GamePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Game</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n\n  <ion-card class="paddingCard">\n      <p>Tempo rimanente: {{this.seconds}}</p>\n\n    <ion-card-title>\n      <h1>{{currentQuestion.question}}</h1>\n    </ion-card-title>\n  </ion-card>\n  <div *ngFor="let c of currentQuestion.choice">\n    <div>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <!-- <button style="padding:10%" ion-button color="secondary" block (click)="answerToQuestion($event)" value={{c}}>{{c}}\n          </button>-->\n          <button class="test" type="submit" style="margin-top: 1%" ion-button color="secondary"\n            (click)="answerToQuestion($event)" block value="{{c}}">\n            {{c}}\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/game/game.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
     ], GamePage);
     return GamePage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=game.js.map
@@ -538,27 +532,27 @@ var map = {
 		6
 	],
 	"../pages/list-view/list-view.module": [
-		378,
+		382,
 		5
 	],
 	"../pages/lobby/lobby.module": [
-		379,
+		383,
 		4
 	],
 	"../pages/login/login.module": [
-		380,
+		378,
 		3
 	],
 	"../pages/result/result.module": [
-		381,
+		379,
 		2
 	],
 	"../pages/signup/signup.module": [
-		382,
+		380,
 		1
 	],
 	"../pages/specific-info/specific-info.module": [
-		383,
+		381,
 		0
 	]
 };
@@ -713,12 +707,12 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/game/game.module#GamePageModule', name: 'GamePage', segment: 'game', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/list-view/list-view.module#DmPageModule', name: 'ListViewPage', segment: 'list-view', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/lobby/lobby.module#LobbyPageModule', name: 'LobbyPage', segment: 'lobby', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/specific-info/specific-info.module#SpecificInfoPageModule', name: 'SpecificInfoPage', segment: 'specific-info', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/specific-info/specific-info.module#SpecificInfoPageModule', name: 'SpecificInfoPage', segment: 'specific-info', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/list-view/list-view.module#DmPageModule', name: 'ListViewPage', segment: 'list-view', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/lobby/lobby.module#LobbyPageModule', name: 'LobbyPage', segment: 'lobby', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],

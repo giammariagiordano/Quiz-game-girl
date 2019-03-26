@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import firebase from 'firebase';
 import { ResultPage } from '../result/result';
 
-/**
- * Generated class for the GamePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -28,7 +22,6 @@ export class GamePage {
   public currentQuestion: any;
   public seconds: any;
   public timer: any;
-  public timerNextQuestion: any;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -116,8 +109,8 @@ export class GamePage {
       this.mix(4, choice);
     }
     else{ // altrimenti ho finito le domande passo al listener answerToQuesion un event null perché non c'è stato un evento esterno
+      //? avrei potuto fermare qui il timer e chiamare la push ma avrei replicato due linee di codice
       this.answerToQuestion(null)
-      //? avrei potuto fermare qui i timer e chiamare la push 
     }
   }
 
@@ -128,10 +121,9 @@ export class GamePage {
     }
     //crea la nuova domanda
     this.it++;
-    //? e qui mettere l'uguaglianza, funziona uguale
+    //? e qui lasciare solo l'uguaglianza
     if (this.it >= this.questionNumber) {
       clearInterval(this.timer);
-      clearInterval(this.timerNextQuestion);
       this.navCtrl.push(ResultPage, this.score);
     } else {
       setTimeout(() => {
@@ -151,9 +143,7 @@ export class GamePage {
       console.log("sono arrivato a zero");
       this.restartTimerCounter();
       this.it++;
-      this.createQuestion();
-
-
+      setTimeout(this.createQuestion,500);
     }
 
   }
