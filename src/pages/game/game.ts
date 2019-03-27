@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import { ResultPage } from '../result/result';
 
 
+
 @IonicPage()
 @Component({
   selector: 'page-game',
@@ -22,9 +23,11 @@ export class GamePage {
   public currentQuestion: any;
   public seconds: any;
   public timer: any;
+  public loading: boolean;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.loading = false;
     this.score = 0;
     this.it = 0;
     this.questionNumber = 4;
@@ -80,6 +83,8 @@ export class GamePage {
   createQuestion() {
     this.restartTimerCounter();
     this.decrementSeconds();
+    console.log(JSON.stringify(this.questions));
+    this.loading = true;
     this.timer = setInterval(() => {
       this.decrementSeconds() // inizio a decrementarre i secondi
     }, 1000)
@@ -124,6 +129,7 @@ export class GamePage {
     //? e qui lasciare solo l'uguaglianza
     if (this.it >= this.questionNumber) {
       clearInterval(this.timer);
+      this.loading = false;
       this.navCtrl.push(ResultPage, this.score);
     } else {
       setTimeout(() => {
@@ -143,7 +149,7 @@ export class GamePage {
       console.log("sono arrivato a zero");
       this.restartTimerCounter();
       this.it++;
-      setTimeout(this.createQuestion,500);
+      this.createQuestion();
     }
 
   }
