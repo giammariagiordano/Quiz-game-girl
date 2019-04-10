@@ -24,6 +24,7 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+   
   }
 
   goSignup(){
@@ -36,6 +37,7 @@ export class LoginPage {
       password: this.user.password,
       username: this.user.username,
     }
+    toSend.email = this.user.email.toLowerCase()
     firebase.auth().signInWithEmailAndPassword(toSend.email,toSend.password)
     .then( res => firebase.database().ref('Users').orderByChild('email').equalTo(toSend.email).once('child_added', snapshot => {
       toSend.email= snapshot.val().email;

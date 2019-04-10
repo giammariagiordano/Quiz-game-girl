@@ -21,6 +21,7 @@ export class ListViewPage {
    }>();
 
    data:any;
+   toSend : any;
   constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
     this.user.username = this.navParams.get('username'); 
     this.getGirlDetails();
@@ -54,8 +55,11 @@ export class ListViewPage {
     }*/
   }
   showInfo(girl){
-
-    this.navCtrl.push(SpecificInfoPage, girl);
+   this.toSend = {
+      Girl: girl,
+      Username: this.user.username
+   }
+    this.navCtrl.push(SpecificInfoPage, this.toSend);
   }
 
 

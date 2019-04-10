@@ -15,18 +15,25 @@ import { HomePage } from '../home/home';
   templateUrl: 'specific-info.html',
 })
 export class SpecificInfoPage {
+  girl:any;
   infoText:string
   nameGirl:string
+  toSend = {
+    username:""
+  }
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.nameGirl= this.navParams.get("name");
-    this.infoText = this.navParams.get("info")
+    this.girl = this.navParams.get("Girl")
+    this.nameGirl = this.girl.name;
+    this.infoText = this.girl.info;
+    this.toSend.username = this.navParams.get("Username");
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SpecificInfoPage');
   }
   goToHome(){
-    this.navCtrl.push(HomePage);
+
+    this.navCtrl.push(HomePage,this.toSend);
   }
 
 }

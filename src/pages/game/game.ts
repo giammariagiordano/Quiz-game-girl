@@ -24,7 +24,8 @@ export class GamePage {
   public seconds: any;
   public timer: any;
   public loading: boolean;
-
+  public toSend;
+  public username:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.loading = false;
@@ -40,6 +41,8 @@ export class GamePage {
       choice: ["", "", "", ""]
     }
     this.seconds = 10;
+    this.username = navParams.get("username");
+
   }
 
   ionViewDidLoad() {
@@ -130,7 +133,8 @@ export class GamePage {
     if (this.it >= this.questionNumber) {
       clearInterval(this.timer);
       this.loading = false;
-      this.navCtrl.push(ResultPage, this.score);
+      this.toSend ={score: this.score,username: this.username} 
+      this.navCtrl.push(ResultPage,this.toSend);
     } else {
       setTimeout(() => {
         this.createQuestion();

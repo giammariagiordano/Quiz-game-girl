@@ -13,11 +13,14 @@ export class HomePage {
     this.username=navParam.get("username")
   }
   
+  ionViewDidEnter() {
+    this.username=this.navParam.get("username")
+  }
   generalInfo(){
-    this.navCtrl.push(ListViewPage, this.navParam.data);
+    this.navCtrl.push(ListViewPage, this.navParam);
   }
 
   newGame(){
-    this.navCtrl.push(GamePage, this.navParam.data);
+    this.navCtrl.push(GamePage, this.navParam);
   }
 }

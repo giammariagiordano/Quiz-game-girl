@@ -1,0 +1,49 @@
+.card-title-md {
+  padding: 5%;
+}
+
+.buttonPadding {
+  padding: 5%;
+}
+
+.paddingCard {
+  padding: 10%;
+  background: #DBDBDB;
+  width: 100%;
+  margin: 0%;
+  border-radius: 3%;
+}
+
+h1 {
+  text-align: center;
+  color: grey;
+}
+
+.box {
+  display: block;
+}
+
+.test {
+  border: 0;
+  background: #DBDBDB;
+  display: block;
+  margin: 2% auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: grey;
+  border-radius: 24px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.test input :hover {
+  background: #2ecc71;
+}
+
+.card-md {
+  margin-bottom: 5%;
+}
+/*# sourceMappingURL=game.css.map */

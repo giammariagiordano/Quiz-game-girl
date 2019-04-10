@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import * as firebase from 'firebase';
 
 /**
  * Generated class for the ResultPage page.
@@ -15,16 +16,23 @@ import { HomePage } from '../home/home';
   templateUrl: 'result.html',
 })
 export class ResultPage {
-  score:string
+  toSend = {
+    username:"",
+    score:0
+  }
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.score= navParams.data
+    this.toSend.score = navParams.get("score")
+    this.toSend.username = navParams.get("username")
+   /* firebase.database().ref('Users').orderByChild('email').equalTo(toSend.email).on('child_added', res => {
+    });*/
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultPage');
   }
   goToHome(){
-    this.navCtrl.push(HomePage);
-
+    this.navCtrl.push(HomePage,this.toSend);
   }
 }
