@@ -35,6 +35,9 @@ export class SignupPage {
     firebase.auth().createUserWithEmailAndPassword(toSend.email,toSend.password)
     .then( user => {
      firebase.database().ref("Users").push(toSend);
+     localStorage.setItem("email", toSend.email);
+     localStorage.setItem("password", toSend.password);
+     localStorage.setItem("username", toSend.username);
       this.navCtrl.push(HomePage, toSend);
     })
     .catch( err => {alert("Compila i campi correttamente")});

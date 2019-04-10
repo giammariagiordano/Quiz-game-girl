@@ -1,3 +1,4 @@
+import { LoginPage } from './../login/login';
 import { GamePage } from './../game/game';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
@@ -22,5 +23,12 @@ export class HomePage {
 
   newGame(){
     this.navCtrl.push(GamePage, this.navParam);
+  }
+
+  logout(){
+    localStorage.removeItem("email");
+    localStorage.removeItem("password");
+    localStorage.removeItem("username");
+    this.navCtrl.push(LoginPage);
   }
 }

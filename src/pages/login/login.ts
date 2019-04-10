@@ -32,20 +32,28 @@ export class LoginPage {
   }
 
   doLogin(){
-    let toSend = {
-      email: this.user.email,
-      password: this.user.password,
-      username: this.user.username,
+    if(localStorage.getItem("email")!==null){
+      let toSend = {
+        email: localStorage.getItem("email"),
+        password: localStorage.getItem("password"),
+        username: localStorage.getItem("username"),
+      }
+      this.navCtrl.push(HomePage, toSend);
+    }else{
+      let toSend = {
+        email: this.user.email,
+        password: this.user.password,
+        username: this.user.username,
+      }
+      toSend.email = this.user.email.toLowerCase();
+      firebase.auth().signInWithEmailAndPassword(toSend.email,toSend.password)
+      .then( res => firebase.database().ref('Users').orderByChild('email').equalTo(toSend.email).once('child_added', snapshot => {
+        toSend.email= snapshot.val().email;
+        toSend.password = snapshot.val().password;
+        toSend.username = snapshot.val().username;
+       this.navCtrl.push(HomePage, toSend);
+      }))
+      .catch( err => alert("Mail o password errate"))
     }
-    toSend.email = this.user.email.toLowerCase()
-    firebase.auth().signInWithEmailAndPassword(toSend.email,toSend.password)
-    .then( res => firebase.database().ref('Users').orderByChild('email').equalTo(toSend.email).once('child_added', snapshot => {
-      toSend.email= snapshot.val().email;
-      toSend.password = snapshot.val().password;
-      toSend.username = snapshot.val().username;
-     this.navCtrl.push(HomePage, toSend);
-     //alert("loggato");
-    }))
-    .catch( err => alert("Mail o password errate"))
   }
 }
