@@ -15,3 +15,5 @@ src/app/credential\.json
 \.vscode/
 
 platforms
+
+www/build/
