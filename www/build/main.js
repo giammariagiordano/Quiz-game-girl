@@ -286,9 +286,10 @@ var SignupPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-signup',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/signup/signup.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Singup</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="container">\n  <form class="box" action="index.html" method="post" (submit)="doSignup()" >\n      <h1>Registrati</h1>\n      <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n      <input type="text" name="" placeholder="username" [(ngModel)]="user.username" name="username">\n\n      <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n      <div class="divLogin">\n        <input type="submit" name="" value="Registrati">\n      </div>\n    </form>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/signup/signup.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
     ], SignupPage);
     return SignupPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=signup.js.map
@@ -318,14 +319,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var ListViewPage = /** @class */ (function () {
-    function ListViewPage(modalCtrl, navCtrl, navParams, cd) {
+    function ListViewPage(modalCtrl, navCtrl, navParams) {
         var _this = this;
         this.modalCtrl = modalCtrl;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.cd = cd;
         this.searchTerm = "";
         this.user = {
             username: "",
@@ -333,11 +332,11 @@ var ListViewPage = /** @class */ (function () {
         this.generalInfo = new Array();
         this.setFilteredItems = function () {
             _this.resetChanges();
+            console.log("filtro");
             _this.generalInfo = _this.generalInfo.filter(function (item) {
                 return item.name.toLowerCase().indexOf(_this.searchTerm.toLowerCase()) > -1;
                 //  return item.name.includes(this.searchTerm);
             });
-            _this.cd.detectChanges();
         };
         this.resetChanges = function () {
             _this.generalInfo = _this.copyGeneralInfo;
@@ -394,7 +393,7 @@ var ListViewPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-list-view',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/list-view/list-view.html"*/'<ion-header>\n  \n  <ion-navbar>\n    <ion-title>Information</ion-title>\n  \n  </ion-navbar>\n  <ion-searchbar (ionClear)="resetChanges()" (ionInput)="setFilteredItems()" \n    placeholder="Search" [(ngModel)]="searchTerm"></ion-searchbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <ion-list>\n    <ion-item *ngFor ="let girl of generalInfo" (click)="showInfo(girl)">\n      <ion-row>\n        <div class="resizeImg">\n            <img src="{{girl.src}}">\n        </div>\n        <div class="centerText">\n         <h1>{{girl.name}}</h1>\n        </div>\n      </ion-row>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/list-view/list-view.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], ListViewPage);
     return ListViewPage;
 }());
@@ -439,7 +438,6 @@ var SpecificInfoPage = /** @class */ (function () {
         this.girl = this.navParams.get("Girl");
         this.nameGirl = this.girl.name;
         this.infoText = this.girl.info;
-        this.photo = this.girl.src;
         this.toSend.username = this.navParams.get("Username");
     }
     SpecificInfoPage.prototype.ionViewDidLoad = function () {
@@ -491,11 +489,11 @@ var map = {
 		8
 	],
 	"../pages/list-view/list-view.module": [
-		384,
+		380,
 		7
 	],
 	"../pages/lobby/lobby.module": [
-		380,
+		381,
 		6
 	],
 	"../pages/login/login.module": [
@@ -503,19 +501,19 @@ var map = {
 		5
 	],
 	"../pages/result/result.module": [
-		381,
+		383,
 		4
 	],
 	"../pages/signup/signup.module": [
-		383,
+		384,
 		3
 	],
 	"../pages/specific-info/specific-info.module": [
-		386,
+		385,
 		2
 	],
 	"../pages/tabs/tabs.module": [
-		385,
+		386,
 		1
 	]
 };
@@ -716,13 +714,13 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/add-question/add-question.module#AddQuestionPageModule', name: 'AddQuestionPage', segment: 'add-question', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/game/game.module#GamePageModule', name: 'GamePage', segment: 'game', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/lobby/lobby.module#LobbyPageModule', name: 'LobbyPage', segment: 'lobby', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/list-view/list-view.module#DmPageModule', name: 'ListViewPage', segment: 'list-view', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/specific-info/specific-info.module#SpecificInfoPageModule', name: 'SpecificInfoPage', segment: 'specific-info', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/lobby/lobby.module#LobbyPageModule', name: 'LobbyPage', segment: 'lobby', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/specific-info/specific-info.module#SpecificInfoPageModule', name: 'SpecificInfoPage', segment: 'specific-info', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
