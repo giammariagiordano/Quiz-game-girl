@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import firebase from 'firebase';
 import { ResultPage } from '../result/result';
 
@@ -25,10 +25,9 @@ export class GamePage {
   public timer: any;
   public loading: boolean;
   public toSend;
-  public username:string;
   //to get tabbar
   tabBarElement : any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController) {
     this.loading = false;
     this.score = 0;
     this.it = 0;
@@ -42,7 +41,6 @@ export class GamePage {
       choice: ["", "", "", ""]
     }
     this.seconds = 10;
-    this.username = navParams.get("username");
     //to use tab bar
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
 
@@ -98,12 +96,12 @@ export class GamePage {
   createQuestion() {
     this.restartTimerCounter();
     this.decrementSeconds();
-    console.log(JSON.stringify(this.questions));
     this.loading = true;
     this.timer = setInterval(() => {
       this.decrementSeconds() // inizio a decrementarre i secondi
     }, 1000)
     if (this.it < this.questionNumber) { //se la domanda attuale è di indice inferiore posso andare avanti
+      
       this.currentQuestion.question = this.pool[this.it].question;
       this.currentQuestion.index = this.it;
       let choice = this.currentQuestion.choice;
@@ -136,7 +134,7 @@ export class GamePage {
 
   answerToQuestion(ev: Event) {
     if(ev != null){ // 
-    let target = ev.srcElement.textContent.trim();
+    let target = ev.srcElement;
     this.score = (target == this.pool[this.currentQuestion.index].answer) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
     }
     //crea la nuova domanda
@@ -145,7 +143,7 @@ export class GamePage {
     if (this.it >= this.questionNumber) {
       clearInterval(this.timer);
       this.loading = false;
-      this.toSend ={score: this.score,username: this.username} 
+      this.toSend ={score: this.score} 
       this.navCtrl.push(ResultPage,this.toSend);
     } else {
       setTimeout(() => {

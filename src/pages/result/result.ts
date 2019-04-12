@@ -16,16 +16,18 @@ import * as firebase from 'firebase';
   templateUrl: 'result.html',
 })
 export class ResultPage {
-  toSend = {
-    username:"",
-    score:0
-  }
-  
+  scoreTotal:number = 0;
+  private email:string;
+  private password:string;
+  private score:number
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.toSend.score = navParams.get("score")
-    this.toSend.username = navParams.get("username")
-   /* firebase.database().ref('Users').orderByChild('email').equalTo(toSend.email).on('child_added', res => {
-    });*/
+    this.score = navParams.get("score")
+    this.email = localStorage.getItem("email")
+    this.password = localStorage.getItem("password")
+    firebase.auth().signInWithEmailAndPassword(this.email,this.password)
+      .then( res => firebase.database().ref('Users').orderByChild('email').equalTo(this.email).once('child_added', v => {
+      this.scoreTotal =  v.val().score+this.score;
+      }))
 
   }
 

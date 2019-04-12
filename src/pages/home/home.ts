@@ -23,7 +23,7 @@ export class HomePage {
   }
 
   newGame(){
-    this.navCtrl.push(GamePage, this.navParam);
+    this.navCtrl.push(GamePage);
   }
 
   logout(){

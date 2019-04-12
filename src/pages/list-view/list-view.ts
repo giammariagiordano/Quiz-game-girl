@@ -23,7 +23,7 @@ export class ListViewPage {
 
   data: any;
   toSend: any;
-  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams,private cd: ChangeDetectorRef) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, private cd: ChangeDetectorRef) {
     this.user.username = this.navParams.get('username');
     this.getGirlDetails();
   }
@@ -36,6 +36,8 @@ export class ListViewPage {
     firebase.database().ref('GeneralInfo').orderByChild('name').on('child_added', res => {
       //for( let girl of res.val())
       this.generalInfo.push({ name: res.val().name, info: res.val().info, src: res.val().src });
+      this.cd.detectChanges();
+
       //this.generalInfo.push({name: girl.name , info: girl.info, src:girl.src});
     });
     this.copyGeneralInfo = this.generalInfo;
