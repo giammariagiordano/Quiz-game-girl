@@ -32,7 +32,4 @@ export class ResultPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultPage');
   }
-  goToHome(){
-    this.navCtrl.push(HomePage,this.toSend);
-  }
 }

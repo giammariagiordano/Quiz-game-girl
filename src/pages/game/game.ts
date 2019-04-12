@@ -26,7 +26,8 @@ export class GamePage {
   public loading: boolean;
   public toSend;
   public username:string;
-
+  //to get tabbar
+  tabBarElement : any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.loading = false;
     this.score = 0;
@@ -42,6 +43,8 @@ export class GamePage {
     }
     this.seconds = 10;
     this.username = navParams.get("username");
+    //to use tab bar
+    this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
 
   }
 
@@ -52,6 +55,15 @@ export class GamePage {
 
   ionViewDidEnter() {
     this.createQuestion();
+  }
+
+  //to remove tab bar
+  ionViewWillEnter() {
+    this.tabBarElement.style.display = 'none';
+  }
+  //to reset tab bar
+  ionViewWillLeave() {
+    this.tabBarElement.style.display = 'flex';
   }
 
   loadQuestion() {
@@ -148,9 +160,9 @@ export class GamePage {
   }
   decrementSeconds() {
     this.seconds--;
-    console.log(this.seconds);
+    //console.log(this.seconds);
     if (this.seconds == 0) {
-      console.log("sono arrivato a zero");
+      //console.log("sono arrivato a zero");
       this.restartTimerCounter();
       this.it++;
       this.createQuestion();

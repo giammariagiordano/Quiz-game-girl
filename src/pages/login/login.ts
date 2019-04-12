@@ -1,3 +1,4 @@
+import { TabsPage } from './../tabs/tabs';
 
 import { Component } from '@angular/core';
 import { IonicPage, Events,NavController } from 'ionic-angular';
@@ -38,7 +39,7 @@ export class LoginPage {
         password: localStorage.getItem("password"),
         username: localStorage.getItem("username"),
       }
-      this.navCtrl.push(HomePage, toSend);
+      this.navCtrl.push(TabsPage, toSend);
     }else{
       let toSend = {
         email: this.user.email,
@@ -51,7 +52,10 @@ export class LoginPage {
         toSend.email= snapshot.val().email;
         toSend.password = snapshot.val().password;
         toSend.username = snapshot.val().username;
-       this.navCtrl.push(HomePage, toSend);
+        localStorage.setItem("email", toSend.email);
+        localStorage.setItem("password", toSend.password);
+        localStorage.setItem("username", toSend.username);
+        this.navCtrl.push(TabsPage, toSend);
       }))
       .catch( err => alert("Mail o password errate"))
     }

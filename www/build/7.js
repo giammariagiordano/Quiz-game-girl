@@ -1,14 +1,14 @@
 webpackJsonp([7],{
 
-/***/ 380:
+/***/ 384:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DmPageModule", function() { return DmPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeaderBoardPageModule", function() { return LeaderBoardPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__list_view__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__leader_board__ = __webpack_require__(141);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DmPageModule = /** @class */ (function () {
-    function DmPageModule() {
+var LeaderBoardPageModule = /** @class */ (function () {
+    function LeaderBoardPageModule() {
     }
-    DmPageModule = __decorate([
+    LeaderBoardPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                ,
+                __WEBPACK_IMPORTED_MODULE_2__leader_board__["a" /* LeaderBoardPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__list_view__["a" /* ListViewPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__leader_board__["a" /* LeaderBoardPage */]),
             ],
         })
-    ], DmPageModule);
-    return DmPageModule;
+    ], LeaderBoardPageModule);
+    return LeaderBoardPageModule;
 }());
 
-//# sourceMappingURL=list-view.module.js.map
+//# sourceMappingURL=leader-board.module.js.map
 
 /***/ })
 
