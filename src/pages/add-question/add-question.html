@@ -11,5 +11,20 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-item>
+    <ion-label stacked>Inserisci il nome</ion-label>
+      <ion-select [(ngModel)]="girl" name="girl">
+        <ion-option *ngFor="let girlName of girls">{{girlName}}</ion-option>
+      </ion-select> 
+    </ion-item>
+    <div>
+    <input type="text" name="" placeholder="Inserisci la domanda" >
+    <input type="text" name="" placeholder="Inserisci la risposta">
+    <input type="text" name="" placeholder="Inserisci la fonte" >
+  </div>
+    <div class="divLogin">
+      <input  name="" value="Invia">
+      </div>
 
+  
 </ion-content>

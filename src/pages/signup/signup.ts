@@ -31,6 +31,7 @@ export class SignupPage {
       email: this.user.email,
       username: this.user.username,
       password: this.user.password,
+      score:0
     };
     firebase.auth().createUserWithEmailAndPassword(toSend.email,toSend.password)
     .then( user => {

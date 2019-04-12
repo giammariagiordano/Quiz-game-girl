@@ -1,15 +1,206 @@
-webpackJsonp([9],{
+webpackJsonp([11],{
 
-/***/ 140:
+/***/ 118:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__add_question_add_question__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login_login__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__game_game__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var HomePage = /** @class */ (function () {
+    function HomePage(navCtrl, navParam) {
+        this.navCtrl = navCtrl;
+        this.navParam = navParam;
+        this.username = localStorage.getItem("username");
+    }
+    HomePage.prototype.ionViewDidEnter = function () {
+        this.username = localStorage.getItem("username");
+    };
+    HomePage.prototype.goToAddQuestion = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__add_question_add_question__["a" /* AddQuestionPage */], this.navParam);
+    };
+    HomePage.prototype.newGame = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__game_game__["a" /* GamePage */], this.navParam);
+    };
+    HomePage.prototype.logout = function () {
+        localStorage.removeItem("email");
+        localStorage.removeItem("password");
+        localStorage.removeItem("username");
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_1__login_login__["a" /* LoginPage */]);
+    };
+    HomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["m" /* Component */])({
+            selector: 'page-home',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>\n      Home Page\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">  \n  <div>\n  </div>\n  <div class="imgApp"></div>\n  <div class="padding">\n    <div class="box" style="margin-top:15%">\n      <h4>Bentornato {{this.username}}</h4>\n      <button  class= "test" type = "submit"style="margin-top: 10%" ion-button color="secondary" (click)="newGame()" block>Nuova Partita</button>\n      <button class="test" type="submit" style="margin-top: 10%" ion-button color="secondary" (click)="goToAddQuestion()" block>Aggiungi Domanda</button>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/home/home.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* NavParams */]])
+    ], HomePage);
+    return HomePage;
+}());
+
+//# sourceMappingURL=home.js.map
+
+/***/ }),
+
+/***/ 141:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LeaderBoardPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the LeaderBoardPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LeaderBoardPage = /** @class */ (function () {
+    function LeaderBoardPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    LeaderBoardPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LeaderBoardPage');
+    };
+    LeaderBoardPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-leader-board',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/leader-board/leader-board.html"*/'<!--\n  Generated template for the LeaderBoardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>leaderBoard</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/leader-board/leader-board.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], LeaderBoardPage);
+    return LeaderBoardPage;
+}());
+
+//# sourceMappingURL=leader-board.js.map
+
+/***/ }),
+
+/***/ 142:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutUsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the AboutUsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AboutUsPage = /** @class */ (function () {
+    function AboutUsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    AboutUsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AboutUsPage');
+    };
+    AboutUsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-about-us',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/about-us/about-us.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>Chi siamo</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div>\n    <img src="../../assets/imgs/logounisa.png">\n  </div>\n  <div class="developed">\n    <h4>Developed by:</h4>\n    <h4>Giammaria Giordano, Valeria Pontillo, Francesco Vicidomini</h4>\n  </div>\n  <div class="supervised">\n    <h4>Supervised by:</h4>\n    <h4>Prof.ssa Filomena Ferrucci</h4>\n    <img src="../../assets/imgs/profferrucci.jpg">\n  </div>\n  <div>\n    <p>Version 1.0</p>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/about-us/about-us.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], AboutUsPage);
+    return AboutUsPage;
+}());
+
+//# sourceMappingURL=about-us.js.map
+
+/***/ }),
+
+/***/ 143:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddQuestionPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AddQuestionPage = /** @class */ (function () {
+    function AddQuestionPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.girls = [
+            "hai", "mica", "una", "amaca"
+        ];
+    }
+    AddQuestionPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AddQuestionPage');
+    };
+    AddQuestionPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-add-question',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/add-question/add-question.html"*/'<!--\n  Generated template for the AddQuestionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>addQuestion</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-item>\n    <ion-label stacked>Inserisci il nome</ion-label>\n      <ion-select [(ngModel)]="girl" name="girl">\n        <ion-option *ngFor="let girlName of girls">{{girlName}}</ion-option>\n      </ion-select> \n    </ion-item>\n    <div>\n    <input type="text" name="" placeholder="Inserisci la domanda" >\n    <input type="text" name="" placeholder="Inserisci la risposta">\n    <input type="text" name="" placeholder="Inserisci la fonte" >\n  </div>\n    <div class="divLogin">\n      <input  name="" value="Invia">\n      </div>\n\n  \n</ion-content>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/add-question/add-question.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
+    ], AddQuestionPage);
+    return AddQuestionPage;
+    var _a, _b;
+}());
+
+//# sourceMappingURL=add-question.js.map
+
+/***/ }),
+
+/***/ 144:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GamePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__result_result__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__result_result__ = __webpack_require__(145);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -43,6 +234,8 @@ var GamePage = /** @class */ (function () {
         };
         this.seconds = 10;
         this.username = navParams.get("username");
+        //to use tab bar
+        this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
     }
     GamePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad GamePage');
@@ -50,6 +243,14 @@ var GamePage = /** @class */ (function () {
     };
     GamePage.prototype.ionViewDidEnter = function () {
         this.createQuestion();
+    };
+    //to remove tab bar
+    GamePage.prototype.ionViewWillEnter = function () {
+        this.tabBarElement.style.display = 'none';
+    };
+    //to reset tab bar
+    GamePage.prototype.ionViewWillLeave = function () {
+        this.tabBarElement.style.display = 'flex';
     };
     GamePage.prototype.loadQuestion = function () {
         var _this = this;
@@ -143,9 +344,9 @@ var GamePage = /** @class */ (function () {
     };
     GamePage.prototype.decrementSeconds = function () {
         this.seconds--;
-        console.log(this.seconds);
+        //console.log(this.seconds);
         if (this.seconds == 0) {
-            console.log("sono arrivato a zero");
+            //console.log("sono arrivato a zero");
             this.restartTimerCounter();
             this.it++;
             this.createQuestion();
@@ -155,7 +356,7 @@ var GamePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-game',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/game/game.html"*/'<!--\n  Generated template for the GamePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>Game</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <div *ngIf= "loading">\n  <ion-card class="paddingCard">\n      <p>Tempo rimanente: {{this.seconds}}</p>\n\n    <ion-card-title>\n      <h1>{{currentQuestion.question}}</h1>\n    </ion-card-title>\n  </ion-card>\n  <div *ngFor="let c of currentQuestion.choice">\n    <div>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <!-- <button style="padding:10%" ion-button color="secondary" block (click)="answerToQuestion($event)" value={{c}}>{{c}}\n          </button>-->\n          <button class="test" type="submit" style="margin-top: 1%" ion-button color="secondary"\n            (click)="answerToQuestion($event)" block value="{{c}}">\n            {{c}}\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n  </div>\n</div>\n<div *ngIf="!loading">\n  <p>Loading...</p>\n</div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/game/game.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], GamePage);
     return GamePage;
 }());
@@ -164,14 +365,13 @@ var GamePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 141:
+/***/ 145:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResultPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -181,7 +381,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 /**
@@ -206,14 +405,11 @@ var ResultPage = /** @class */ (function () {
     ResultPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ResultPage');
     };
-    ResultPage.prototype.goToHome = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */], this.toSend);
-    };
     ResultPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-result',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/result/result.html"*/'<!--\n  Generated template for the ResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>result</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="container">\n  <div>\n      <form class="box" action="index.html" method="post" (submit)="goToHome()" >\n          <h1>Il tuo punteggio finale è: {{this.toSend.score}}</h1>\n        </form>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/result/result.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], ResultPage);
     return ResultPage;
 }());
@@ -222,89 +418,16 @@ var ResultPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 142:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(45);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/**
- * Generated class for the SignupPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var SignupPage = /** @class */ (function () {
-    function SignupPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.ref = __WEBPACK_IMPORTED_MODULE_2_firebase__["database"]().ref('user/');
-        this.user = {
-            email: "",
-            username: "",
-            password: "",
-        };
-    }
-    SignupPage.prototype.doSignup = function () {
-        var _this = this;
-        var toSend = {
-            email: this.user.email,
-            username: this.user.username,
-            password: this.user.password,
-        };
-        __WEBPACK_IMPORTED_MODULE_2_firebase__["auth"]().createUserWithEmailAndPassword(toSend.email, toSend.password)
-            .then(function (user) {
-            __WEBPACK_IMPORTED_MODULE_2_firebase__["database"]().ref("Users").push(toSend);
-            localStorage.setItem("email", toSend.email);
-            localStorage.setItem("password", toSend.password);
-            localStorage.setItem("username", toSend.username);
-            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */], toSend);
-        })
-            .catch(function (err) { alert("Compila i campi correttamente"); });
-    };
-    SignupPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad SignupPage');
-    };
-    SignupPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-signup',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/signup/signup.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Singup</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="container">\n  <form class="box" action="index.html" method="post" (submit)="doSignup()" >\n      <h1>Registrati</h1>\n      <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n      <input type="text" name="" placeholder="username" [(ngModel)]="user.username" name="username">\n\n      <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n      <div class="divLogin">\n        <input type="submit" name="" value="Registrati">\n      </div>\n    </form>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/signup/signup.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], SignupPage);
-    return SignupPage;
-}());
-
-//# sourceMappingURL=signup.js.map
-
-/***/ }),
-
-/***/ 143:
+/***/ 146:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListViewPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__specific_info_specific_info__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__specific_info_specific_info__ = __webpack_require__(147);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -370,24 +493,22 @@ var ListViewPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-list-view',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/list-view/list-view.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>Information</ion-title>\n  \n  </ion-navbar>\n  <ion-searchbar (ionClear)="resetChanges()" (ionInput)="setFilteredItems()" \n    placeholder="Search" [(ngModel)]="searchTerm"></ion-searchbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <ion-list>\n    <ion-item *ngFor ="let girl of generalInfo" (click)="showInfo(girl)">\n      <ion-row>\n        <div class="resizeImg">\n            <img src="{{girl.src}}">\n        </div>\n        <div class="centerText">\n         <h1>{{girl.name}}</h1>\n        </div>\n      </ion-row>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/list-view/list-view.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */]])
     ], ListViewPage);
     return ListViewPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=list-view.js.map
 
 /***/ }),
 
-/***/ 144:
+/***/ 147:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpecificInfoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -397,7 +518,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 /**
@@ -416,19 +536,17 @@ var SpecificInfoPage = /** @class */ (function () {
         this.girl = this.navParams.get("Girl");
         this.nameGirl = this.girl.name;
         this.infoText = this.girl.info;
+        this.photo = this.girl.src;
         this.toSend.username = this.navParams.get("Username");
     }
     SpecificInfoPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad SpecificInfoPage');
     };
-    SpecificInfoPage.prototype.goToHome = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */], this.toSend);
-    };
     SpecificInfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-specific-info',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/specific-info/specific-info.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>SpecificInfo</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <div>\n      <form class="box" action="index.html" method="post" (submit)="goToHome()" >\n        <img src={{this.photo}}>\n        <h1>{{this.nameGirl}}</h1>\n          <p >{{this.infoText}}</p>\n        </form>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/specific-info/specific-info.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], SpecificInfoPage);
     return SpecificInfoPage;
 }());
@@ -437,7 +555,81 @@ var SpecificInfoPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 153:
+/***/ 148:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(118);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the SignupPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var SignupPage = /** @class */ (function () {
+    function SignupPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.ref = __WEBPACK_IMPORTED_MODULE_2_firebase__["database"]().ref('user/');
+        this.user = {
+            email: "",
+            username: "",
+            password: "",
+        };
+    }
+    SignupPage.prototype.doSignup = function () {
+        var _this = this;
+        var toSend = {
+            email: this.user.email,
+            username: this.user.username,
+            password: this.user.password,
+            score: 0
+        };
+        __WEBPACK_IMPORTED_MODULE_2_firebase__["auth"]().createUserWithEmailAndPassword(toSend.email, toSend.password)
+            .then(function (user) {
+            __WEBPACK_IMPORTED_MODULE_2_firebase__["database"]().ref("Users").push(toSend);
+            localStorage.setItem("email", toSend.email);
+            localStorage.setItem("password", toSend.password);
+            localStorage.setItem("username", toSend.username);
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */], toSend);
+        })
+            .catch(function (err) { alert("Compila i campi correttamente"); });
+    };
+    SignupPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad SignupPage');
+    };
+    SignupPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-signup',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/signup/signup.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Singup</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="container">\n  <form class="box" action="index.html" method="post" (submit)="doSignup()" >\n      <h1>Registrati</h1>\n      <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n      <input type="text" name="" placeholder="username" [(ngModel)]="user.username" name="username">\n\n      <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n      <div class="divLogin">\n        <input type="submit" name="" value="Registrati">\n      </div>\n    </form>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/signup/signup.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], SignupPage);
+    return SignupPage;
+}());
+
+//# sourceMappingURL=signup.js.map
+
+/***/ }),
+
+/***/ 157:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -450,57 +642,57 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 153;
+webpackEmptyAsyncContext.id = 157;
 
 /***/ }),
 
-/***/ 194:
+/***/ 198:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/about-us/about-us.module": [
-		388,
-		2
+		381,
+		10
 	],
 	"../pages/add-question/add-question.module": [
-		378,
-		1
+		382,
+		9
 	],
 	"../pages/game/game.module": [
-		379,
-		22
-	],
-	"../pages/leader-board/leader-board.module": [
-		390,
-		0
-	],
-	"../pages/list-view/list-view.module": [
-		380,
-		21
-	],
-	"../pages/lobby/lobby.module": [
-		381,
+		383,
 		8
 	],
-	"../pages/login/login.module": [
-		382,
+	"../pages/leader-board/leader-board.module": [
+		384,
 		7
 	],
-	"../pages/result/result.module": [
-		383,
+	"../pages/list-view/list-view.module": [
+		385,
 		6
 	],
-	"../pages/signup/signup.module": [
-		384,
+	"../pages/lobby/lobby.module": [
+		386,
 		5
 	],
-	"../pages/specific-info/specific-info.module": [
-		385,
+	"../pages/login/login.module": [
+		387,
 		4
 	],
-	"../pages/tabs/tabs.module": [
-		386,
+	"../pages/result/result.module": [
+		388,
 		3
+	],
+	"../pages/signup/signup.module": [
+		389,
+		2
+	],
+	"../pages/specific-info/specific-info.module": [
+		390,
+		1
+	],
+	"../pages/tabs/tabs.module": [
+		391,
+		0
 	]
 };
 function webpackAsyncContext(req) {
@@ -514,18 +706,18 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 194;
+webpackAsyncContext.id = 198;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 248:
+/***/ 252:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LobbyPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -555,7 +747,7 @@ var LobbyPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-lobby',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/lobby/lobby.html"*/'<!--\n  Generated template for the LobbyPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>lobby</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/lobby/lobby.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], LobbyPage);
     return LobbyPage;
 }());
@@ -564,55 +756,13 @@ var LobbyPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 249:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(45);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var TabsPage = /** @class */ (function () {
-    function TabsPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.home = __WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */];
-    }
-    TabsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad TabsPage');
-    };
-    TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tabs',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/tabs/tabs.html"*/'<ion-tabs mode="md" tabsHighlight="true">\n  <ion-tab [root]="home" tabTitle="Home" tabIcon="md-home"></ion-tab>\n  <ion-tab [root]="list" tabTitle="Informazioni" tabIcon="md-information-circle" ></ion-tab>\n  <ion-tab [root]= "addQuestion" tabTitle="Aggiungi domanda" tabIcon="md-add"></ion-tab>\n  <ion-tab [root]= "leaderboard" tabTitle="Classifica" tabIcon="md-ribbon"></ion-tab>\n  <ion-tab [root]="about" tabTitle="Chi siamo" tabIcon="md-contacts"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/tabs/tabs.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], TabsPage);
-    return TabsPage;
-}());
-
-//# sourceMappingURL=tabs.js.map
-
-/***/ }),
-
-/***/ 250:
+/***/ 253:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(251);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(276);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -620,36 +770,42 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 273:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_lobby_lobby__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(376);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_firebase__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_signup_signup__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_list_view_list_view__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_specific_info_specific_info__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__credential_json__ = __webpack_require__(377);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__credential_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__credential_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_game_game__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_result_result__ = __webpack_require__(141);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_tabs_tabs__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_leader_board_leader_board__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_about_us_about_us__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_add_question_add_question__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_lobby_lobby__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_firebase__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_login_login__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_signup_signup__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_list_view_list_view__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_specific_info_specific_info__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__credential_json__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__credential_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__credential_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_game_game__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_result_result__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__ = __webpack_require__(77);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -668,38 +824,43 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var config = {
-    apiKey: __WEBPACK_IMPORTED_MODULE_13__credential_json__["apiKey"],
-    authDomain: __WEBPACK_IMPORTED_MODULE_13__credential_json__["authDomain"],
-    databaseURL: __WEBPACK_IMPORTED_MODULE_13__credential_json__["databaseURL"],
-    projectId: __WEBPACK_IMPORTED_MODULE_13__credential_json__["projectId"],
-    storageBucket: __WEBPACK_IMPORTED_MODULE_13__credential_json__["storageBucket"],
-    messagingSenderId: __WEBPACK_IMPORTED_MODULE_13__credential_json__["messagingSenderId"]
+    apiKey: __WEBPACK_IMPORTED_MODULE_16__credential_json__["apiKey"],
+    authDomain: __WEBPACK_IMPORTED_MODULE_16__credential_json__["authDomain"],
+    databaseURL: __WEBPACK_IMPORTED_MODULE_16__credential_json__["databaseURL"],
+    projectId: __WEBPACK_IMPORTED_MODULE_16__credential_json__["projectId"],
+    storageBucket: __WEBPACK_IMPORTED_MODULE_16__credential_json__["storageBucket"],
+    messagingSenderId: __WEBPACK_IMPORTED_MODULE_16__credential_json__["messagingSenderId"]
 };
-__WEBPACK_IMPORTED_MODULE_8_firebase___default.a.initializeApp(config);
-__WEBPACK_IMPORTED_MODULE_8_firebase___default.a.database.enableLogging(true);
+__WEBPACK_IMPORTED_MODULE_11_firebase___default.a.initializeApp(config);
+__WEBPACK_IMPORTED_MODULE_11_firebase___default.a.database.enableLogging(true);
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_signup_signup__["a" /* SignupPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_list_view_list_view__["a" /* ListViewPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_specific_info_specific_info__["a" /* SpecificInfoPage */],
-                __WEBPACK_IMPORTED_MODULE_0__pages_lobby_lobby__["a" /* LobbyPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_game_game__["a" /* GamePage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_result_result__["a" /* ResultPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_tabs_tabs__["a" /* TabsPage */]
+                __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_signup_signup__["a" /* SignupPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_list_view_list_view__["a" /* ListViewPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_specific_info_specific_info__["a" /* SpecificInfoPage */],
+                __WEBPACK_IMPORTED_MODULE_3__pages_lobby_lobby__["a" /* LobbyPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_game_game__["a" /* GamePage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_result_result__["a" /* ResultPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_2__pages_add_question_add_question__["a" /* AddQuestionPage */],
+                __WEBPACK_IMPORTED_MODULE_1__pages_about_us_about_us__["a" /* AboutUsPage */],
+                __WEBPACK_IMPORTED_MODULE_0__pages_leader_board_leader_board__["a" /* LeaderBoardPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {}, {
                     links: [
+                        { loadChildren: '../pages/about-us/about-us.module#AboutUsPageModule', name: 'AboutUsPage', segment: 'about-us', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/add-question/add-question.module#AddQuestionPageModule', name: 'AddQuestionPage', segment: 'add-question', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/game/game.module#GamePageModule', name: 'GamePage', segment: 'game', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/leader-board/leader-board.module#LeaderBoardPageModule', name: 'LeaderBoardPage', segment: 'leader-board', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/list-view/list-view.module#DmPageModule', name: 'ListViewPage', segment: 'list-view', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/lobby/lobby.module#LobbyPageModule', name: 'LobbyPage', segment: 'lobby', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
@@ -710,23 +871,26 @@ var AppModule = /** @class */ (function () {
                     ]
                 })
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_6_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_signup_signup__["a" /* SignupPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_list_view_list_view__["a" /* ListViewPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_specific_info_specific_info__["a" /* SpecificInfoPage */],
-                __WEBPACK_IMPORTED_MODULE_0__pages_lobby_lobby__["a" /* LobbyPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_game_game__["a" /* GamePage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_result_result__["a" /* ResultPage */],
-                __WEBPACK_IMPORTED_MODULE_16__pages_tabs_tabs__["a" /* TabsPage */]
+                __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_signup_signup__["a" /* SignupPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_list_view_list_view__["a" /* ListViewPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_specific_info_specific_info__["a" /* SpecificInfoPage */],
+                __WEBPACK_IMPORTED_MODULE_3__pages_lobby_lobby__["a" /* LobbyPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_game_game__["a" /* GamePage */],
+                __WEBPACK_IMPORTED_MODULE_18__pages_result_result__["a" /* ResultPage */],
+                __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_2__pages_add_question_add_question__["a" /* AddQuestionPage */],
+                __WEBPACK_IMPORTED_MODULE_1__pages_about_us_about_us__["a" /* AboutUsPage */],
+                __WEBPACK_IMPORTED_MODULE_0__pages_leader_board_leader_board__["a" /* LeaderBoardPage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_2__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicErrorHandler */] }
+                __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__["a" /* SplashScreen */],
+                { provide: __WEBPACK_IMPORTED_MODULE_5__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* IonicErrorHandler */] }
             ]
         })
     ], AppModule);
@@ -737,16 +901,17 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 376:
+/***/ 379:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(77);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -761,9 +926,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MyApp = /** @class */ (function () {
     function MyApp(platform, statusBar, splashScreen) {
         this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
+        if (localStorage.getItem("email") !== null) {
+            this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */];
+        }
         platform.ready().then(function () {
             // Okay, sothe platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -774,7 +943,7 @@ var MyApp = /** @class */ (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -783,82 +952,24 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 377:
+/***/ 380:
 /***/ (function(module, exports) {
 
 module.exports = {"apiKey":"AIzaSyDwu-STjJLemthvONG68cmtRoY3hh8_RjM","authDomain":"quizgamegirl-e0d99.firebaseapp.com","databaseURL":"https://quizgamegirl-e0d99.firebaseio.com","projectId":"quizgamegirl-e0d99","storageBucket":"quizgamegirl-e0d99.appspot.com","messagingSenderId":"748143241095"}
 
 /***/ }),
 
-/***/ 45:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_login__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__game_game__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__list_view_list_view__ = __webpack_require__(143);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, navParam) {
-        this.navCtrl = navCtrl;
-        this.navParam = navParam;
-        this.username = navParam.get("username");
-    }
-    HomePage.prototype.ionViewDidEnter = function () {
-        this.username = this.navParam.get("username");
-    };
-    HomePage.prototype.generalInfo = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__list_view_list_view__["a" /* ListViewPage */], this.navParam);
-    };
-    HomePage.prototype.newGame = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_1__game_game__["a" /* GamePage */], this.navParam);
-    };
-    HomePage.prototype.logout = function () {
-        localStorage.removeItem("email");
-        localStorage.removeItem("password");
-        localStorage.removeItem("username");
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__login_login__["a" /* LoginPage */]);
-    };
-    HomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>\n      Home Page\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">  \n  <div>\n  </div>\n  <div class="imgApp"></div>\n  <div class="padding">\n    <div class="box" style="margin-top:15%">\n      <h4>Bentornato {{this.username}}</h4>\n      <button  class= "test" type = "submit"style="margin-top: 10%" ion-button color="secondary" (click)="newGame()" block>Nuova Partita</button>\n      <!--<button class="test" type="submit" style="margin-top: 10%" ion-button color="secondary" (click)="generalInfo()" block>Ottieni\n        Informazioni</button>-->\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/home/home.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavParams */]])
-    ], HomePage);
-    return HomePage;
-}());
-
-//# sourceMappingURL=home.js.map
-
-/***/ }),
-
-/***/ 77:
+/***/ 76:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__signup_signup__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tabs_tabs__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup_signup__ = __webpack_require__(148);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -877,58 +988,110 @@ var LoginPage = /** @class */ (function () {
     function LoginPage(events, navCtrl) {
         this.events = events;
         this.navCtrl = navCtrl;
-        this.ref = __WEBPACK_IMPORTED_MODULE_2_firebase__["database"]().ref('user/');
+        this.ref = __WEBPACK_IMPORTED_MODULE_3_firebase__["database"]().ref('user/');
         this.user = {
             email: "",
             password: "",
             username: ""
         };
     }
-    LoginPage.prototype.ionViewDidLoad = function () {
+    LoginPage.prototype.ionViewWillEnter = function () {
         console.log('ionViewDidLoad LoginPage');
     };
     LoginPage.prototype.goSignup = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__signup_signup__["a" /* SignupPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__signup_signup__["a" /* SignupPage */]);
     };
     LoginPage.prototype.doLogin = function () {
         var _this = this;
-        if (localStorage.getItem("email") !== null) {
-            var toSend = {
-                email: localStorage.getItem("email"),
-                password: localStorage.getItem("password"),
-                username: localStorage.getItem("username"),
-            };
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */], toSend);
-        }
-        else {
-            var toSend_1 = {
-                email: this.user.email,
-                password: this.user.password,
-                username: this.user.username,
-            };
-            toSend_1.email = this.user.email.toLowerCase();
-            __WEBPACK_IMPORTED_MODULE_2_firebase__["auth"]().signInWithEmailAndPassword(toSend_1.email, toSend_1.password)
-                .then(function (res) { return __WEBPACK_IMPORTED_MODULE_2_firebase__["database"]().ref('Users').orderByChild('email').equalTo(toSend_1.email).once('child_added', function (snapshot) {
-                toSend_1.email = snapshot.val().email;
-                toSend_1.password = snapshot.val().password;
-                toSend_1.username = snapshot.val().username;
-                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */], toSend_1);
-            }); })
-                .catch(function (err) { return alert("Mail o password errate"); });
-        }
+        var toSend = {
+            email: this.user.email,
+            password: this.user.password,
+            username: this.user.username,
+        };
+        toSend.email = this.user.email.toLowerCase();
+        __WEBPACK_IMPORTED_MODULE_3_firebase__["auth"]().signInWithEmailAndPassword(toSend.email, toSend.password)
+            .then(function (res) { return __WEBPACK_IMPORTED_MODULE_3_firebase__["database"]().ref('Users').orderByChild('email').equalTo(toSend.email).once('child_added', function (snapshot) {
+            toSend.email = snapshot.val().email;
+            toSend.password = snapshot.val().password;
+            toSend.username = snapshot.val().username;
+            localStorage.setItem("email", toSend.email);
+            localStorage.setItem("password", toSend.password);
+            localStorage.setItem("username", toSend.username);
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__tabs_tabs__["a" /* TabsPage */], toSend);
+        }); })
+            .catch(function (err) { return alert("Mail o password errate"); });
     };
     LoginPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
             selector: 'page-login',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/login/login.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="container">\n\n    <div>\n\n      </div>\n      <div class="imgApp"></div>\n  <form class="box" action="index.html" method="post">\n\n    <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n    <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n    <div class="divLogin">\n      <input type="submit" name="" value="Login" (click)="doLogin()">\n      <input type="submit" name="" value="Registrati" block (click)="goSignup()">\n      </div>\n  </form>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/login/login.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavController */]])
     ], LoginPage);
     return LoginPage;
 }());
 
+//}
 //# sourceMappingURL=login.js.map
+
+/***/ }),
+
+/***/ 77:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__leader_board_leader_board__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__about_us_about_us__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__list_view_list_view__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the TabsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var TabsPage = /** @class */ (function () {
+    //aggiungere altre root
+    function TabsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.home = __WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */];
+        this.list = __WEBPACK_IMPORTED_MODULE_3__list_view_list_view__["a" /* ListViewPage */];
+        this.leaderboard = __WEBPACK_IMPORTED_MODULE_0__leader_board_leader_board__["a" /* LeaderBoardPage */];
+        this.about = __WEBPACK_IMPORTED_MODULE_1__about_us_about_us__["a" /* AboutUsPage */];
+    }
+    TabsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad TabsPage');
+    };
+    TabsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["m" /* Component */])({
+            selector: 'page-tabs',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/tabs/tabs.html"*/'<ion-tabs mode="md" tabsHighlight="true">\n  <ion-tab [root]="home" tabTitle="Home" tabIcon="md-home"></ion-tab>\n  <ion-tab [root]="list" tabTitle="Informazioni" tabIcon="md-information-circle" ></ion-tab>\n  <ion-tab [root]= "leaderboard" tabTitle="Classifica" tabIcon="md-ribbon"></ion-tab>\n  <ion-tab [root]="about" tabTitle="Chi siamo" tabIcon="md-contacts"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/tabs/tabs.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["h" /* NavParams */]])
+    ], TabsPage);
+    return TabsPage;
+}());
+
+//# sourceMappingURL=tabs.js.map
 
 /***/ })
 
-},[250]);
+},[253]);
 //# sourceMappingURL=main.js.map
