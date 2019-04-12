@@ -1,10 +1,8 @@
 import { TabsPage } from './../tabs/tabs';
-
 import { Component } from '@angular/core';
 import { IonicPage, Events,NavController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { SignupPage } from '../signup/signup';
-import { HomePage } from '../home/home';
 
 
 @IonicPage()
@@ -23,9 +21,8 @@ export class LoginPage {
   constructor( public events: Events, public navCtrl: NavController) {
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter(){
     console.log('ionViewDidLoad LoginPage');
-   
   }
 
   goSignup(){
@@ -33,14 +30,6 @@ export class LoginPage {
   }
 
   doLogin(){
-    if(localStorage.getItem("email")!==null){
-      let toSend = {
-        email: localStorage.getItem("email"),
-        password: localStorage.getItem("password"),
-        username: localStorage.getItem("username"),
-      }
-      this.navCtrl.push(TabsPage, toSend);
-    }else{
       let toSend = {
         email: this.user.email,
         password: this.user.password,
@@ -60,4 +49,4 @@ export class LoginPage {
       .catch( err => alert("Mail o password errate"))
     }
   }
-}
+//}

@@ -12,6 +12,9 @@ export class MyApp {
   rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+    if(localStorage.getItem("email")!==null){
+     this.rootPage = TabsPage;
+    }
     platform.ready().then(() => {
       // Okay, sothe platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

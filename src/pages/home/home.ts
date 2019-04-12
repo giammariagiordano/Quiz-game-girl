@@ -1,3 +1,4 @@
+import { AddQuestionPage } from './../add-question/add-question';
 import { LoginPage } from './../login/login';
 import { GamePage } from './../game/game';
 import { Component } from '@angular/core';
@@ -17,8 +18,8 @@ export class HomePage {
   ionViewDidEnter() {
     this.username=localStorage.getItem("username");
   }
-  generalInfo(){
-    this.navCtrl.push(ListViewPage, this.navParam);
+  goToAddQuestion(){
+    this.navCtrl.push(AddQuestionPage, this.navParam);
   }
 
   newGame(){

@@ -1,4 +1,3 @@
-import { AddQuestionPage } from './../add-question/add-question';
 import { LeaderBoardPage } from './../leader-board/leader-board';
 import { AboutUsPage } from './../about-us/about-us';
 import { HomePage } from './../home/home';
@@ -19,11 +18,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'tabs.html',
 })
 export class TabsPage {
-  
   home = HomePage;
   list = ListViewPage;
   leaderboard = LeaderBoardPage;
-  addQuestion = AddQuestionPage;
   about = AboutUsPage;
   //aggiungere altre root
   constructor(public navCtrl: NavController, public navParams: NavParams) {
