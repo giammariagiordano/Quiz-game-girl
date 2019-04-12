@@ -17,6 +17,7 @@ export class SpecificInfoPage {
   girl:any;
   infoText:string
   nameGirl:string
+  photo:string
   toSend = {
     username:""
   }
@@ -24,6 +25,7 @@ export class SpecificInfoPage {
     this.girl = this.navParams.get("Girl")
     this.nameGirl = this.girl.name;
     this.infoText = this.girl.info;
+    this.photo = this.girl.src;
     this.toSend.username = this.navParams.get("Username");
   }
 
