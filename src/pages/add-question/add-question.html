@@ -10,25 +10,6 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="container">
-    <select>
-        <option value="" selected disabled hidden>Seleziona una Informatica</option>
-        <option *ngFor="let girl of generalInfo" [ngValue]="girl.name">{{girl.name}}</option>
-        <option [ngValue]="olther" >Non è presente nella lista</option>
-      </select>
+<ion-content padding>
 
-      <form class="box" action="index.html" method="post" (submit)="sendQuestion()" >
-          <input *ngIf="olther" type="text" name="" placeholder="Indica il nome e il cognome " [(ngModel)]="question.question" name="question">
-
-          <input type="text" name="" placeholder="Domanda" [(ngModel)]="question.question" name="question">
-          <input type="text" name="" placeholder="Risposta Corretta" [(ngModel)]="question.correctAnswer" name="correctAnswer">
-          
-          <input type="text" name="" placeholder="Risposta Errata" [(ngModel)]="question.uncorrectAnswer1" name="uncorrectAnswer1">
-          <input type="text" name="" placeholder="Risposta Errata" [(ngModel)]="question.uncorrectAnswer2" name="uncorrectAnswer2">
-          <input type="text" name="" placeholder="Risposta Errata" [(ngModel)]="question.uncorrectAnswer3" name="uncorrectAnswer3">
-          <input type="text" name="" placeholder="Indica la fonte della domanda" [(ngModel)]="question.source" name="source">
-
-          <input type="submit" name="" value="Invia domanda">
-
-        </form>
 </ion-content>

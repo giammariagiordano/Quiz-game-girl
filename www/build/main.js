@@ -155,7 +155,7 @@ var GamePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-game',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/game/game.html"*/'<!--\n  Generated template for the GamePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Game</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <div *ngIf= "loading">\n  <ion-card class="paddingCard">\n      <p>Tempo rimanente: {{this.seconds}}</p>\n\n    <ion-card-title>\n      <h1>{{currentQuestion.question}}</h1>\n    </ion-card-title>\n  </ion-card>\n  <div *ngFor="let c of currentQuestion.choice">\n    <div>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <!-- <button style="padding:10%" ion-button color="secondary" block (click)="answerToQuestion($event)" value={{c}}>{{c}}\n          </button>-->\n          <button class="test" type="submit" style="margin-top: 1%" ion-button color="secondary"\n            (click)="answerToQuestion($event)" block value="{{c}}">\n            {{c}}\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n  </div>\n</div>\n<div *ngIf="!loading">\n  <p>Loading...</p>\n</div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/game/game.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], GamePage);
     return GamePage;
 }());
@@ -211,9 +211,9 @@ var ResultPage = /** @class */ (function () {
     };
     ResultPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-result',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/result/result.html"*/'<!--\n  Generated template for the ResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>result</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="container">\n  <div>\n      <form class="box" action="index.html" method="post" (submit)="goToHome()" >\n          <h1>Il tuo punteggio finale è: {{this.toSend.score}}</h1>\n          <div class="divLogin">\n            <input type="submit" name="" value="Vai alla home">\n          </div>\n        </form>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/result/result.html"*/,
+            selector: 'page-result',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/result/result.html"*/'<!--\n  Generated template for the ResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>result</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="container">\n  <div>\n      <form class="box" action="index.html" method="post" (submit)="goToHome()" >\n          <h1>Il tuo punteggio finale è: {{this.toSend.score}}</h1>\n        </form>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/result/result.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], ResultPage);
     return ResultPage;
 }());
@@ -286,10 +286,9 @@ var SignupPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-signup',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/signup/signup.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Singup</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="container">\n  <form class="box" action="index.html" method="post" (submit)="doSignup()" >\n      <h1>Registrati</h1>\n      <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n      <input type="text" name="" placeholder="username" [(ngModel)]="user.username" name="username">\n\n      <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n      <div class="divLogin">\n        <input type="submit" name="" value="Registrati">\n      </div>\n    </form>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/signup/signup.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], SignupPage);
     return SignupPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=signup.js.map
@@ -393,7 +392,7 @@ var ListViewPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-list-view',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/list-view/list-view.html"*/'<ion-header>\n  \n  <ion-navbar>\n    <ion-title>Information</ion-title>\n  \n  </ion-navbar>\n  <ion-searchbar (ionClear)="resetChanges()" (ionInput)="setFilteredItems()" \n    placeholder="Search" [(ngModel)]="searchTerm"></ion-searchbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <ion-list>\n    <ion-item *ngFor ="let girl of generalInfo" (click)="showInfo(girl)">\n      <ion-row>\n        <div class="resizeImg">\n            <img src="{{girl.src}}">\n        </div>\n        <div class="centerText">\n         <h1>{{girl.name}}</h1>\n        </div>\n      </ion-row>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/list-view/list-view.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], ListViewPage);
     return ListViewPage;
 }());
@@ -448,9 +447,9 @@ var SpecificInfoPage = /** @class */ (function () {
     };
     SpecificInfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-specific-info',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/specific-info/specific-info.html"*/'<!--\n  Generated template for the SpecificInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>SpecificInfo</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <div>\n      <form class="box" action="index.html" method="post" (submit)="goToHome()" >\n        <img src={{this.photo}}>\n        <h1>{{this.nameGirl}}</h1>\n          <p >{{this.infoText}}</p>\n          <div class="divLogin">\n            <input type="submit" name="" value="Vai alla home">\n          </div>\n        </form>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/specific-info/specific-info.html"*/,
+            selector: 'page-specific-info',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/specific-info/specific-info.html"*/'<!--\n  Generated template for the SpecificInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>SpecificInfo</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <div>\n      <form class="box" action="index.html" method="post" (submit)="goToHome()" >\n        <img src={{this.photo}}>\n        <h1>{{this.nameGirl}}</h1>\n          <p >{{this.infoText}}</p>\n        </form>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/specific-info/specific-info.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], SpecificInfoPage);
     return SpecificInfoPage;
 }());
@@ -480,41 +479,49 @@ webpackEmptyAsyncContext.id = 153;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"../pages/about-us/about-us.module": [
+		388,
+		2
+	],
 	"../pages/add-question/add-question.module": [
 		378,
-		0
+		1
 	],
 	"../pages/game/game.module": [
 		379,
-		8
+		22
+	],
+	"../pages/leader-board/leader-board.module": [
+		390,
+		0
 	],
 	"../pages/list-view/list-view.module": [
 		380,
-		7
+		21
 	],
 	"../pages/lobby/lobby.module": [
 		381,
-		6
+		8
 	],
 	"../pages/login/login.module": [
 		382,
-		5
+		7
 	],
 	"../pages/result/result.module": [
 		383,
-		4
+		6
 	],
 	"../pages/signup/signup.module": [
 		384,
-		3
+		5
 	],
 	"../pages/specific-info/specific-info.module": [
 		385,
-		2
+		4
 	],
 	"../pages/tabs/tabs.module": [
 		386,
-		1
+		3
 	]
 };
 function webpackAsyncContext(req) {
@@ -569,7 +576,7 @@ var LobbyPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-lobby',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/lobby/lobby.html"*/'<!--\n  Generated template for the LobbyPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>lobby</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/lobby/lobby.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], LobbyPage);
     return LobbyPage;
 }());
@@ -609,9 +616,9 @@ var TabsPage = /** @class */ (function () {
     };
     TabsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tabs',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/tabs/tabs.html"*/'<ion-tabs>\n    <ion-tab [root]="home" tabTitle="Chat" tabIcon="chat"></ion-tab>\n    <ion-tab tabTitle="Chat" tabIcon="chat"></ion-tab>\n    <ion-tab tabTitle="Chat" tabIcon="chat"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/tabs/tabs.html"*/,
+            selector: 'page-tabs',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/tabs/tabs.html"*/'<ion-tabs mode="md" tabsHighlight="true">\n  <ion-tab [root]="home" tabTitle="Home" tabIcon="md-home"></ion-tab>\n  <ion-tab [root]="list" tabTitle="Informazioni" tabIcon="md-information-circle" ></ion-tab>\n  <ion-tab [root]= "addQuestion" tabTitle="Aggiungi domanda" tabIcon="md-add"></ion-tab>\n  <ion-tab [root]= "leaderboard" tabTitle="Classifica" tabIcon="md-ribbon"></ion-tab>\n  <ion-tab [root]="about" tabTitle="Chi siamo" tabIcon="md-contacts"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/tabs/tabs.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], TabsPage);
     return TabsPage;
 }());
@@ -788,7 +795,7 @@ var MyApp = /** @class */ (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -851,9 +858,9 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Home Page\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">  \n  <div>\n  </div>\n  <div class="imgApp"></div>\n  <div class="padding">\n    <div class="box" style="margin-top:15%">\n      <h4>Bentornato {{this.username}}</h4>\n      <button  class= "test" type = "submit"style="margin-top: 10%" ion-button color="secondary" (click)="newGame()" block>Nuova Partita</button>\n      <button class="test" type="submit" style="margin-top: 10%" ion-button color="secondary" (click)="generalInfo()" block>Ottieni\n        Informazioni</button>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Home Page\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">  \n  <div>\n  </div>\n  <div class="imgApp"></div>\n  <div class="padding">\n    <div class="box" style="margin-top:15%">\n      <h4>Bentornato {{this.username}}</h4>\n      <button  class= "test" type = "submit"style="margin-top: 10%" ion-button color="secondary" (click)="newGame()" block>Nuova Partita</button>\n      <!--<button class="test" type="submit" style="margin-top: 10%" ion-button color="secondary" (click)="generalInfo()" block>Ottieni\n        Informazioni</button>-->\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavParams */]])
     ], HomePage);
     return HomePage;
 }());
@@ -935,7 +942,7 @@ var LoginPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-login',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/login/login.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="container">\n\n    <div>\n\n      </div>\n      <div class="imgApp"></div>\n  <form class="box" action="index.html" method="post">\n\n    <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n    <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n    <div class="divLogin">\n      <input type="submit" name="" value="Login" (click)="doLogin()">\n      <input type="submit" name="" value="Registrati" block (click)="goSignup()">\n      </div>\n  </form>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/login/login.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
     ], LoginPage);
     return LoginPage;
 }());

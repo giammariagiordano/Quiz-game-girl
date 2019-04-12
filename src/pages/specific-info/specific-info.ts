@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
 
 /**
  * Generated class for the SpecificInfoPage page.
@@ -32,10 +31,6 @@ export class SpecificInfoPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SpecificInfoPage');
-  }
-  goToHome(){
-
-    this.navCtrl.push(HomePage,this.toSend);
   }
 
 }

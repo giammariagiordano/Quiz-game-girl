@@ -63,34 +63,5 @@ showInfo(girl){
   }
   this.navCtrl.push(SpecificInfoPage, this.toSend);
 }
-
-
-seeListEvent(dealer) {
-  /*this.getAllEvents(dealer).then(res => {
-    this.presentModal();
-  })*/
-}
-
-getAllEvents(dealer) {
-  /* return new Promise((resolve, reject) => {
-     firebase.database().ref("Users/" + dealer + "/EventiIscritto").on("child_added", res => {
-       firebase.database().ref("Evento/" + res.val()).once("value", ev => {
-         //alert(ev.val().data + " " + ev.val().locandina + " " + ev.val().luogo + " " + ev.val().nome + " " + ev.val().scadenza + " " + ev.val().speaker)
-         firebase.database().ref("Evento/" + res.val() + "/trainer").once("value", tr => {
-           let element = {
-             data: ev.val().data, locandina: ev.val().locandina, luogo: ev.val().luogo, nome: ev.val().nome,
-             scadenza: ev.val().scadenza, speaker: ev.val().speaker, trainer: { email: tr.val().email, lavoraPer: tr.val().lavoraPer, username: tr.val().username }
-           };
-           firebase.storage().ref(element.locandina).getDownloadURL().then(res => {
-             element.locandina = res;
-             this.listEventOfDealer.push(element);
-             resolve(this.listEventOfDealer);
-           })
-         });
-       })
-     })
-   })*/
-}
-
   
 }

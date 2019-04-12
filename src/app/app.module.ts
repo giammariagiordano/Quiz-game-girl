@@ -1,3 +1,6 @@
+import { LeaderBoardPage } from './../pages/leader-board/leader-board';
+import { AboutUsPage } from './../pages/about-us/about-us';
+import { AddQuestionPage } from './../pages/add-question/add-question';
 import { LobbyPage } from './../pages/lobby/lobby';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -40,7 +43,10 @@ firebase.database.enableLogging(true);
     LobbyPage,
     GamePage,
     ResultPage,
-    TabsPage
+    TabsPage,
+    AddQuestionPage,
+    AboutUsPage,
+    LeaderBoardPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +63,10 @@ firebase.database.enableLogging(true);
     LobbyPage,
     GamePage,
     ResultPage,
-    TabsPage
+    TabsPage,
+    AddQuestionPage,
+    AboutUsPage,
+    LeaderBoardPage
   ],
   providers: [
     StatusBar,

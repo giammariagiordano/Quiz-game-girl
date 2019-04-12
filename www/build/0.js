@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 378:
+/***/ 390:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddQuestionPageModule", function() { return AddQuestionPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeaderBoardPageModule", function() { return LeaderBoardPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_question__ = __webpack_require__(387);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__leader_board__ = __webpack_require__(391);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +18,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AddQuestionPageModule = /** @class */ (function () {
-    function AddQuestionPageModule() {
+var LeaderBoardPageModule = /** @class */ (function () {
+    function LeaderBoardPageModule() {
     }
-    AddQuestionPageModule = __decorate([
+    LeaderBoardPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__add_question__["a" /* AddQuestionPage */],
+                __WEBPACK_IMPORTED_MODULE_2__leader_board__["a" /* LeaderBoardPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__add_question__["a" /* AddQuestionPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__leader_board__["a" /* LeaderBoardPage */]),
             ],
         })
-    ], AddQuestionPageModule);
-    return AddQuestionPageModule;
+    ], LeaderBoardPageModule);
+    return LeaderBoardPageModule;
 }());
 
-//# sourceMappingURL=add-question.module.js.map
+//# sourceMappingURL=leader-board.module.js.map
 
 /***/ }),
 
-/***/ 387:
+/***/ 391:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddQuestionPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LeaderBoardPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,48 +56,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 /**
- * Generated class for the AddQuestionPage page.
+ * Generated class for the LeaderBoardPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var AddQuestionPage = /** @class */ (function () {
-    function AddQuestionPage(navCtrl, navParams) {
-        //  this.user.username = this.navParams.get('username'); 
+var LeaderBoardPage = /** @class */ (function () {
+    function LeaderBoardPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.user = {
-            username: "",
-        };
-        this.generalInfo = new Array();
-        this.question = new Array();
-        this.getGirlDetails();
     }
-    AddQuestionPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AddQuestionPage');
+    LeaderBoardPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LeaderBoardPage');
     };
-    AddQuestionPage.prototype.getGirlDetails = function () {
-        var _this = this;
-        __WEBPACK_IMPORTED_MODULE_2_firebase__["database"]().ref('GeneralInfo').orderByChild('name').on('child_added', function (res) {
-            _this.generalInfo.push({ name: res.val().name, info: res.val().info, src: res.val().src });
-            console.log("add question: " + JSON.stringify(_this.generalInfo));
-        });
-    };
-    AddQuestionPage.prototype.sendQuestion = function () {
-        console.log("question send correct");
-    };
-    AddQuestionPage = __decorate([
+    LeaderBoardPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-question',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/add-question/add-question.html"*/'<!--\n  Generated template for the AddQuestionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>addQuestion</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n    <select>\n        <option value="" selected disabled hidden>Seleziona una Informatica</option>\n        <option *ngFor="let girl of generalInfo" [ngValue]="girl.name">{{girl.name}}</option>\n        <option [ngValue]="olther" >Non è presente nella lista</option>\n      </select>\n\n      <form class="box" action="index.html" method="post" (submit)="sendQuestion()" >\n          <input *ngIf="olther" type="text" name="" placeholder="Indica il nome e il cognome " [(ngModel)]="question.question" name="question">\n\n          <input type="text" name="" placeholder="Domanda" [(ngModel)]="question.question" name="question">\n          <input type="text" name="" placeholder="Risposta Corretta" [(ngModel)]="question.correctAnswer" name="correctAnswer">\n          \n          <input type="text" name="" placeholder="Risposta Errata" [(ngModel)]="question.uncorrectAnswer1" name="uncorrectAnswer1">\n          <input type="text" name="" placeholder="Risposta Errata" [(ngModel)]="question.uncorrectAnswer2" name="uncorrectAnswer2">\n          <input type="text" name="" placeholder="Risposta Errata" [(ngModel)]="question.uncorrectAnswer3" name="uncorrectAnswer3">\n          <input type="text" name="" placeholder="Indica la fonte della domanda" [(ngModel)]="question.source" name="source">\n\n          <input type="submit" name="" value="Invia domanda">\n\n        </form>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/add-question/add-question.html"*/,
+            selector: 'page-leader-board',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/leader-board/leader-board.html"*/'<!--\n  Generated template for the LeaderBoardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>leaderBoard</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/leader-board/leader-board.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-    ], AddQuestionPage);
-    return AddQuestionPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], LeaderBoardPage);
+    return LeaderBoardPage;
 }());
 
-//# sourceMappingURL=add-question.js.map
+//# sourceMappingURL=leader-board.js.map
 
 /***/ })
 

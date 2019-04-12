@@ -1,5 +1,7 @@
-<ion-tabs>
-    <ion-tab [root]="home" tabTitle="Chat" tabIcon="chat"></ion-tab>
-    <ion-tab tabTitle="Chat" tabIcon="chat"></ion-tab>
-    <ion-tab tabTitle="Chat" tabIcon="chat"></ion-tab>
+<ion-tabs mode="md" tabsHighlight="true">
+  <ion-tab [root]="home" tabTitle="Home" tabIcon="md-home"></ion-tab>
+  <ion-tab [root]="list" tabTitle="Informazioni" tabIcon="md-information-circle" ></ion-tab>
+  <ion-tab [root]= "addQuestion" tabTitle="Aggiungi domanda" tabIcon="md-add"></ion-tab>
+  <ion-tab [root]= "leaderboard" tabTitle="Classifica" tabIcon="md-ribbon"></ion-tab>
+  <ion-tab [root]="about" tabTitle="Chi siamo" tabIcon="md-contacts"></ion-tab>
 </ion-tabs>
