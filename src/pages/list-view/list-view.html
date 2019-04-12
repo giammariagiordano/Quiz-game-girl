@@ -1,13 +1,12 @@
 <ion-header>
-
+  
   <ion-navbar>
     <ion-title>Information</ion-title>
+  
   </ion-navbar>
-
-  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)">
-  </ion-searchbar>
+  <ion-searchbar (ionClear)="resetChanges()" (ionInput)="setFilteredItems()" 
+    placeholder="Search" [(ngModel)]="searchTerm"></ion-searchbar>
 </ion-header>
-
 
 <ion-content padding class="container">
   <ion-list>
@@ -18,7 +17,6 @@
         </div>
         <div  >
          <h1 >{{girl.name}}</h1>
-          
         </div>
       </ion-row>
     </ion-item>

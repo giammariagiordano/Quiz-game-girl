@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 377:
+/***/ 378:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddQuestionPageModule", function() { return AddQuestionPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_question__ = __webpack_require__(385);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_question__ = __webpack_require__(387);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,14 +38,14 @@ var AddQuestionPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 385:
+/***/ 387:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddQuestionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -92,7 +92,7 @@ var AddQuestionPage = /** @class */ (function () {
     };
     AddQuestionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-question',template:/*ion-inline-start:"/Users/francescovicidomini/git/Quiz-game-girl/src/pages/add-question/add-question.html"*/'<!--\n  Generated template for the AddQuestionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>addQuestion</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n    <select>\n        <option value="" selected disabled hidden>Seleziona una Informatica</option>\n        <option *ngFor="let girl of generalInfo" [ngValue]="girl.name">{{girl.name}}</option>\n        <option [ngValue]="olther" >Non è presente nella lista</option>\n      </select>\n\n      <form class="box" action="index.html" method="post" (submit)="sendQuestion()" >\n          <input *ngIf="olther" type="text" name="" placeholder="Indica il nome e il cognome " [(ngModel)]="question.question" name="question">\n\n          <input type="text" name="" placeholder="Domanda" [(ngModel)]="question.question" name="question">\n          <input type="text" name="" placeholder="Risposta Corretta" [(ngModel)]="question.correctAnswer" name="correctAnswer">\n          \n          <input type="text" name="" placeholder="Risposta Errata" [(ngModel)]="question.uncorrectAnswer1" name="uncorrectAnswer1">\n          <input type="text" name="" placeholder="Risposta Errata" [(ngModel)]="question.uncorrectAnswer2" name="uncorrectAnswer2">\n          <input type="text" name="" placeholder="Risposta Errata" [(ngModel)]="question.uncorrectAnswer3" name="uncorrectAnswer3">\n          <input type="text" name="" placeholder="Indica la fonte della domanda" [(ngModel)]="question.source" name="source">\n\n          <input type="submit" name="" value="Invia domanda">\n\n        </form>\n</ion-content>'/*ion-inline-end:"/Users/francescovicidomini/git/Quiz-game-girl/src/pages/add-question/add-question.html"*/,
+            selector: 'page-add-question',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/add-question/add-question.html"*/'<!--\n  Generated template for the AddQuestionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>addQuestion</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n    <select>\n        <option value="" selected disabled hidden>Seleziona una Informatica</option>\n        <option *ngFor="let girl of generalInfo" [ngValue]="girl.name">{{girl.name}}</option>\n        <option [ngValue]="olther" >Non è presente nella lista</option>\n      </select>\n\n      <form class="box" action="index.html" method="post" (submit)="sendQuestion()" >\n          <input *ngIf="olther" type="text" name="" placeholder="Indica il nome e il cognome " [(ngModel)]="question.question" name="question">\n\n          <input type="text" name="" placeholder="Domanda" [(ngModel)]="question.question" name="question">\n          <input type="text" name="" placeholder="Risposta Corretta" [(ngModel)]="question.correctAnswer" name="correctAnswer">\n          \n          <input type="text" name="" placeholder="Risposta Errata" [(ngModel)]="question.uncorrectAnswer1" name="uncorrectAnswer1">\n          <input type="text" name="" placeholder="Risposta Errata" [(ngModel)]="question.uncorrectAnswer2" name="uncorrectAnswer2">\n          <input type="text" name="" placeholder="Risposta Errata" [(ngModel)]="question.uncorrectAnswer3" name="uncorrectAnswer3">\n          <input type="text" name="" placeholder="Indica la fonte della domanda" [(ngModel)]="question.source" name="source">\n\n          <input type="submit" name="" value="Invia domanda">\n\n        </form>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/add-question/add-question.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], AddQuestionPage);

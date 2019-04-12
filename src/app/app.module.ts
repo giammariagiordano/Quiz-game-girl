@@ -16,6 +16,7 @@ import { SpecificInfoPage } from '../pages/specific-info/specific-info';
 import * as credential from "./credential.json";
 import { GamePage } from '../pages/game/game';
 import {ResultPage} from '../pages/result/result'
+import { TabsPage } from '../pages/tabs/tabs';
 
 let config ={
   apiKey: (<any>credential).apiKey,
@@ -38,7 +39,8 @@ firebase.database.enableLogging(true);
     SpecificInfoPage,
     LobbyPage,
     GamePage,
-    ResultPage
+    ResultPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ firebase.database.enableLogging(true);
     SpecificInfoPage,
     LobbyPage,
     GamePage,
-    ResultPage
+    ResultPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
