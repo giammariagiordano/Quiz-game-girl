@@ -39,6 +39,7 @@ export class ListViewPage {
       //this.generalInfo.push({name: girl.name , info: girl.info, src:girl.src});
     });
     this.copyGeneralInfo = this.generalInfo;
+    //this.cd.detectChanges();
   }
 
   public setFilteredItems = () => {
