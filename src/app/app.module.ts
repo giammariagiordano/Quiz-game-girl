@@ -20,6 +20,7 @@ import * as credential from "./credential.json";
 import { GamePage } from '../pages/game/game';
 import {ResultPage} from '../pages/result/result'
 import { TabsPage } from '../pages/tabs/tabs';
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
 let config ={
   apiKey: (<any>credential).apiKey,
@@ -46,7 +47,7 @@ firebase.database.enableLogging(true);
     TabsPage,
     AddQuestionPage,
     AboutUsPage,
-    LeaderBoardPage
+    LeaderBoardPage,
   ],
   imports: [
     BrowserModule,
@@ -66,11 +67,12 @@ firebase.database.enableLogging(true);
     TabsPage,
     AddQuestionPage,
     AboutUsPage,
-    LeaderBoardPage
+    LeaderBoardPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    EmailComposer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

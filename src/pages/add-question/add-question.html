@@ -1,30 +1,22 @@
-<!--
-  Generated template for the AddQuestionPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-  <ion-navbar hideBackButton>
-    <ion-title>addQuestion</ion-title>
+
+  <ion-navbar>
+    <ion-title>Aggiungi una domanda</ion-title>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  <ion-item>
-    <ion-label stacked>Inserisci il nome</ion-label>
-      <ion-select [(ngModel)]="girl" name="girl">
-        <ion-option *ngFor="let girlName of girls">{{girlName}}</ion-option>
-      </ion-select> 
-    </ion-item>
-    <div>
-    <input type="text" name="" placeholder="Inserisci la domanda" >
-    <input type="text" name="" placeholder="Inserisci la risposta">
-    <input type="text" name="" placeholder="Inserisci la fonte" >
-  </div>
-    <div class="divLogin">
-      <input  name="" value="Invia">
-      </div>
 
-  
+<ion-content class="container">
+  <form class="box" action="index.html" method="post" (submit)="sendEmail()" >
+    <input type="text" name="" placeholder="Inserisci una domanda" [(ngModel)]="question" name="question">
+    <input type="text" name="" placeholder="Inserisci la risposta corretta" [(ngModel)]="realAns" name="realAns">
+    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans1" name="ans1">
+    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans2" name="ans2">
+    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans3" name="ans3">
+    <input type="text" name="" placeholder="Inserisci la fonte" [(ngModel)]="source" name="source">
+      <div class="divLogin">
+        <input type="submit" name="" value="Invia domanda">
+      </div>
+    </form>
 </ion-content>
