@@ -48,3 +48,7 @@ h4 {
   background: #2ecc71;
 }
 /*# sourceMappingURL=home.css.map */
+
+.hideBackgoroud {
+  background: none;
+}
