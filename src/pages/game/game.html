@@ -16,10 +16,10 @@
       <p>Tempo rimanente: {{this.seconds}}</p>
 
     <ion-card-title>
-      <h1>{{currentQuestion.question}}</h1>
+      <h1>{{arrayQuestions[this.it].question}}</h1>
     </ion-card-title>
   </ion-card>
-  <div *ngFor="let c of currentQuestion.choice">
+  <div *ngFor="let c of arrayQuestions[this.it].ans">
     <div>
     <ion-grid>
       <ion-row>

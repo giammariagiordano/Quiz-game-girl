@@ -18,9 +18,9 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-     /* if(localStorage.getItem("email")!==null){
+     if(localStorage.getItem("email")!==null){
         this.rootPage = TabsPage;
-       }*/
+       }
     });
   }
 }
