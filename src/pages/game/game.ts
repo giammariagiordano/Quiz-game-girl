@@ -109,7 +109,7 @@ export class GamePage {
     let ans;
     if (ev != null) { // 
       let target = ev.srcElement.textContent.trim();
-      if(target == this.arrayQuestions[this.it].real){
+      /*if(target == this.arrayQuestions[this.it].real){
         this.score += this.CORRECT;
           ans = {question:this.arrayQuestions[this.it].question,ans:true}
       }
@@ -117,8 +117,8 @@ export class GamePage {
         this.score += this.UNCORRECT;
           ans = {question:this.arrayQuestions[this.it].question,ans:false}
       }
-      this.arrayAnswerByUser.push(ans)
-   // this.score = (target == this.arrayQuestions[this.it].real) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
+      this.arrayAnswerByUser.push(ans)*/
+    this.score = (target == this.arrayQuestions[this.it].real) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
       
     }
     //crea la nuova domanda

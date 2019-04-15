@@ -37,10 +37,10 @@ export class ResultPage {
   }
 
   setCouncil(score:number){
-    if(this.score<0){
+    if(this.score<=10){
       this.council = "Hai totalizzato un punteggio basso. Ti consiglio di riguardare bene la sezione delle Informazioni per migliorare il tuo punteggio"
     }
-    else if(this.score >=0 && this.score <30){
+    else if(this.score >10 && this.score <=30){
       this.council = "Hai ottenuto un buon punteggio, ma puoi sempre migliorare!"
     }
     else {
