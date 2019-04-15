@@ -20,7 +20,8 @@ export class ResultPage {
   scoreTotal:number = 0;
   private email:string;
   private password:string;
-  private score:number
+  private score:number;
+  private council:string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.score = navParams.get("score")
     this.email = localStorage.getItem("email")
@@ -29,8 +30,20 @@ export class ResultPage {
       .then( res => firebase.database().ref('Users').orderByChild('email').equalTo(this.email).once('child_added', v => {
       this.scoreTotal =  v.val().score+this.score;
       }))
+      this.setCouncil(this.score);
   }
 
+  setCouncil(score:number){
+    if(this.score<0){
+      this.council = "Hai totalizzato un punteggio basso. Ti consiglio di riguardare bene la sezione delle Informazioni per migliorare il tuo punteggio"
+    }
+    else if(this.score >0 && this.score <30){
+      this.council = "Hai ottenuto un buon punteggio, ma puoi sempre migliorare!"
+    }
+    else {
+      this.council ="Complimenti, sei davvero un campione!"
+    }
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultPage');
   }
