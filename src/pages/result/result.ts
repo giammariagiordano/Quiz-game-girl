@@ -22,8 +22,11 @@ export class ResultPage {
   private password:string;
   private score:number;
   private council:string;
+  private AnswerByUser:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.score = navParams.get("score")
+   // this.AnswerByUser = navParams.get("ans");
+    //alert(JSON.stringify(this.AnswerByUser))
     this.email = localStorage.getItem("email")
     this.password = localStorage.getItem("password")
     firebase.auth().signInWithEmailAndPassword(this.email,this.password)
@@ -37,7 +40,7 @@ export class ResultPage {
     if(this.score<0){
       this.council = "Hai totalizzato un punteggio basso. Ti consiglio di riguardare bene la sezione delle Informazioni per migliorare il tuo punteggio"
     }
-    else if(this.score >0 && this.score <30){
+    else if(this.score >=0 && this.score <30){
       this.council = "Hai ottenuto un buon punteggio, ma puoi sempre migliorare!"
     }
     else {
