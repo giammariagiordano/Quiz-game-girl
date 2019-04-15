@@ -194,6 +194,7 @@ var GamePage = /** @class */ (function () {
         this.arrayQuestions = new Array();
         this.pool = new Array();
         this.seconds = 10;
+        this.arrayAnswerByUser = new Array();
         //to use tab bar
         this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
     }
@@ -257,10 +258,19 @@ var GamePage = /** @class */ (function () {
     };
     GamePage.prototype.answerToQuestion = function (ev) {
         var _this = this;
+        var ans;
         if (ev != null) {
             var target = ev.srcElement.textContent.trim();
-            ;
-            this.score = (target == this.arrayQuestions[this.it].real) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
+            if (target == this.arrayQuestions[this.it].real) {
+                this.score += this.CORRECT;
+                ans = { question: this.arrayQuestions[this.it].question, ans: true };
+            }
+            else {
+                this.score += this.UNCORRECT;
+                ans = { question: this.arrayQuestions[this.it].question, ans: false };
+            }
+            this.arrayAnswerByUser.push(ans);
+            // this.score = (target == this.arrayQuestions[this.it].real) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
         }
         //crea la nuova domanda
         this.it++;
@@ -268,6 +278,7 @@ var GamePage = /** @class */ (function () {
         if (this.it >= this.questionNumber) {
             clearInterval(this.timer);
             this.loading = false;
+            // alert(JSON.stringify(this.arrayAnswerByUser))
             this.toSend = { score: this.score };
             this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__result_result__["a" /* ResultPage */], this.toSend);
         }
@@ -338,6 +349,8 @@ var ResultPage = /** @class */ (function () {
         this.navParams = navParams;
         this.scoreTotal = 0;
         this.score = navParams.get("score");
+        // this.AnswerByUser = navParams.get("ans");
+        //alert(JSON.stringify(this.AnswerByUser))
         this.email = localStorage.getItem("email");
         this.password = localStorage.getItem("password");
         __WEBPACK_IMPORTED_MODULE_2_firebase__["auth"]().signInWithEmailAndPassword(this.email, this.password)
@@ -350,7 +363,7 @@ var ResultPage = /** @class */ (function () {
         if (this.score < 0) {
             this.council = "Hai totalizzato un punteggio basso. Ti consiglio di riguardare bene la sezione delle Informazioni per migliorare il tuo punteggio";
         }
-        else if (this.score > 0 && this.score < 30) {
+        else if (this.score >= 0 && this.score < 30) {
             this.council = "Hai ottenuto un buon punteggio, ma puoi sempre migliorare!";
         }
         else {
@@ -693,11 +706,11 @@ var map = {
 		4
 	],
 	"../pages/result/result.module": [
-		389,
+		390,
 		3
 	],
 	"../pages/signup/signup.module": [
-		390,
+		389,
 		2
 	],
 	"../pages/specific-info/specific-info.module": [
@@ -880,8 +893,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/list-view/list-view.module#DmPageModule', name: 'ListViewPage', segment: 'list-view', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/lobby/lobby.module#LobbyPageModule', name: 'LobbyPage', segment: 'lobby', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/specific-info/specific-info.module#SpecificInfoPageModule', name: 'SpecificInfoPage', segment: 'specific-info', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
                     ]
