@@ -12,6 +12,7 @@ import { SignupPage } from '../signup/signup';
 })
 export class LoginPage {
   ref= firebase.database().ref('user/');  
+  tabBarElement:any;
   user = {
       email:"",
       password:"",
@@ -19,10 +20,18 @@ export class LoginPage {
     }
 
   constructor( public events: Events, public navCtrl: NavController) {
+    //this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
+    this.tabBarElement = document.getElementsByClassName('show-tabbar').item(0);
+
   }
 
-  ionViewWillEnter(){
-    console.log('ionViewDidLoad LoginPage');
+  //to remove tab bar
+  ionViewWillEnter() {
+    //this.tabBarElement.style.display = 'none';
+  }
+  //to reset tab bar
+  ionViewWillLeave() {
+   // this.tabBarElement.style.display = 'flex';
   }
 
   goSignup(){

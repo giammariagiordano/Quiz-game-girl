@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import * as firebase from 'firebase';
+import { v } from '@angular/core/src/render3';
 
 /**
  * Generated class for the ResultPage page.
@@ -28,7 +29,6 @@ export class ResultPage {
       .then( res => firebase.database().ref('Users').orderByChild('email').equalTo(this.email).once('child_added', v => {
       this.scoreTotal =  v.val().score+this.score;
       }))
-
   }
 
   ionViewDidLoad() {

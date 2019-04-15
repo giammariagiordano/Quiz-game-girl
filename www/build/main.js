@@ -103,7 +103,7 @@ var LeaderBoardPage = /** @class */ (function () {
     };
     LeaderBoardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-leader-board',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/leader-board/leader-board.html"*/'<!--\n  Generated template for the LeaderBoardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>leaderBoard</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor ="let user of leaderBoard?.slice().reverse()">\n      <ion-row>\n        <div>\n         <p>{{user.username}}</p>\n         <p>{{user.score}}</p>\n        </div>\n      </ion-row>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/leader-board/leader-board.html"*/,
+            selector: 'page-leader-board',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/leader-board/leader-board.html"*/'<!--\n  Generated template for the LeaderBoardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>Classifica</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <ion-list>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <div>\n            Ranking\n          </div>\n        </ion-col>\n        <ion-col>\n          <div>\n            Username\n          </div>\n        </ion-col>\n        <ion-col>\n          <div>\n            Score\n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n      <ion-item *ngFor="let user of leaderBoard?.slice().reverse();  index as i">\n        <!--  <ion-row>\n        <div>\n         <p>{{user.username}}</p>\n         <p>{{user.score}}</p>\n        </div>\n      </ion-row>\n    -->\n        <ion-grid>\n          <ion-row>\n            <ion-col>\n              <div>\n                {{i+1}}\n              </div>\n            </ion-col>\n            <ion-col>\n              <div>\n                <p>{{user.username}}</p>\n              </div>\n            </ion-col>\n            <ion-col>\n              <div>\n                <p>{{user.score}}</p>\n              </div>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/leader-board/leader-board.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */]])
     ], LeaderBoardPage);
@@ -665,35 +665,35 @@ var map = {
 		8
 	],
 	"../pages/leader-board/leader-board.module": [
-		385,
+		387,
 		7
 	],
 	"../pages/list-view/list-view.module": [
-		386,
+		391,
 		6
 	],
 	"../pages/lobby/lobby.module": [
-		387,
+		385,
 		5
 	],
 	"../pages/login/login.module": [
-		388,
+		386,
 		4
 	],
 	"../pages/result/result.module": [
-		389,
+		392,
 		3
 	],
 	"../pages/signup/signup.module": [
-		390,
+		388,
 		2
 	],
 	"../pages/specific-info/specific-info.module": [
-		391,
+		389,
 		1
 	],
 	"../pages/tabs/tabs.module": [
-		392,
+		390,
 		0
 	]
 };
@@ -864,14 +864,14 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/about-us/about-us.module#AboutUsPageModule', name: 'AboutUsPage', segment: 'about-us', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/add-question/add-question.module#AddQuestionPageModule', name: 'AddQuestionPage', segment: 'add-question', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/game/game.module#GamePageModule', name: 'GamePage', segment: 'game', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/leader-board/leader-board.module#LeaderBoardPageModule', name: 'LeaderBoardPage', segment: 'leader-board', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/list-view/list-view.module#DmPageModule', name: 'ListViewPage', segment: 'list-view', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/lobby/lobby.module#LobbyPageModule', name: 'LobbyPage', segment: 'lobby', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/leader-board/leader-board.module#LeaderBoardPageModule', name: 'LeaderBoardPage', segment: 'leader-board', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/specific-info/specific-info.module#SpecificInfoPageModule', name: 'SpecificInfoPage', segment: 'specific-info', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/list-view/list-view.module#DmPageModule', name: 'ListViewPage', segment: 'list-view', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
@@ -1000,9 +1000,16 @@ var LoginPage = /** @class */ (function () {
             password: "",
             username: ""
         };
+        //this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
+        this.tabBarElement = document.getElementsByClassName('show-tabbar').item(0);
     }
+    //to remove tab bar
     LoginPage.prototype.ionViewWillEnter = function () {
-        console.log('ionViewDidLoad LoginPage');
+        //this.tabBarElement.style.display = 'none';
+    };
+    //to reset tab bar
+    LoginPage.prototype.ionViewWillLeave = function () {
+        // this.tabBarElement.style.display = 'flex';
     };
     LoginPage.prototype.goSignup = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__signup_signup__["a" /* SignupPage */]);

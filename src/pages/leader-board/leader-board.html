@@ -6,19 +6,58 @@
 -->
 <ion-header>
   <ion-navbar hideBackButton>
-    <ion-title>leaderBoard</ion-title>
+    <ion-title>Classifica</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="container">
   <ion-list>
-    <ion-item *ngFor ="let user of leaderBoard?.slice().reverse()">
+    <ion-grid>
       <ion-row>
+        <ion-col>
+          <div>
+            Ranking
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            Username
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            Score
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+      <ion-item *ngFor="let user of leaderBoard?.slice().reverse();  index as i">
+        <!--  <ion-row>
         <div>
          <p>{{user.username}}</p>
          <p>{{user.score}}</p>
         </div>
       </ion-row>
-    </ion-item>
+    -->
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div>
+                {{i+1}}
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+                <p>{{user.username}}</p>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+                <p>{{user.score}}</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
   </ion-list>
 </ion-content>
