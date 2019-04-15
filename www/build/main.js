@@ -5,9 +5,9 @@ webpackJsonp([11],{
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__add_question_add_question__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__add_question_add_question__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login_login__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__game_game__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__game_game__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -47,7 +47,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>\n      Home Page\n    </ion-title>\n    <ion-buttons end>\n       <button  class="hideBackgoroud" (click)="logout()" style="background: none"> Logout </button> </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">  \n  <div>\n  </div>\n  <div class="imgApp"></div>\n  <div class="padding">\n    <div class="box" style="margin-top:15%">\n      <h4>Bentornato {{this.username}}</h4>\n      <button  class= "test" type = "submit"style="margin-top: 10%" ion-button color="secondary" (click)="newGame()" block>Nuova Partita</button>\n      <button class="test" type="submit" style="margin-top: 10%" ion-button color="secondary" (click)="goToAddQuestion()" block>Aggiungi Domanda</button>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton>\n\n    <ion-buttons end>\n\n       <button  class="hideBackgoroud" (click)="logout()" style="background: none"> Logout </button> </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="container">  \n\n  <div>\n\n  </div>\n\n  <div class="imgApp"></div>\n\n  <div class="padding">\n\n    <div class="box" style="margin-top:15%">\n\n      <h4>Bentornato {{this.username}}</h4>\n\n      <button  class= "test" type = "submit"style="margin-top: 10%" ion-button color="secondary" (click)="newGame()" block>Nuova Partita</button>\n\n      <button class="test" type="submit" style="margin-top: 10%" ion-button color="secondary" (click)="goToAddQuestion()" block>Aggiungi Domanda</button>\n\n    </div>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* NavParams */]])
     ], HomePage);
@@ -103,7 +103,7 @@ var LeaderBoardPage = /** @class */ (function () {
     };
     LeaderBoardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-leader-board',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/leader-board/leader-board.html"*/'<!--\n  Generated template for the LeaderBoardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>Classifica</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <ion-list>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <div>\n            Ranking\n          </div>\n        </ion-col>\n        <ion-col>\n          <div>\n            Username\n          </div>\n        </ion-col>\n        <ion-col>\n          <div>\n            Score\n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n      <ion-item *ngFor="let user of leaderBoard?.slice().reverse();  index as i">\n        <!--  <ion-row>\n        <div>\n         <p>{{user.username}}</p>\n         <p>{{user.score}}</p>\n        </div>\n      </ion-row>\n    -->\n        <ion-grid>\n          <ion-row>\n            <ion-col>\n              <div>\n                {{i+1}}\n              </div>\n            </ion-col>\n            <ion-col>\n              <div>\n                <p>{{user.username}}</p>\n              </div>\n            </ion-col>\n            <ion-col>\n              <div>\n                <p>{{user.score}}</p>\n              </div>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/leader-board/leader-board.html"*/,
+            selector: 'page-leader-board',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\leader-board\leader-board.html"*/'<!--\n\n  Generated template for the LeaderBoardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton>\n\n    <ion-title>Classifica</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="container">\n\n  <ion-list>\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col>\n\n          <div>\n\n            Ranking\n\n          </div>\n\n        </ion-col>\n\n        <ion-col>\n\n          <div>\n\n            Username\n\n          </div>\n\n        </ion-col>\n\n        <ion-col>\n\n          <div>\n\n            Score\n\n          </div>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n      <ion-item *ngFor="let user of leaderBoard?.slice().reverse();  index as i">\n\n        <!--  <ion-row>\n\n        <div>\n\n         <p>{{user.username}}</p>\n\n         <p>{{user.score}}</p>\n\n        </div>\n\n      </ion-row>\n\n    -->\n\n        <ion-grid>\n\n          <ion-row>\n\n            <ion-col>\n\n              <div>\n\n                {{i+1}}\n\n              </div>\n\n            </ion-col>\n\n            <ion-col>\n\n              <div>\n\n                <p>{{user.username}}</p>\n\n              </div>\n\n            </ion-col>\n\n            <ion-col>\n\n              <div>\n\n                <p>{{user.score}}</p>\n\n              </div>\n\n            </ion-col>\n\n          </ion-row>\n\n        </ion-grid>\n\n      </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\leader-board\leader-board.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */]])
     ], LeaderBoardPage);
@@ -148,7 +148,7 @@ var AboutUsPage = /** @class */ (function () {
     };
     AboutUsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-about-us',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/about-us/about-us.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>Chi siamo</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div>\n    <img src="../../assets/imgs/logounisa.png">\n  </div>\n  <div class="developed">\n    <h4>Developed by:</h4>\n    <h5>Giammaria Giordano, Valeria Pontillo, Francesco Vicidomini</h5>\n  </div>\n  <div class="supervised">\n    <h4>Supervised by:</h4>\n    <h5>Prof.ssa Filomena Ferrucci</h5>\n    <img src="../../assets/imgs/profferrucci.jpg" style="width: 20%">\n  </div>\n  <div>\n    <p>Version 1.0</p>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/about-us/about-us.html"*/,
+            selector: 'page-about-us',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\about-us\about-us.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton>\n\n    <ion-title>Chi siamo</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div>\n\n    <img src="../../assets/imgs/logounisa.png">\n\n  </div>\n\n  <div class="developed">\n\n    <h4>Developed by:</h4>\n\n    <h5>Giammaria Giordano, Valeria Pontillo, Francesco Vicidomini</h5>\n\n  </div>\n\n  <div class="supervised">\n\n    <h4>Supervised by:</h4>\n\n    <h5>Prof.ssa Filomena Ferrucci</h5>\n\n    \n\n  </div>\n\n  <div>\n\n    <p>Version 1.0</p>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\about-us\about-us.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], AboutUsPage);
@@ -163,12 +163,70 @@ var AboutUsPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddQuestionPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer_ngx__ = __webpack_require__(200);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AddQuestionPage = /** @class */ (function () {
+    function AddQuestionPage(navCtrl, navParams, emailComposer) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.emailComposer = emailComposer;
+    }
+    AddQuestionPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AddQuestionPage');
+    };
+    AddQuestionPage.prototype.sendEmail = function () {
+        if (this.question == undefined || this.realAns == undefined || this.ans1 == undefined ||
+            this.ans2 == undefined || this.ans3 == undefined || this.soruce == undefined) {
+            alert("Inserisci tutti i campi");
+        }
+        else {
+            var email = {
+                to: "fakeEmail@fake.com",
+                subject: 'New question',
+                body: 'question:' + this.question + "\n real answer: " + this.realAns + "\n risposta sbagliata:" + this.ans1 + "\n" +
+                    "risposta sbagliata:" + this.ans2 + "\n rispsota sbagliata:" + this.ans3 + "\n fonte:" + this.soruce,
+                isHtml: true
+            };
+            this.emailComposer.open(email);
+        }
+    };
+    AddQuestionPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-add-question',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\add-question\add-question.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Aggiungi una domanda</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="container">\n\n  <form class="box" action="index.html" method="post" (submit)="sendEmail()" >\n\n    <input type="text" name="" placeholder="Inserisci una domanda" [(ngModel)]="question" name="question">\n\n    <input type="text" name="" placeholder="Inserisci la risposta corretta" [(ngModel)]="realAns" name="realAns">\n\n    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans1" name="ans1">\n\n    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans2" name="ans2">\n\n    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans3" name="ans3">\n\n    <input type="text" name="" placeholder="Inserisci la fonte" [(ngModel)]="source" name="source">\n\n      <div class="divLogin">\n\n        <input type="submit" name="" value="Invia domanda">\n\n      </div>\n\n    </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\add-question\add-question.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer_ngx__["a" /* EmailComposer */]])
+    ], AddQuestionPage);
+    return AddQuestionPage;
+}());
+
+//# sourceMappingURL=add-question.js.map
+
+/***/ }),
+
+/***/ 145:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GamePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__result_result__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__result_result__ = __webpack_require__(146);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -293,7 +351,7 @@ var GamePage = /** @class */ (function () {
     };
     GamePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-game',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/game/game.html"*/'<!--\n  Generated template for the GamePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>Game</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <div *ngIf= "loading">\n  <ion-card class="paddingCard">\n      <p>Tempo rimanente: {{this.seconds}}</p>\n\n    <ion-card-title>\n      <h1>{{arrayQuestions[this.it].question}}</h1>\n    </ion-card-title>\n  </ion-card>\n  <div *ngFor="let c of arrayQuestions[this.it].ans">\n    <div>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <!-- <button style="padding:10%" ion-button color="secondary" block (click)="answerToQuestion($event)" value={{c}}>{{c}}\n          </button>-->\n          <button class="test" type="submit" style="margin-top: 1%" ion-button color="secondary"\n            (click)="answerToQuestion($event)" block value="{{c}}">\n            {{c}}\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </div>\n  </div>\n</div>\n<div *ngIf="!loading">\n  <p>Loading...</p>\n</div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/game/game.html"*/,
+            selector: 'page-game',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\game\game.html"*/'<!--\n\n  Generated template for the GamePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton>\n\n    <ion-title>Game</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="container">\n\n  <div *ngIf= "loading">\n\n  <ion-card class="paddingCard">\n\n      <p>Tempo rimanente: {{this.seconds}}</p>\n\n\n\n    <ion-card-title>\n\n      <h1>{{arrayQuestions[this.it].question}}</h1>\n\n    </ion-card-title>\n\n  </ion-card>\n\n  <div *ngFor="let c of arrayQuestions[this.it].ans">\n\n    <div>\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col>\n\n          <!-- <button style="padding:10%" ion-button color="secondary" block (click)="answerToQuestion($event)" value={{c}}>{{c}}\n\n          </button>-->\n\n          <button class="test" type="submit" style="margin-top: 1%" ion-button color="secondary"\n\n            (click)="answerToQuestion($event)" block value="{{c}}">\n\n            {{c}}\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </div>\n\n  </div>\n\n</div>\n\n<div *ngIf="!loading">\n\n  <p>Loading...</p>\n\n</div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\game\game.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
     ], GamePage);
@@ -304,7 +362,7 @@ var GamePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 145:
+/***/ 146:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -362,7 +420,7 @@ var ResultPage = /** @class */ (function () {
     };
     ResultPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-result',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/result/result.html"*/'<!--\n  Generated template for the ResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>result</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="container">\n  <div>\n      <form class="box" action="index.html" method="post" (submit)="goToHome()" >\n          <h1>Il tuo punteggio finale è: {{this.score}}</h1>\n          <h1>il tuo punteggio totale è: {{this.scoreTotal}}</h1>\n          <h3>{{this.council}}</h3>\n        </form>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/result/result.html"*/,
+            selector: 'page-result',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\result\result.html"*/'<!--\n\n  Generated template for the ResultPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar hideBackButton>\n\n    <ion-title>result</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="container">\n\n  <div>\n\n      <form class="box" action="index.html" method="post" (submit)="goToHome()" >\n\n          <h1>Il tuo punteggio finale è: {{this.score}}</h1>\n\n          <h1>il tuo punteggio totale è: {{this.scoreTotal}}</h1>\n\n          <h3>{{this.council}}</h3>\n\n        </form>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\result\result.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], ResultPage);
@@ -370,64 +428,6 @@ var ResultPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=result.js.map
-
-/***/ }),
-
-/***/ 146:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddQuestionPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer_ngx__ = __webpack_require__(210);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var AddQuestionPage = /** @class */ (function () {
-    function AddQuestionPage(navCtrl, navParams, emailComposer) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.emailComposer = emailComposer;
-    }
-    AddQuestionPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AddQuestionPage');
-    };
-    AddQuestionPage.prototype.sendEmail = function () {
-        if (this.question == undefined || this.realAns == undefined || this.ans1 == undefined ||
-            this.ans2 == undefined || this.ans3 == undefined || this.soruce == undefined) {
-            alert("Inserisci tutti i campi");
-        }
-        else {
-            var email = {
-                to: "fakeEmail@fake.com",
-                subject: 'New question',
-                body: 'question:' + this.question + "\n real answer: " + this.realAns + "\n risposta sbagliata:" + this.ans1 + "\n" +
-                    "risposta sbagliata:" + this.ans2 + "\n rispsota sbagliata:" + this.ans3 + "\n fonte:" + this.soruce,
-                isHtml: true
-            };
-            this.emailComposer.open(email);
-        }
-    };
-    AddQuestionPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-question',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/add-question/add-question.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Aggiungi una domanda</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="container">\n  <form class="box" action="index.html" method="post" (submit)="sendEmail()" >\n    <input type="text" name="" placeholder="Inserisci una domanda" [(ngModel)]="question" name="question">\n    <input type="text" name="" placeholder="Inserisci la risposta corretta" [(ngModel)]="realAns" name="realAns">\n    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans1" name="ans1">\n    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans2" name="ans2">\n    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans3" name="ans3">\n    <input type="text" name="" placeholder="Inserisci la fonte" [(ngModel)]="source" name="source">\n      <div class="divLogin">\n        <input type="submit" name="" value="Invia domanda">\n      </div>\n    </form>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/add-question/add-question.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer_ngx__["a" /* EmailComposer */]])
-    ], AddQuestionPage);
-    return AddQuestionPage;
-}());
-
-//# sourceMappingURL=add-question.js.map
 
 /***/ }),
 
@@ -505,7 +505,7 @@ var ListViewPage = /** @class */ (function () {
     };
     ListViewPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-list-view',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/list-view/list-view.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>Informazioni</ion-title>\n  \n  </ion-navbar>\n  <ion-searchbar (ionClear)="resetChanges()" (ionInput)="setFilteredItems()" \n    placeholder="Search" [(ngModel)]="searchTerm"></ion-searchbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <ion-list>\n    <ion-item *ngFor ="let girl of generalInfo" (click)="showInfo(girl)">\n      <ion-row>\n        <div class="resizeImg">\n            <img src="{{girl.src}}">\n        </div>\n        <div class="centerText">\n         <h1>{{girl.name}}</h1>\n        </div>\n      </ion-row>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/list-view/list-view.html"*/,
+            selector: 'page-list-view',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\list-view\list-view.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton>\n\n    <ion-title>Informazioni</ion-title>\n\n  \n\n  </ion-navbar>\n\n  <ion-searchbar (ionClear)="resetChanges()" (ionInput)="setFilteredItems()" \n\n    placeholder="Search" [(ngModel)]="searchTerm"></ion-searchbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="container">\n\n  <ion-list>\n\n    <ion-item *ngFor ="let girl of generalInfo" (click)="showInfo(girl)">\n\n      <ion-row>\n\n        <div class="resizeImg">\n\n            <img src="{{girl.src}}">\n\n        </div>\n\n        <div class="centerText">\n\n         <h1>{{girl.name}}</h1>\n\n        </div>\n\n      </ion-row>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\list-view\list-view.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* ChangeDetectorRef */]])
     ], ListViewPage);
@@ -558,7 +558,7 @@ var SpecificInfoPage = /** @class */ (function () {
     };
     SpecificInfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-specific-info',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/specific-info/specific-info.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>{{this.nameGirl}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <div>\n      <form class="box" action="index.html" method="post" (submit)="goToHome()" >\n        <img src={{this.photo}}>\n        <h1>{{this.nameGirl}}</h1>\n          <p >{{this.infoText}}</p>\n        </form>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/specific-info/specific-info.html"*/,
+            selector: 'page-specific-info',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\specific-info\specific-info.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton>\n\n    <ion-title>{{this.nameGirl}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="container">\n\n  <div>\n\n      <form class="box" action="index.html" method="post" (submit)="goToHome()" >\n\n        <img src={{this.photo}}>\n\n        <h1>{{this.nameGirl}}</h1>\n\n          <p >{{this.infoText}}</p>\n\n        </form>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\specific-info\specific-info.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], SpecificInfoPage);
@@ -632,7 +632,7 @@ var SignupPage = /** @class */ (function () {
     };
     SignupPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-signup',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/signup/signup.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Singup</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="container">\n  <form class="box" action="index.html" method="post" (submit)="doSignup()" >\n      <h1>Registrati</h1>\n      <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n      <input type="text" name="" placeholder="username" [(ngModel)]="user.username" name="username">\n\n      <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n      <div class="divLogin">\n        <input type="submit" name="" value="Registrati">\n      </div>\n    </form>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/signup/signup.html"*/,
+            selector: 'page-signup',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\signup\signup.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Singup</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="container">\n\n  <form class="box" action="index.html" method="post" (submit)="doSignup()" >\n\n      <h1>Registrati</h1>\n\n      <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n\n      <input type="text" name="" placeholder="username" [(ngModel)]="user.username" name="username">\n\n\n\n      <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n\n      <div class="divLogin">\n\n        <input type="submit" name="" value="Registrati">\n\n      </div>\n\n    </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\signup\signup.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], SignupPage);
@@ -669,23 +669,23 @@ var map = {
 		10
 	],
 	"../pages/add-question/add-question.module": [
-		384,
+		383,
 		9
 	],
 	"../pages/game/game.module": [
-		383,
+		384,
 		8
 	],
 	"../pages/leader-board/leader-board.module": [
-		385,
+		386,
 		7
 	],
 	"../pages/list-view/list-view.module": [
-		386,
+		387,
 		6
 	],
 	"../pages/lobby/lobby.module": [
-		387,
+		385,
 		5
 	],
 	"../pages/login/login.module": [
@@ -759,7 +759,7 @@ var LobbyPage = /** @class */ (function () {
     };
     LobbyPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-lobby',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/lobby/lobby.html"*/'<!--\n  Generated template for the LobbyPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>lobby</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/lobby/lobby.html"*/,
+            selector: 'page-lobby',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\lobby\lobby.html"*/'<!--\n\n  Generated template for the LobbyPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>lobby</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\lobby\lobby.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], LobbyPage);
@@ -791,7 +791,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_leader_board_leader_board__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_about_us_about_us__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_add_question_add_question__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_add_question_add_question__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_lobby_lobby__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(0);
@@ -808,10 +808,10 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_specific_info_specific_info__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__credential_json__ = __webpack_require__(381);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__credential_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__credential_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_game_game__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_result_result__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_game_game__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_result_result__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_email_composer_ngx__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_email_composer_ngx__ = __webpack_require__(200);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -874,11 +874,11 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/about-us/about-us.module#AboutUsPageModule', name: 'AboutUsPage', segment: 'about-us', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/game/game.module#GamePageModule', name: 'GamePage', segment: 'game', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/add-question/add-question.module#AddQuestionPageModule', name: 'AddQuestionPage', segment: 'add-question', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/game/game.module#GamePageModule', name: 'GamePage', segment: 'game', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/lobby/lobby.module#LobbyPageModule', name: 'LobbyPage', segment: 'lobby', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/leader-board/leader-board.module#LeaderBoardPageModule', name: 'LeaderBoardPage', segment: 'leader-board', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/list-view/list-view.module#DmPageModule', name: 'ListViewPage', segment: 'list-view', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/lobby/lobby.module#LobbyPageModule', name: 'LobbyPage', segment: 'lobby', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
@@ -959,7 +959,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -1048,7 +1048,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/login/login.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="container">\n\n    <div>\n\n      </div>\n      <div class="imgApp"></div>\n  <form class="box" action="index.html" method="post">\n\n    <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n    <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n    <div class="divLogin">\n      <input type="submit" name="" value="Login" (click)="doLogin()">\n      <input type="submit" name="" value="Registrati" block (click)="goSignup()">\n      </div>\n  </form>\n</ion-content>'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\login\login.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Login</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="container">\n\n\n\n    <div>\n\n\n\n      </div>\n\n      <div class="imgApp"></div>\n\n  <form class="box" action="index.html" method="post">\n\n\n\n    <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n\n    <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n\n    <div class="divLogin">\n\n      <input type="submit" name="" value="Login" (click)="doLogin()">\n\n      <input type="submit" name="" value="Registrati" block (click)="goSignup()">\n\n      </div>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\login\login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavController */]])
     ], LoginPage);
@@ -1107,7 +1107,7 @@ var TabsPage = /** @class */ (function () {
     };
     TabsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["m" /* Component */])({
-            selector: 'page-tabs',template:/*ion-inline-start:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/tabs/tabs.html"*/'<ion-tabs mode="md" tabsHighlight="true">\n  <ion-tab [root]="home" tabTitle="Home" tabIcon="md-home"></ion-tab>\n  <ion-tab [root]="list" tabTitle="Informazioni" tabIcon="md-information-circle" ></ion-tab>\n  <ion-tab [root]= "leaderboard" tabTitle="Classifica" tabIcon="md-ribbon"></ion-tab>\n  <ion-tab [root]="about" tabTitle="Chi siamo" tabIcon="md-contacts"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/home/broke31/Scrivania/Quiz-game-girl/src/pages/tabs/tabs.html"*/,
+            selector: 'page-tabs',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\tabs\tabs.html"*/'<ion-tabs mode="md" tabsHighlight="true">\n\n  <ion-tab [root]="home" tabTitle="Home" tabIcon="md-home"></ion-tab>\n\n  <ion-tab [root]="list" tabTitle="Informazioni" tabIcon="md-information-circle" ></ion-tab>\n\n  <ion-tab [root]= "leaderboard" tabTitle="Classifica" tabIcon="md-ribbon"></ion-tab>\n\n  <ion-tab [root]="about" tabTitle="Chi siamo" tabIcon="md-contacts"></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\tabs\tabs.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["h" /* NavParams */]])
     ], TabsPage);
