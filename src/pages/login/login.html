@@ -1,9 +1,4 @@
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-
 </ion-header>
 
 
@@ -13,13 +8,34 @@
 
       </div>
       <div class="imgApp"></div>
-  <form class="box" action="index.html" method="post">
+  <form class="group" action="index.html" method="post">
 
-    <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">
+    <!--<input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">
     <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">
     <div class="divLogin">
       <input type="submit" name="" value="Login" (click)="doLogin()">
       <input type="submit" name="" value="Registrati" block (click)="goSignup()">
-      </div>
+      </div>-->
+
+      <div class="group">      
+          <input type="text" required [(ngModel)]="user.email" name="email">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Email</label>
+        </div>
+
+        <div class="group">      
+            <input type="password" required [(ngModel)]="user.password" name="password" pattern="[0-9]*">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Password</label>
+          </div>
+
+          <div class="divLogin">
+              <button type="submit" name="" value="Login" (click)="doLogin()">Login</button>
+              <button type="submit" name="" value="Registrati" block (click)="goSignup()">Registrati</button>
+              
+          </div>
+
   </form>
 </ion-content>

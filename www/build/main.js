@@ -5,9 +5,9 @@ webpackJsonp([11],{
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__add_question_add_question__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__add_question_add_question__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login_login__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__game_game__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__game_game__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -163,12 +163,70 @@ var AboutUsPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddQuestionPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer_ngx__ = __webpack_require__(200);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AddQuestionPage = /** @class */ (function () {
+    function AddQuestionPage(navCtrl, navParams, emailComposer) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.emailComposer = emailComposer;
+    }
+    AddQuestionPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AddQuestionPage');
+    };
+    AddQuestionPage.prototype.sendEmail = function () {
+        if (this.question == undefined || this.realAns == undefined || this.ans1 == undefined ||
+            this.ans2 == undefined || this.ans3 == undefined || this.soruce == undefined) {
+            alert("Inserisci tutti i campi");
+        }
+        else {
+            var email = {
+                to: "fakeEmail@fake.com",
+                subject: 'New question',
+                body: 'question:' + this.question + "\n real answer: " + this.realAns + "\n risposta sbagliata:" + this.ans1 + "\n" +
+                    "risposta sbagliata:" + this.ans2 + "\n rispsota sbagliata:" + this.ans3 + "\n fonte:" + this.soruce,
+                isHtml: true
+            };
+            this.emailComposer.open(email);
+        }
+    };
+    AddQuestionPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-add-question',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\add-question\add-question.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Aggiungi una domanda</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="container">\n\n  <!--\n\n    <input type="text" name="" placeholder="Inserisci una domanda" [(ngModel)]="question" name="question">\n\n    <input type="text" name="" placeholder="Inserisci la risposta corretta" [(ngModel)]="realAns" name="realAns">\n\n    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans1" name="ans1">\n\n    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans2" name="ans2">\n\n    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans3" name="ans3">\n\n    <input type="text" name="" placeholder="Inserisci la fonte" [(ngModel)]="source" name="source">\n\n      <div class="divLogin">\n\n        <input type="submit" name="" value="Invia domanda">\n\n      </div>\n\n    </form>-->\n\n    <form class="group" action="index.html" method="post" (submit)="sendEmail()" >\n\n    <div class="group">      \n\n      <input type="text" required [(ngModel)]="question" name="question">\n\n      <span class="highlight"></span>\n\n      <span class="bar"></span>\n\n      <label>Inserisci una domanda</label>\n\n    </div>\n\n\n\n    <div class="group">      \n\n      <input type="text" required [(ngModel)]="realAns" name="realAns">\n\n      <span class="highlight"></span>\n\n      <span class="bar"></span>\n\n      <label>Inserisci la risposta corretta</label>\n\n    </div>\n\n\n\n    <div class="group">      \n\n      <input type="text" required [(ngModel)]="ans1" name="ans1">\n\n      <span class="highlight"></span>\n\n      <span class="bar"></span>\n\n      <label>Inserisci la risposta errata</label>\n\n    </div>\n\n\n\n    <div class="group">      \n\n      <input type="text" required [(ngModel)]="ans2" name="ans2">\n\n      <span class="highlight"></span>\n\n      <span class="bar"></span>\n\n      <label>Inserisci la risposta errata</label>\n\n    </div>\n\n\n\n    <div class="group">      \n\n      <input type="text" required [(ngModel)]="ans3" name="ans3">\n\n      <span class="highlight"></span>\n\n      <span class="bar"></span>\n\n      <label>Inserisci la risposta errata</label>\n\n    </div>\n\n\n\n    <div class="group">      \n\n      <input type="text" required [(ngModel)]="source" name="source">\n\n      <span class="highlight"></span>\n\n      <span class="bar"></span>\n\n      <label>Inserisci la fonte</label>\n\n    </div>\n\n\n\n    <div class="divLogin">\n\n        <button type="submit" name="" value="Invia domanda">Invia</button>\n\n \n\n    </div>\n\n    </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\add-question\add-question.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer_ngx__["a" /* EmailComposer */]])
+    ], AddQuestionPage);
+    return AddQuestionPage;
+}());
+
+//# sourceMappingURL=add-question.js.map
+
+/***/ }),
+
+/***/ 145:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GamePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__result_result__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__result_result__ = __webpack_require__(146);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -315,7 +373,7 @@ var GamePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 145:
+/***/ 146:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -383,64 +441,6 @@ var ResultPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=result.js.map
-
-/***/ }),
-
-/***/ 146:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddQuestionPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer_ngx__ = __webpack_require__(210);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var AddQuestionPage = /** @class */ (function () {
-    function AddQuestionPage(navCtrl, navParams, emailComposer) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.emailComposer = emailComposer;
-    }
-    AddQuestionPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AddQuestionPage');
-    };
-    AddQuestionPage.prototype.sendEmail = function () {
-        if (this.question == undefined || this.realAns == undefined || this.ans1 == undefined ||
-            this.ans2 == undefined || this.ans3 == undefined || this.soruce == undefined) {
-            alert("Inserisci tutti i campi");
-        }
-        else {
-            var email = {
-                to: "fakeEmail@fake.com",
-                subject: 'New question',
-                body: 'question:' + this.question + "\n real answer: " + this.realAns + "\n risposta sbagliata:" + this.ans1 + "\n" +
-                    "risposta sbagliata:" + this.ans2 + "\n rispsota sbagliata:" + this.ans3 + "\n fonte:" + this.soruce,
-                isHtml: true
-            };
-            this.emailComposer.open(email);
-        }
-    };
-    AddQuestionPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-question',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\add-question\add-question.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Aggiungi una domanda</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="container">\n\n  <form class="box" action="index.html" method="post" (submit)="sendEmail()" >\n\n    <input type="text" name="" placeholder="Inserisci una domanda" [(ngModel)]="question" name="question">\n\n    <input type="text" name="" placeholder="Inserisci la risposta corretta" [(ngModel)]="realAns" name="realAns">\n\n    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans1" name="ans1">\n\n    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans2" name="ans2">\n\n    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans3" name="ans3">\n\n    <input type="text" name="" placeholder="Inserisci la fonte" [(ngModel)]="source" name="source">\n\n      <div class="divLogin">\n\n        <input type="submit" name="" value="Invia domanda">\n\n      </div>\n\n    </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\add-question\add-question.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer_ngx__["a" /* EmailComposer */]])
-    ], AddQuestionPage);
-    return AddQuestionPage;
-}());
-
-//# sourceMappingURL=add-question.js.map
 
 /***/ }),
 
@@ -682,27 +682,27 @@ var map = {
 		10
 	],
 	"../pages/add-question/add-question.module": [
-		384,
+		383,
 		9
 	],
 	"../pages/game/game.module": [
-		383,
+		384,
 		8
 	],
 	"../pages/leader-board/leader-board.module": [
-		386,
+		385,
 		7
 	],
 	"../pages/list-view/list-view.module": [
-		387,
+		386,
 		6
 	],
 	"../pages/lobby/lobby.module": [
-		385,
+		387,
 		5
 	],
 	"../pages/login/login.module": [
-		390,
+		388,
 		4
 	],
 	"../pages/result/result.module": [
@@ -710,7 +710,7 @@ var map = {
 		3
 	],
 	"../pages/signup/signup.module": [
-		388,
+		390,
 		2
 	],
 	"../pages/specific-info/specific-info.module": [
@@ -804,7 +804,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_leader_board_leader_board__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_about_us_about_us__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_add_question_add_question__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_add_question_add_question__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_lobby_lobby__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(0);
@@ -821,10 +821,10 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_specific_info_specific_info__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__credential_json__ = __webpack_require__(381);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__credential_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__credential_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_game_game__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_result_result__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_game_game__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_result_result__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_email_composer_ngx__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_email_composer_ngx__ = __webpack_require__(200);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -887,14 +887,14 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/about-us/about-us.module#AboutUsPageModule', name: 'AboutUsPage', segment: 'about-us', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/game/game.module#GamePageModule', name: 'GamePage', segment: 'game', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/add-question/add-question.module#AddQuestionPageModule', name: 'AddQuestionPage', segment: 'add-question', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/lobby/lobby.module#LobbyPageModule', name: 'LobbyPage', segment: 'lobby', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/game/game.module#GamePageModule', name: 'GamePage', segment: 'game', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/leader-board/leader-board.module#LeaderBoardPageModule', name: 'LeaderBoardPage', segment: 'leader-board', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/list-view/list-view.module#DmPageModule', name: 'ListViewPage', segment: 'list-view', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/lobby/lobby.module#LobbyPageModule', name: 'LobbyPage', segment: 'lobby', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/result/result.module#ResultPageModule', name: 'ResultPage', segment: 'result', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/specific-info/specific-info.module#SpecificInfoPageModule', name: 'SpecificInfoPage', segment: 'specific-info', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
                     ]
@@ -1061,7 +1061,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\login\login.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Login</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="container">\n\n\n\n    <div>\n\n\n\n      </div>\n\n      <div class="imgApp"></div>\n\n  <form class="box" action="index.html" method="post">\n\n\n\n    <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n\n    <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n\n    <div class="divLogin">\n\n      <input type="submit" name="" value="Login" (click)="doLogin()">\n\n      <input type="submit" name="" value="Registrati" block (click)="goSignup()">\n\n      </div>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\login\login.html"*/'<ion-header>\n\n</ion-header>\n\n\n\n\n\n<ion-content class="container">\n\n\n\n    <div>\n\n\n\n      </div>\n\n      <div class="imgApp"></div>\n\n  <form class="group" action="index.html" method="post">\n\n\n\n    <!--<input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">\n\n    <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n\n    <div class="divLogin">\n\n      <input type="submit" name="" value="Login" (click)="doLogin()">\n\n      <input type="submit" name="" value="Registrati" block (click)="goSignup()">\n\n      </div>-->\n\n\n\n      <div class="group">      \n\n          <input type="text" required [(ngModel)]="user.email" name="email">\n\n          <span class="highlight"></span>\n\n          <span class="bar"></span>\n\n          <label>Email</label>\n\n        </div>\n\n\n\n        <div class="group">      \n\n            <input type="password" required [(ngModel)]="user.password" name="password" pattern="[0-9]*">\n\n            <span class="highlight"></span>\n\n            <span class="bar"></span>\n\n            <label>Password</label>\n\n          </div>\n\n\n\n          <div class="divLogin">\n\n              <button type="submit" name="" value="Login" (click)="doLogin()">Login</button>\n\n              <button type="submit" name="" value="Registrati" block (click)="goSignup()">Registrati</button>\n\n              \n\n          </div>\n\n\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Vally\Desktop\Quiz-game-girl\src\pages\login\login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* Events */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavController */]])
     ], LoginPage);
