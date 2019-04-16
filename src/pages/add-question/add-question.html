@@ -8,7 +8,7 @@
 
 
 <ion-content class="container">
-  <form class="box" action="index.html" method="post" (submit)="sendEmail()" >
+  <!--
     <input type="text" name="" placeholder="Inserisci una domanda" [(ngModel)]="question" name="question">
     <input type="text" name="" placeholder="Inserisci la risposta corretta" [(ngModel)]="realAns" name="realAns">
     <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans1" name="ans1">
@@ -18,5 +18,53 @@
       <div class="divLogin">
         <input type="submit" name="" value="Invia domanda">
       </div>
+    </form>-->
+    <form class="group" action="index.html" method="post" (submit)="sendEmail()" >
+    <div class="group">      
+      <input type="text" required [(ngModel)]="question" name="question">
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Inserisci una domanda</label>
+    </div>
+
+    <div class="group">      
+      <input type="text" required [(ngModel)]="realAns" name="realAns">
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Inserisci la risposta corretta</label>
+    </div>
+
+    <div class="group">      
+      <input type="text" required [(ngModel)]="ans1" name="ans1">
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Inserisci la risposta errata</label>
+    </div>
+
+    <div class="group">      
+      <input type="text" required [(ngModel)]="ans2" name="ans2">
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Inserisci la risposta errata</label>
+    </div>
+
+    <div class="group">      
+      <input type="text" required [(ngModel)]="ans3" name="ans3">
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Inserisci la risposta errata</label>
+    </div>
+
+    <div class="group">      
+      <input type="text" required [(ngModel)]="source" name="source">
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Inserisci la fonte</label>
+    </div>
+
+    <div class="divLogin">
+        <button type="submit" name="" value="Invia domanda">Invia</button>
+ 
+    </div>
     </form>
 </ion-content>
