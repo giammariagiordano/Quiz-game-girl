@@ -109,7 +109,6 @@ export class GamePage {
     if (ev != null) { // 
       let target = (<HTMLButtonElement>ev.target).value;
     this.score = (target == this.arrayQuestions[this.it].real) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
-      
     }
     //crea la nuova domanda
     this.it++;
@@ -123,7 +122,7 @@ export class GamePage {
     } else {
       setTimeout(() => {
         this.createQuestion();
-      }, 500);
+    }, 500);
     }
   }
 

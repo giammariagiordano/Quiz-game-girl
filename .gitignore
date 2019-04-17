@@ -19,3 +19,7 @@ src/app/email\.json
 platforms
 
 www/build/
+
+plugins/
+
+resources/

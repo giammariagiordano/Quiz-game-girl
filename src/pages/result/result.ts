@@ -16,19 +16,16 @@ import * as firebase from 'firebase';
 })
 export class ResultPage {
   scoreTotal:number = 0;
-  private council: string;
+  council: string;
   private email: string;
-  //private password: string;
-  private score: number;
+  score: number;
   //private AnswerByUser: any;
   private ref: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.score = navParams.get("score")
     this.email = localStorage.getItem("email")
-    //this.password = localStorage.getItem("password")
     this.ref = firebase.database().ref("Users");
-    
   }
 
   setCouncil(score:number){
