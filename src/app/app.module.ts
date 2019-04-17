@@ -20,7 +20,7 @@ import * as credential from "./credential.json";
 import { GamePage } from '../pages/game/game';
 import {ResultPage} from '../pages/result/result'
 import { TabsPage } from '../pages/tabs/tabs';
-import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 let config ={
   apiKey: (<any>credential).apiKey,

@@ -52,7 +52,7 @@
   "cordova-plugin-email-composer": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-email-composer"
+      "id": "cordova-plugin-email-composer@0.9.2"
     },
     "is_top_level": true,
     "variables": {}
