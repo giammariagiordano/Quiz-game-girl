@@ -21,9 +21,23 @@ export class SignupPage {
       username:"",
       password:"",
     }
-    
+    private passwordShown:boolean = false;
+    private passwordType : string ="password"
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     
+  }
+  public showPassword(){
+    if(this.passwordShown){
+      this.passwordShown= false;
+        this.passwordType = "password"
+    }
+    else{
+      this.passwordShown = true;
+      this.passwordType ="text"
+    }
+  }
+  doBackLogin(){
+    this.navCtrl.pop();
   }
 
   doSignup(){

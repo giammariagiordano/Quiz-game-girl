@@ -32,5 +32,5 @@ export class SpecificInfoPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SpecificInfoPage');
   }
-
+  
 }

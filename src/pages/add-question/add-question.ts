@@ -21,15 +21,17 @@ export class AddQuestionPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddQuestionPage');
   }
-  sendEmail() {
 
+  goToHomePage(){
+    this.navCtrl.pop();
+  }
+  sendEmail() {
     if (this.question == undefined || this.realAns == undefined || this.ans1 == undefined ||
       this.ans2 == undefined || this.ans3 == undefined || this.source == undefined) {
       alert("Inserisci tutti i campi")
     }
 
     else {
-
       this.emailComposer.isAvailable().then((available: boolean) =>{
         if(available) {
           //Now we know we can send

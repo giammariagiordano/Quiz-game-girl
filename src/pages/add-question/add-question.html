@@ -8,63 +8,52 @@
 
 
 <ion-content class="container">
-  <!--
-    <input type="text" name="" placeholder="Inserisci una domanda" [(ngModel)]="question" name="question">
-    <input type="text" name="" placeholder="Inserisci la risposta corretta" [(ngModel)]="realAns" name="realAns">
-    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans1" name="ans1">
-    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans2" name="ans2">
-    <input type="text" name="" placeholder="Inserisci una risposta sbagliata" [(ngModel)]="ans3" name="ans3">
-    <input type="text" name="" placeholder="Inserisci la fonte" [(ngModel)]="source" name="source">
-      <div class="divLogin">
-        <input type="submit" name="" value="Invia domanda">
-      </div>
-    </form>-->
-    <form class="group" action="index.html" method="post" (submit)="sendEmail()" >
-    <div class="group">      
-      <input type="text" required [(ngModel)]="question" name="question">
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>Inserisci una domanda</label>
-    </div>
 
-    <div class="group">      
-      <input type="text" required [(ngModel)]="realAns" name="realAns">
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>Inserisci la risposta corretta</label>
-    </div>
+  <div class="group">
+    <ion-item>
+      <ion-label floating>Domanda</ion-label>
+      <ion-input type="text" required [(ngModel)]="question" name="question"></ion-input>
+    </ion-item>
+  </div>
 
-    <div class="group">      
-      <input type="text" required [(ngModel)]="ans1" name="ans1">
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>Inserisci la risposta errata</label>
-    </div>
+  <div class="group">
+    <ion-item>
+      <ion-label floating>Inserisci la risposta corretta</ion-label>
+      <ion-input type="text" required [(ngModel)]="realAns" name="realAns"></ion-input>
+    </ion-item>
+  </div>
 
-    <div class="group">      
-      <input type="text" required [(ngModel)]="ans2" name="ans2">
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>Inserisci la risposta errata</label>
-    </div>
+  <div class="group">
+    <ion-item>
+      <ion-label floating>Inserisci una risposta sbagliata</ion-label>
+      <ion-input type="text" required [(ngModel)]="ans1" name="ans1"></ion-input>
+    </ion-item>
+  </div>
 
-    <div class="group">      
-      <input type="text" required [(ngModel)]="ans3" name="ans3">
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>Inserisci la risposta errata</label>
-    </div>
+  <div class="group">
+    <ion-item>
+      <ion-label floating>Inserisci una risposta sbagliata</ion-label>
+      <ion-input type="text" required [(ngModel)]="ans2" name="ans2"></ion-input>
+    </ion-item>
+  </div>
 
-    <div class="group">      
-      <input type="text" required [(ngModel)]="source" name="source">
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>Inserisci la fonte</label>
-    </div>
+  <div class="group">
+    <ion-item>
+      <ion-label floating>Inserisci una risposta sbagliata</ion-label>
+      <ion-input type="text" required [(ngModel)]="ans3" name="ans3"></ion-input>
+    </ion-item>
+  </div>
+
+  <div class="group">
+    <ion-item>
+      <ion-label floating>Inserisci la fonte</ion-label>
+      <ion-input type="text" required [(ngModel)]="source" name="source"></ion-input>
+    </ion-item>
+  </div>
 
     <div class="divLogin">
-        <button type="submit" (onclick)="sendEmail()"name="" value="Invia domanda">Invia</button>
- 
+        <button type="submit" (click)="sendEmail()"name="" value="Invia domanda">Invia</button> 
+        <button type="submit" name="" value="goToHomePage" block (click)="goToHomePage()">Torna Indietro</button>
+
     </div>
-    </form>
 </ion-content>

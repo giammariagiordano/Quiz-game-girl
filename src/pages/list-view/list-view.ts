@@ -25,11 +25,15 @@ export class ListViewPage {
   toSend: any;
   constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, private cd: ChangeDetectorRef) {
     this.user.username = this.navParams.get('username');
+    this.searchTerm  = "";
     this.getGirlDetails();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DmPage');
+    alert("test")
+    this.searchTerm  = "";
+
   } 
 
   getGirlDetails() {

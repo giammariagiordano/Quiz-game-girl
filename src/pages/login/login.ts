@@ -18,13 +18,24 @@ export class LoginPage {
       password:"",
       username: ""
     }
+    passwordType: string = "password";
+    passwordShown :boolean = false;
 
   constructor( public events: Events, public navCtrl: NavController) {
     //this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
     this.tabBarElement = document.getElementsByClassName('show-tabbar').item(0);
 
   }
-
+  public showPassword(){
+    if(this.passwordShown){
+      this.passwordShown= false;
+        this.passwordType = "password"
+    }
+    else{
+      this.passwordShown = true;
+      this.passwordType ="text"
+    }
+  }
   //to remove tab bar
   ionViewWillEnter() {
     //this.tabBarElement.style.display = 'none';

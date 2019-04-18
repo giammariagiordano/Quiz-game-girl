@@ -8,14 +8,40 @@
 
 
 <ion-content class="container">
-  <form class="box" action="index.html" method="post" (submit)="doSignup()" >
-      <h1>Registrati</h1>
-      <input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">
-      <input type="text" name="" placeholder="username" [(ngModel)]="user.username" name="username">
+  <div class="group">
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" required [(ngModel)]="user.email" name="email"></ion-input>
+    </ion-item>
+  </div>
 
-      <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">
-      <div class="divLogin">
-        <input type="submit" name="" value="Registrati">
-      </div>
-    </form>
+  <div class="group">
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" required [(ngModel)]="user.username" name="username"></ion-input>
+    </ion-item>
+  </div>
+
+  <div class="group">
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="{{passwordType}}" name="password" ngModel  [(ngModel)]="user.password" required pattern=".{4,10}">
+      </ion-input>
+
+      <button *ngIf="!passwordShown" ion-button clear color="dark" type="button" item-right
+        (click)="showPassword()">
+        <ion-icon name="ios-eye-off-outline"></ion-icon>
+      </button>
+      <button *ngIf="passwordShown" ion-button clear color="dark" type="button" item-right
+        (click)="showPassword()">
+        <ion-icon name="ios-eye-outline"></ion-icon>
+      </button>
+
+    </ion-item>
+  </div>
+
+  <div class="divLogin">
+    <button type="submit" name="" value="registrati" (click)="doSignup()">Registrati</button>
+    <button type="submit" name="" value="Registrati" block (click)="doBackLogin()">Torna al login</button>
+  </div>
 </ion-content>

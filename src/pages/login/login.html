@@ -2,40 +2,42 @@
 </ion-header>
 
 
-<ion-content class="container">
+<ion-content>
+  <div class="container">
+    <div class="imgApp"></div>
+    <div class="div1">
+      <div class="div2">
+        <div class="group">
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="text" required [(ngModel)]="user.email" name="email"></ion-input>
+          </ion-item>
+        </div>
+        <div class="group">
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="{{passwordType}}" name="password" ngModel  [(ngModel)]="user.password" required pattern=".{4,10}">
+            </ion-input>
 
-    <div>
+            <button *ngIf="!passwordShown" ion-button clear color="dark" type="button" item-right
+              (click)="showPassword()">
+              <ion-icon name="ios-eye-off-outline"></ion-icon>
+            </button>
+            <button *ngIf="passwordShown" ion-button clear color="dark" type="button" item-right
+              (click)="showPassword()">
+              <ion-icon name="ios-eye-outline"></ion-icon>
+            </button>
 
-      </div>
-      <div class="imgApp"></div>
-  <form class="group" action="index.html" method="post">
-
-    <!--<input type="text" name="" placeholder="email" [(ngModel)]="user.email" name="email">
-    <input type="password" name="" placeholder="Password" [(ngModel)]="user.password" name="password" pattern="[0-9]*">
-    <div class="divLogin">
-      <input type="submit" name="" value="Login" (click)="doLogin()">
-      <input type="submit" name="" value="Registrati" block (click)="goSignup()">
-      </div>-->
-
-      <div class="group">      
-          <input type="text" required [(ngModel)]="user.email" name="email">
-          <span class="highlight"></span>
-          <span class="bar"></span>
-          <label>Email</label>
+          </ion-item>
         </div>
 
-        <div class="group">      
-            <input type="password" required [(ngModel)]="user.password" name="password" pattern="[0-9]*">
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <label>Password</label>
-          </div>
+        <div class="divLogin">
+          <button type="submit" name="" value="Login" (click)="doLogin()">Login</button>
+          <button type="submit" name="" value="Registrati" block (click)="goSignup()">Registrati</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <div class="divLogin">
-              <button type="submit" name="" value="Login" (click)="doLogin()">Login</button>
-              <button type="submit" name="" value="Registrati" block (click)="goSignup()">Registrati</button>
-              
-          </div>
 
-  </form>
 </ion-content>
