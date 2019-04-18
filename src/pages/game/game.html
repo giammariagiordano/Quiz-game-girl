@@ -5,7 +5,8 @@
 </ion-header>
 
 <ion-content padding class="container">
-  <div *ngIf= "loading">
+  <div *ngIf= "loading && nextAns
+  ">
   <ion-card class="paddingCard">
       <p>Tempo rimanente: {{this.seconds}}</p>
 
@@ -30,7 +31,7 @@
   </div>
   </div>
 </div>
-<div *ngIf="!loading">
+<div *ngIf="!loading || !nextAns">
   <p>Loading...</p>
 </div>
 </ion-content>

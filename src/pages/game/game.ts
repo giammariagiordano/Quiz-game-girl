@@ -24,6 +24,7 @@ export class GamePage {
   public toSend;
   public arrayQuestions: any;
   public arrayAnswerByUser: any;
+  public nextAns:boolean =false;
   //to get tabbar
   tabBarElement: any;
   constructor(public navCtrl: NavController) {
@@ -46,6 +47,8 @@ export class GamePage {
     this.pool = new Array();
     this.seconds = 10;
     this.arrayAnswerByUser = new Array();
+    this.nextAns =false;
+
   }
 
   ionViewDidEnter() {
@@ -77,6 +80,7 @@ export class GamePage {
       this.pool.push(this.arrayQuestions[i]);
     }
     this.loading = true;
+    this.createQuestion();
   }
 
   /**
@@ -93,6 +97,7 @@ export class GamePage {
   }
 
   createQuestion() {
+    this.nextAns = false;
     this.restartTimerCounter();
     this.decrementSeconds();
     console.log("create question");
@@ -103,6 +108,7 @@ export class GamePage {
     }, 1000)
     if (this.it < this.questionNumber) { //se la domanda attuale è di indice inferiore posso andare avanti
       this.mix(4,this.arrayQuestions[this.it].ans)
+      this.nextAns=true;
     }
     else { // altrimenti ho finito le domande passo al listener answerToQuesion un event null perché non c'è stato un evento esterno
       //? avrei potuto fermare qui il timer e chiamare la push ma avrei replicato due linee di codice
@@ -116,6 +122,7 @@ export class GamePage {
       let target = ev.srcElement.textContent.trim();
     this.score = (target == this.arrayQuestions[this.it].real) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
     }
+    
     //crea la nuova domanda
     this.it++;
     //? e qui lasciare solo l'uguaglianza
@@ -128,7 +135,7 @@ export class GamePage {
     } else {
       setTimeout(() => {
         this.createQuestion();
-    }, 500);
+    }, 1000);
     }
   }
 

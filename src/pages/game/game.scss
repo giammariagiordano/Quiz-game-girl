@@ -30,7 +30,7 @@ h1 {
     display: block;
     margin: 2% auto;
     text-align: center;
-    border: 2px solid #2ecc71;
+    border: 2px solid grey;
     padding: 14px 40px;
     outline: none;
     color: grey;
@@ -40,8 +40,20 @@ h1 {
     cursor: pointer;
   }
   .test input :hover{
-    background: #2ecc71;
+    border: 2px solid grey !important;
+    background: #DBDBDB !important;
   }
   .card-md{
       margin-bottom: 5%;
+  }
+
+  button:hover{
+    border: 2px solid grey !important;
+      background: #DBDBDB !important;
+      color: gray !important;
+  }
+  .button-md{
+    color: gray !important;
+    border: 2px solid grey !important;
+    background: #DBDBDB !important;
   }
