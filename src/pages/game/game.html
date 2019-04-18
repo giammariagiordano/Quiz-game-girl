@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar hideBackButton>
     <ion-title>Game</ion-title>
   </ion-navbar>
 </ion-header>
@@ -19,8 +19,6 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <!-- <button style="padding:10%" ion-button color="secondary" block (click)="answerToQuestion($event)" value={{c}}>{{c}}
-          </button>-->
           <button class="test" type="submit" style="margin-top: 1%" ion-button color="secondary"
             (click)="answerToQuestion($event)" block value="{{c}}">
             {{c}}

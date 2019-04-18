@@ -28,20 +28,22 @@ export class MyApp {
 
       let activeView = nav.getActive();
       if (activeView != null) {
-        if (this.navCtrl.canGoBack){
+        if (this.navCtrl.canGoBack) {
           if (activeView.name == "HomePage" || activeView.name == "ListViewPage" ||
-           activeView.name == "AboutUsPage" || activeView.name =="LeaderBoardPage" || activeView.name=="LoginPage") {
+            activeView.name == "AboutUsPage" || activeView.name == "LeaderBoardPage" || activeView.name == "LoginPage") {
             this.confirmExitApp();
           }
-           else if (activeView.name == "SignupPage") {
+          else if (activeView.name == "SignupPage") {
             this.navCtrl.pop();
           }
-         
+          else if (activeView.name == "GamePage") {
+            this.goHomeBack()
+          }
           else {
             this.navCtrl.setRoot(TabsPage, { opentab: 1 });
           }
+        }
       }
-    }
     });
   }
   confirmExitApp() {
@@ -66,7 +68,30 @@ export class MyApp {
       ]
     });
     alert.present();
-}
+  }
+  goHomeBack() {
+    let alert = this.alertCtrl.create({
+      title: 'Desideri abbandonare la partita?',
+      message: 'Sei sicuro di voler abbandonare la partita? Il punteggio ottenuto fino ad adesso non verrà salvato',
+      buttons: [
+        {
+          text: 'no',
+          role: 'no',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Si',
+          handler: () => {
+            console.log('Buy clicked');
+            this.navCtrl.pop()
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
 }
 
 
