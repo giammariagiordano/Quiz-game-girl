@@ -31,7 +31,6 @@ export class ListViewPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DmPage');
-    alert("test")
     this.searchTerm  = "";
 
   } 

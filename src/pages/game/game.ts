@@ -27,6 +27,17 @@ export class GamePage {
   //to get tabbar
   tabBarElement: any;
   constructor(public navCtrl: NavController) {
+    this.resetParam();
+    //to use tab bar
+    this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
+
+  }
+
+  ionViewDidLoad() {
+    this.it = 0;
+    this.loadQuestion();
+  }
+  private resetParam(){
     this.loading = false;
     this.score = 0;
     this.it = 0;
@@ -35,18 +46,11 @@ export class GamePage {
     this.pool = new Array();
     this.seconds = 10;
     this.arrayAnswerByUser = new Array();
-    //to use tab bar
-    this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
-
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GamePage');
-    this.loadQuestion();
   }
 
   ionViewDidEnter() {
-    this.createQuestion();
+    this.resetParam();
+    this.loadQuestion();
   }
 
   //to remove tab bar
@@ -72,6 +76,7 @@ export class GamePage {
     for (let i = 0; i < this.questionNumber; i++) {
       this.pool.push(this.arrayQuestions[i]);
     }
+    this.loading = true;
   }
 
   /**
@@ -142,3 +147,7 @@ export class GamePage {
     }
   }
 }
+
+
+
+//bernulli cobol wifi babbage 

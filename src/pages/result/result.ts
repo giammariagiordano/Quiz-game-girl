@@ -51,6 +51,11 @@ export class ResultPage {
     
     this.setCouncil(this.score);
   }
-
+  goToHome(){
+    this.navCtrl.popToRoot();
+  }
+  newGame(){
+    this.navCtrl.popTo("GamePage");
+  }
 
 }
