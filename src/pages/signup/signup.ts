@@ -2,12 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { HomePage } from '../home/home';
-/**
- * Generated class for the SignupPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -27,14 +21,8 @@ export class SignupPage {
     
   }
   public showPassword(){
-    if(this.passwordShown){
-      this.passwordShown= false;
-        this.passwordType = "password"
-    }
-    else{
-      this.passwordShown = true;
-      this.passwordType ="text"
-    }
+    this.passwordShown = !this.passwordShown
+    this.passwordType = !this.passwordShown ? "password" :"text"
   }
   doBackLogin(){
     this.navCtrl.pop();

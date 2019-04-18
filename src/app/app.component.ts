@@ -5,7 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
-import { ViewController } from 'ionic-angular/navigation/view-controller';
 @Component({
   templateUrl: 'app.html'
 })
@@ -85,7 +84,7 @@ export class MyApp {
           text: 'Si',
           handler: () => {
             console.log('Buy clicked');
-            this.navCtrl.pop()
+            this.navCtrl.setRoot(TabsPage, { opentab: 1 });
           }
         }
       ]
