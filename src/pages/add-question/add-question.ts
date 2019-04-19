@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
 import * as emailDev from '../../app/email.json'
+import { Dialogs } from '@ionic-native/dialogs';
 @IonicPage()
 @Component({
   selector: 'page-add-question',
@@ -15,7 +16,7 @@ export class AddQuestionPage {
   ans2: string;
   ans3: string;
   source: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private emailComposer: EmailComposer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private emailComposer: EmailComposer, private dialogs: Dialogs) {
   }
 
   ionViewDidLoad() {
@@ -28,7 +29,9 @@ export class AddQuestionPage {
   sendEmail() {
     if (this.question == undefined || this.realAns == undefined || this.ans1 == undefined ||
       this.ans2 == undefined || this.ans3 == undefined || this.source == undefined) {
-      alert("Inserisci tutti i campi")
+        this.dialogs.alert('Tutti i campi sono obbligatori',"Inserisci tutti i campi")
+        .then(() => console.log('Dialog dismissed'))
+        .catch(e => console.log('Error displaying dialog', e));
     }
 
     else {

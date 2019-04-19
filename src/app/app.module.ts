@@ -21,6 +21,7 @@ import { GamePage } from '../pages/game/game';
 import {ResultPage} from '../pages/result/result'
 import { TabsPage } from '../pages/tabs/tabs';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { Dialogs } from '@ionic-native/dialogs';
 
 let config ={
   apiKey: (<any>credential).apiKey,
@@ -73,6 +74,7 @@ firebase.database.enableLogging(true);
     StatusBar,
     SplashScreen,
     EmailComposer,
+    Dialogs,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

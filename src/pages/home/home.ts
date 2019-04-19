@@ -2,7 +2,7 @@ import { AddQuestionPage } from './../add-question/add-question';
 import { LoginPage } from './../login/login';
 import { GamePage } from './../game/game';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, App } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -12,7 +12,7 @@ export class HomePage {
   username:string
   private bar: any
 
-  constructor(public navCtrl: NavController, public navParam : NavParams) {
+  constructor(public navCtrl: NavController, public navParam : NavParams,private app: App) {
     this.username=localStorage.getItem("username");
   }
   
@@ -33,6 +33,8 @@ export class HomePage {
     localStorage.removeItem("username");
     this.bar = document.querySelector('.tabbar.show-tabbar');
     this.bar.style.display = 'none';
-    this.navCtrl.push(LoginPage);
+    this.app.getRootNav().setRoot( LoginPage );
+
+
   }
 }

@@ -85,6 +85,7 @@
     <plugin name="cordova-plugin-email-composer" spec="0.9.2">
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
     </plugin>
+    <plugin name="cordova-plugin-dialogs" spec="~2.0.1" />
     <engine name="android" spec="7.1.4" />
     <engine name="ios" spec="4.5.5" />
 </widget>
