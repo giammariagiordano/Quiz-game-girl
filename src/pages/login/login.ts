@@ -27,15 +27,10 @@ export class LoginPage {
     this.tabBarElement = document.getElementsByClassName('show-tabbar').item(0);
 
   }
+  //nasconde la password o la mostra in base ad un valore boolean
   public showPassword(){
-    if(this.passwordShown){
-      this.passwordShown= false;
-        this.passwordType = "password"
-    }
-    else{
-      this.passwordShown = true;
-      this.passwordType ="text"
-    }
+    this.passwordShown = !this.passwordShown
+    this.passwordType = !this.passwordShown ? "password" :"text"
   }
   //to remove tab bar
   ionViewWillEnter() {

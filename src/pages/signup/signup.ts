@@ -80,12 +80,3 @@ export class SignupPage {
   }
 
 }
-
-
-
-/*
-
-this.dialogs.alert('Hello world')
-  .then(() => console.log('Dialog dismissed'))
-  .catch(e => console.log('Error displaying dialog', e));
-*/

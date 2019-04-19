@@ -3,8 +3,6 @@ import { IonicPage, NavController } from 'ionic-angular';
 import firebase from 'firebase';
 import { ResultPage } from '../result/result';
 
-
-
 @IonicPage()
 @Component({
   selector: 'page-game',
@@ -31,7 +29,6 @@ export class GamePage {
     this.resetParam();
     //to use tab bar
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
-
   }
 
   ionViewDidLoad() {
@@ -48,7 +45,6 @@ export class GamePage {
     this.seconds = 10;
     this.arrayAnswerByUser = new Array();
     this.nextAns =false;
-
   }
 
   ionViewDidEnter() {
@@ -119,8 +115,8 @@ export class GamePage {
   answerToQuestion(ev: Event) {
     this.nextAns = false;
     if (ev != null) { // 
-      //let target = (<HTMLButtonElement>ev.target).value;
-      let target = ev.srcElement.textContent.trim();
+      let target = (<HTMLButtonElement>ev.target).value;
+      //let target = ev.srcElement.textContent.trim();
     this.score = (target == this.arrayQuestions[this.it].real) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
     }
     
@@ -134,9 +130,11 @@ export class GamePage {
       this.toSend = { score: this.score}
       this.navCtrl.push(ResultPage, this.toSend);
     } else {
-      setTimeout(() => {
+      setTimeout(()=>{
         this.createQuestion();
-    }, 1000);
+      },500) //aggiornamento grafico
+      
+        
     }
   }
 
@@ -144,6 +142,7 @@ export class GamePage {
     this.seconds = 10;
     clearInterval(this.timer);
   }
+
   decrementSeconds() {
     this.seconds--;
     //console.log(this.seconds);
@@ -151,11 +150,8 @@ export class GamePage {
       //console.log("sono arrivato a zero");
       this.restartTimerCounter();
       this.it++;
-      this.createQuestion();
+        this.createQuestion(); 
+     
     }
   }
 }
-
-
-
-//bernulli cobol wifi babbage 
