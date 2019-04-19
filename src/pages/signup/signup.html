@@ -25,7 +25,7 @@
   <div class="group">
     <ion-item>
       <ion-label floating>Password</ion-label>
-      <ion-input type="{{passwordType}}" name="password"  clearOnEdit="false" ngModel  [(ngModel)]="user.password" required pattern=".{4,10}">
+      <ion-input type="{{passwordType}}" name="password"  clearOnEdit="false" ngModel  [(ngModel)]="user.password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
       </ion-input>
 
       <button *ngIf="!passwordShown" ion-button clear color="dark" type="button" item-right

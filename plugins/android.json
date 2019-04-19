@@ -29,11 +29,10 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "io.ionic.starter"
-    }
-  },
-  "dependent_plugins": {
+    },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "io.ionic.starter"
     }
-  }
+  },
+  "dependent_plugins": {}
 }

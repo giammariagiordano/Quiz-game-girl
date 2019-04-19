@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { IonicPage, Events,NavController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { SignupPage } from '../signup/signup';
+import { Dialogs } from '@ionic-native/dialogs';
 
 
 @IonicPage()
@@ -21,7 +22,7 @@ export class LoginPage {
     passwordType: string = "password";
     passwordShown :boolean = false;
 
-  constructor( public events: Events, public navCtrl: NavController) {
+  constructor( public events: Events, public navCtrl: NavController,private dialogs: Dialogs) {
     //this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
     this.tabBarElement = document.getElementsByClassName('show-tabbar').item(0);
 
@@ -61,7 +62,11 @@ export class LoginPage {
         localStorage.setItem("username", toSend.username);
         this.navCtrl.push(TabsPage, toSend);
       }))
-      .catch( err => alert("Mail o password errate"))
+      .catch( err =>{
+        this.dialogs.alert('Le credenziali inserite non sono valide',"Inserisci credenziali valide")
+        .then(() => console.log('Dialog dismissed'))
+        .catch(e => console.log('Error displaying dialog', e));
+      })
     }
   }
 //}
