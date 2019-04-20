@@ -115,8 +115,8 @@ export class GamePage {
   answerToQuestion(ev: Event) {
     this.nextAns = false;
     if (ev != null) { // 
-      let target = (<HTMLButtonElement>ev.target).value;
-      //let target = ev.srcElement.textContent.trim();
+     // let target = (<HTMLButtonElement>ev.target).value;
+      let target = ev.srcElement.textContent.trim();
     this.score = (target == this.arrayQuestions[this.it].real) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
     }
     
