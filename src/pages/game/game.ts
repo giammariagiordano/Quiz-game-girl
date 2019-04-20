@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import firebase from 'firebase';
 import { ResultPage } from '../result/result';
@@ -23,9 +23,10 @@ export class GamePage {
   public arrayQuestions: any;
   public arrayAnswerByUser: any;
   public nextAns:boolean =false;
+  public isSrcSet:boolean = false
   //to get tabbar
   tabBarElement: any;
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,private cd: ChangeDetectorRef) {
     this.resetParam();
     //to use tab bar
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
@@ -45,6 +46,7 @@ export class GamePage {
     this.seconds = 10;
     this.arrayAnswerByUser = new Array();
     this.nextAns =false;
+    this.isSrcSet=false
   }
 
   ionViewDidEnter() {
@@ -62,9 +64,10 @@ export class GamePage {
   }
 
   loadQuestion() {
+    this.loading = false;
     firebase.database().ref("Questions").once('value', res => {
       res.val().forEach(element => {
-        this.arrayQuestions.push({ question: element.question, real: element.realAnswer, ans: element.answer })
+        this.arrayQuestions.push({ question: element.question, real: element.realAnswer, ans: element.answer, src:element.src })
       });
       this.createPool();
     });
@@ -75,7 +78,6 @@ export class GamePage {
     for (let i = 0; i < this.questionNumber; i++) {
       this.pool.push(this.arrayQuestions[i]);
     }
-    this.loading = true;
     this.createQuestion();
   }
 
@@ -93,16 +95,21 @@ export class GamePage {
   }
 
   createQuestion() {
-    this.nextAns = false;
+    this.isSrcSet=false
     this.restartTimerCounter();
-    this.decrementSeconds();
+  //  this.decrementSeconds();
     console.log("create question");
 
-    this.loading = true;
     this.timer = setInterval(() => {
        this.decrementSeconds() // inizio a decrementarre i secondi
+       this.cd.detectChanges();
     }, 1000)
     if (this.it < this.questionNumber) { //se la domanda attuale è di indice inferiore posso andare avanti
+      this.loading = true;
+      if(this.arrayQuestions[this.it].src!=""){
+        //alert(this.arrayQuestions[this.it].src)
+        this.isSrcSet=true;
+      }
       this.mix(4,this.arrayQuestions[this.it].ans)
       this.nextAns=true;
     }
@@ -114,7 +121,7 @@ export class GamePage {
 
   answerToQuestion(ev: Event) {
     this.nextAns = false;
-    if (ev != null) { // 
+    if (ev != null) { 
      // let target = (<HTMLButtonElement>ev.target).value;
       let target = ev.srcElement.textContent.trim();
     this.score = (target == this.arrayQuestions[this.it].real) ? this.score + this.CORRECT : this.score + this.UNCORRECT;
@@ -122,10 +129,11 @@ export class GamePage {
     
     //crea la nuova domanda
     this.it++;
+    this.loading = false;
     //? e qui lasciare solo l'uguaglianza
     if (this.it >= this.questionNumber) {
       clearInterval(this.timer);
-      this.loading = false;
+     
      // alert(JSON.stringify(this.arrayAnswerByUser))
       this.toSend = { score: this.score}
       this.navCtrl.push(ResultPage, this.toSend);
@@ -145,9 +153,9 @@ export class GamePage {
 
   decrementSeconds() {
     this.seconds--;
-    //console.log(this.seconds);
+    console.log(this.seconds);
     if (this.seconds == 0) {
-      //console.log("sono arrivato a zero");
+      console.log("sono arrivato a zero");
       this.restartTimerCounter();
       this.it++;
         this.createQuestion(); 

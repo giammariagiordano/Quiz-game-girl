@@ -5,31 +5,33 @@
 </ion-header>
 
 <ion-content padding class="container">
-  <div *ngIf= "loading && nextAns
-  ">
-  <ion-card class="paddingCard">
+  <div *ngIf="loading && nextAns">
+    <ion-card class="paddingCard">
       <p>Tempo rimanente: {{this.seconds}}</p>
 
-    <ion-card-title>
-      <h1>{{arrayQuestions[this.it].question}}</h1>
-    </ion-card-title>
-  </ion-card>
-  <div *ngFor="let c of arrayQuestions[this.it].ans">
-    <div>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <button class="test" type="submit" style="margin-top: 1%" ion-button color="secondary"
-            (click)="answerToQuestion($event)" block value="{{c}}">
-            {{c}}
-          </button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+      <ion-card-title>
+        <h1>{{arrayQuestions[this.it].question}}</h1>
+        <div *ngIf="this.isSrcSet" class="resImg">
+          <img class="resImg" src="{{arrayQuestions[this.it].src}}">
+        </div>
+      </ion-card-title>
+    </ion-card>
+    <div *ngFor="let c of arrayQuestions[this.it].ans">
+      <div>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <button class="test" type="submit" style="margin-top: 1%" ion-button color="secondary"
+                (click)="answerToQuestion($event)" block value="{{c}}">
+                {{c}}
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
   </div>
+  <div *ngIf="!loading || !nextAns">
+    <p>Loading...</p>
   </div>
-</div>
-<div *ngIf="!loading || !nextAns">
-  <p>Loading...</p>
-</div>
 </ion-content>
