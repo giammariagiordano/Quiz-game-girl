@@ -52,6 +52,11 @@ export class SignupPage {
       .then(() => console.log('Dialog dismissed'))
       .catch(e => console.log('Error displaying dialog', e));
     }
+    else if(this.user.username == ""){
+      this.dialogs.alert('Il campo username non può essere vuoto',"Inserisci un Username")
+      .then(() => console.log('Dialog dismissed'))
+      .catch(e => console.log('Error displaying dialog', e));
+    }
     
     else{
     firebase.auth().createUserWithEmailAndPassword(toSend.email, toSend.password)
@@ -61,19 +66,24 @@ export class SignupPage {
         localStorage.setItem("password", toSend.password);
         localStorage.setItem("username", toSend.username);
         this.navCtrl.setRoot(TabsPage, { opentab: 1 });
-
       })
-      .catch(err => { alert("Compila i campi correttamente") });
+      .catch(err => {
+        this.dialogs.alert('L\'email inserita è già presente',"Inserisci un\'altra email")
+        .then(() => console.log('Dialog dismissed'))
+        .catch(e => console.log('Error displaying dialog', e));  
+      });
     }
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
+
   checkPass(e:string){  
     let reg = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})") //min 8 caratteri, 1 numero, 1 maiuscola e 1 minuscola e un carattere speciale
     return(reg.test(e))
   }
+  
   checkEmail(email){
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
