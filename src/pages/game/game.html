@@ -32,6 +32,13 @@
     </div>
   </div>
   <div *ngIf="!loading || !nextAns">
-    <p>Loading...</p>
+
+      <div class="row">
+          <div class="col">
+              <div class="text-center">
+                  <ion-spinner class="spinnerLoad"></ion-spinner>
+                </div>
+          </div>
+      </div>   
   </div>
 </ion-content>

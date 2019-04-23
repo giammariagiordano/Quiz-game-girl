@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, App } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { SpecificInfoPage } from '../specific-info/specific-info';
 import { ChangeDetectorRef } from '@angular/core';
@@ -11,6 +11,7 @@ import { ChangeDetectorRef } from '@angular/core';
 export class ListViewPage {
   searchTerm : string = ""
   private copyGeneralInfo:any;
+  private bar:any;
   private user = {
     username: "",
   };
@@ -23,7 +24,7 @@ export class ListViewPage {
 
   data: any;
   toSend: any;
-  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, private cd: ChangeDetectorRef) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, private cd: ChangeDetectorRef,private app: App) {
     this.user.username = this.navParams.get('username');
     this.searchTerm  = "";
     this.getGirlDetails();
@@ -67,7 +68,8 @@ showInfo(girl){
     Girl: girl,
     Username: this.user.username
   }
-  this.navCtrl.push(SpecificInfoPage, this.toSend);
+  this.bar = document.querySelector('.tabbar.show-tabbar');
+  this.app.getRootNav().push( SpecificInfoPage,this.toSend );
 }
   
 }

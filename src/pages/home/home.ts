@@ -9,31 +9,33 @@ import { NavController, NavParams, App } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  username:string
+  username: string
   private bar: any
 
-  constructor(public navCtrl: NavController, public navParam : NavParams,private app: App) {
-    this.username=localStorage.getItem("username");
-  }
-  
-  ionViewDidEnter() {
-    this.username=localStorage.getItem("username");
-  }
-  goToAddQuestion(){
-    this.navCtrl.push(AddQuestionPage, this.navParam);
+  constructor(public navCtrl: NavController, public navParam: NavParams, private app: App) {
+    this.username = localStorage.getItem("username");
   }
 
-  newGame(){
+  ionViewDidEnter() {
+    this.username = localStorage.getItem("username");
+  }
+  goToAddQuestion() {
+    this.bar = document.querySelector('.tabbar.show-tabbar');
+    this.app.getRootNav().push(AddQuestionPage, this.navParam);
+  }
+
+  newGame() {
     this.navCtrl.push(GamePage);
   }
 
-  logout(){
+  logout() {
     localStorage.removeItem("email");
     localStorage.removeItem("password");
     localStorage.removeItem("username");
+    localStorage.clear();
     this.bar = document.querySelector('.tabbar.show-tabbar');
     this.bar.style.display = 'none';
-    this.app.getRootNav().setRoot( LoginPage );
+    this.app.getRootNav().setRoot(LoginPage);
 
 
   }

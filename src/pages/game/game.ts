@@ -140,9 +140,7 @@ export class GamePage {
     } else {
       setTimeout(()=>{
         this.createQuestion();
-      },500) //aggiornamento grafico
-      
-        
+      },500) //aggiornamento grafico 
     }
   }
 

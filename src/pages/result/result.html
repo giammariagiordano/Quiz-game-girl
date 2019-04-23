@@ -10,15 +10,8 @@
           <h1>Il tuo punteggio finale è: {{score}}</h1>
           <h1>Il tuo punteggio totale è: {{this.scoreTotal}}</h1>
           <h3>{{this.council}}</h3>
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                <button type="submit" name="" value="registrati" (click)="goToHome()">Home</button>
-              </ion-col>
-              <ion-col>
-                <button type="submit" name="" value="Registrati" block (click)="newGame()">Nuova partita</button>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
+          <button  class= "test" type = "submit"style="margin-top: 10%" ion-button color="secondary" (click)="newGame()" block>Nuova Partita</button>
+          <button  class= "test" type = "submit"style="margin-top: 10%" ion-button color="secondary" (click)="goToHome()" block>Torna alla Home</button>
+
   </div>
 </ion-content>
