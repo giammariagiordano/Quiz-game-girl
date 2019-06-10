@@ -13,7 +13,7 @@ To answer these questions, the players will be able to document themselves using
 `npm i -g cordova ionic`
 2. Clone this repository
 3. Go in the main directory of this repo and run  
-`ionic serve`or  ionic cordova run android/ios (to install the application on your phone)
+`ionic serve`or  `ionic cordova run android/ios` (to install the application on your phone)
 
 ## Developed by:
 - [Giammaria Giordano](https://github.com/broke31), 
